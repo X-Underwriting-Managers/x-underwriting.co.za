@@ -17,14 +17,25 @@ Parameters:
   CloudFrontDistributionIdProduction:
     Type: String
     Description: CloudFront distribution ID for the production environment
+  ExistingOIDCProviderArn:
+    Type: String
+    Default: ""
+    Description: >
+      Leave blank to create a new GitHub OIDC provider (first time setup).
+      If token.actions.githubusercontent.com already exists in IAM → Identity
+      Providers, paste its ARN here (arn:aws:iam::<account-id>:oidc-provider/token.actions.githubusercontent.com)
+      to skip creation and avoid a conflict.
+
+Conditions:
+  CreateOIDCProvider: !Equals [!Ref ExistingOIDCProviderArn, ""]
 
 Resources:
 
   # ── OIDC Identity Provider ──────────────────────────────────────────────────
-  # Only create this once per AWS account. If it already exists, import it
-  # into the stack or remove this resource and reference the existing ARN.
+  # Skipped automatically if ExistingOIDCProviderArn is provided above.
   GitHubOIDCProvider:
     Type: AWS::IAM::OIDCProvider
+    Condition: CreateOIDCProvider
     Properties:
       Url: https://token.actions.githubusercontent.com
       ClientIdList:
@@ -43,12 +54,14 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              Federated: !GetAtt GitHubOIDCProvider.Arn
+              Federated: !If
+                - CreateOIDCProvider
+                - !GetAtt GitHubOIDCProvider.Arn
+                - !Ref ExistingOIDCProviderArn
             Action: sts:AssumeRoleWithWebIdentity
             Condition:
               StringEquals:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com
-              StringLike:
                 token.actions.githubusercontent.com:sub:
                   !Sub "repo:${GitHubOrg}/${GitHubRepo}:ref:refs/heads/test/main"
       Policies:
@@ -88,12 +101,14 @@ Resources:
         Statement:
           - Effect: Allow
             Principal:
-              Federated: !GetAtt GitHubOIDCProvider.Arn
+              Federated: !If
+                - CreateOIDCProvider
+                - !GetAtt GitHubOIDCProvider.Arn
+                - !Ref ExistingOIDCProviderArn
             Action: sts:AssumeRoleWithWebIdentity
             Condition:
               StringEquals:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com
-              StringLike:
                 token.actions.githubusercontent.com:sub:
                   !Sub "repo:${GitHubOrg}/${GitHubRepo}:ref:refs/heads/production/main"
       Policies:
@@ -130,3 +145,9 @@ Outputs:
   RoleArnProduction:
     Description: Paste this value into the GitHub 'production' environment secret AWS_ROLE_ARN
     Value: !GetAtt GitHubActionsRoleProduction.Arn
+  OIDCProviderArn:
+    Description: OIDC provider ARN in use (created or existing)
+    Value: !If
+      - CreateOIDCProvider
+      - !GetAtt GitHubOIDCProvider.Arn
+      - !Ref ExistingOIDCProviderArn

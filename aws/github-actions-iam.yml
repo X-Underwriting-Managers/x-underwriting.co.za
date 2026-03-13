@@ -63,7 +63,7 @@ Resources:
               StringEquals:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com
                 token.actions.githubusercontent.com:sub:
-                  !Sub "repo:${GitHubOrg}/${GitHubRepo}:ref:refs/heads/test/main"
+                  !Sub "repo:${GitHubOrg}/${GitHubRepo}:environment:test"
       Policies:
         - PolicyName: deploy-test
           PolicyDocument:
@@ -110,7 +110,7 @@ Resources:
               StringEquals:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com
                 token.actions.githubusercontent.com:sub:
-                  !Sub "repo:${GitHubOrg}/${GitHubRepo}:ref:refs/heads/production/main"
+                  !Sub "repo:${GitHubOrg}/${GitHubRepo}:environment:production"
       Policies:
         - PolicyName: deploy-production
           PolicyDocument:

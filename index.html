@@ -117,12 +117,12 @@
     <p class="s-p reveal d1">From in-hospital shortfalls to cancer diagnosis payouts, our benefit suite is built to protect you and your family at every stage of the healthcare journey.</p>
   </div>
 
-  <div class="ben-grid">
+  <div class="ben-grid" id="benefitsGrid">
 
     <!-- ── IN-HOSPITAL ── -->
     <div class="ben-card reveal">
       <div class="ben-tag">In-Hospital</div>
-      <div class="ben-title">Gap Cover (additional)</div>
+      <div class="ben-title">Gap Cover</div>
       <div class="ben-txt">Covers the shortfall between what your medical scheme pays and what doctors and specialists charge in hospital. 500% additional cover, BMI included.</div>
       <div class="ben-plan-tags">
         <span class="ben-plan-tag apex">Apex · 500% up to OAL</span>
@@ -142,7 +142,7 @@
 
     <div class="ben-card reveal d2">
       <div class="ben-tag">In-Hospital</div>
-      <div class="ben-title">Co-Payments</div>
+      <div class="ben-title">Copayment</div>
       <div class="ben-txt">Covers co-payments, excesses, or deductibles imposed by your medical scheme for specified procedures and hospital admission fees.</div>
       <div class="ben-plan-tags">
         <span class="ben-plan-tag apex">Apex · Up to OAL</span>
@@ -152,7 +152,7 @@
 
     <div class="ben-card reveal">
       <div class="ben-tag">In-Hospital</div>
-      <div class="ben-title">Penalty Fee Cover</div>
+      <div class="ben-title">Penalty Fee</div>
       <div class="ben-txt">Covers the penalty when you use a hospital not on your medical scheme's network — stated amount or percentage charged by your scheme. 3 claims per policy per annum.</div>
       <div class="ben-plan-tags">
         <span class="ben-plan-tag apex">Apex · R15 000</span>
@@ -193,7 +193,7 @@
     <!-- ── EMERGENCY ROOM ── -->
     <div class="ben-card reveal d1">
       <div class="ben-tag">Emergency Room</div>
-      <div class="ben-title">Emergency Room Limit</div>
+      <div class="ben-title">Emergency Room</div>
       <div class="ben-txt">Overall annual limit for all emergency room visits per policy per annum, covering accidents and illness.</div>
       <div class="ben-plan-tags">
         <span class="ben-plan-tag apex">Apex · R25 000 p.a.</span>
@@ -275,7 +275,7 @@
     <!-- ── CANCER ── -->
     <div class="ben-card reveal">
       <div class="ben-tag">Cancer</div>
-      <div class="ben-title">Cancer Co-Payment</div>
+      <div class="ben-title">Cancer Copayments</div>
       <div class="ben-txt">Covers cancer treatment co-payments required by your medical scheme throughout your treatment journey.</div>
       <div class="ben-plan-tags">
         <span class="ben-plan-tag apex">Apex · Up to OAL</span>
@@ -285,7 +285,7 @@
 
     <div class="ben-card reveal d1">
       <div class="ben-tag">Cancer</div>
-      <div class="ben-title">Cancer Top-Up</div>
+      <div class="ben-title">Cancer Boost</div>
       <div class="ben-txt">Additional protection once your scheme's cancer benefit limits are reached, ensuring continued cover during treatment.</div>
       <div class="ben-plan-tags">
         <span class="ben-plan-tag apex">Apex · Up to OAL</span>
@@ -354,6 +354,9 @@
       </div>
     </div>
 
+  </div>
+  <div class="ben-toggle-wrap reveal">
+    <button type="button" class="ben-toggle-btn" id="benefitsToggle" aria-controls="benefitsGrid" aria-expanded="false">Show more</button>
   </div>
 </section>
 

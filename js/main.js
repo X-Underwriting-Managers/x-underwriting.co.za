@@ -20,3 +20,41 @@ mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => 
   burger.classList.remove('open');
   mobileMenu.classList.remove('open');
 }));
+
+// Benefits show more / show less toggle
+const benefitsGrid = document.getElementById('benefitsGrid');
+const benefitsToggle = document.getElementById('benefitsToggle');
+
+if (benefitsGrid && benefitsToggle) {
+  const defaultBenefits = new Set([
+    'Gap Cover',
+    'Copayment',
+    'Penalty Fee',
+    'Emergency Room',
+    'Cancer Boost',
+    'Cancer Copayments'
+  ]);
+
+  const allCards = Array.from(benefitsGrid.querySelectorAll('.ben-card'));
+  const extraCards = allCards.filter(card => {
+    const title = card.querySelector('.ben-title');
+    return !title || !defaultBenefits.has(title.textContent.trim());
+  });
+
+  let expanded = false;
+  const updateBenefits = () => {
+    extraCards.forEach(card => card.classList.toggle('ben-card-hidden', !expanded));
+    benefitsToggle.setAttribute('aria-expanded', String(expanded));
+    benefitsToggle.textContent = expanded ? 'Show less' : 'Show more';
+  };
+
+  if (extraCards.length === 0) {
+    benefitsToggle.style.display = 'none';
+  } else {
+    updateBenefits();
+    benefitsToggle.addEventListener('click', () => {
+      expanded = !expanded;
+      updateBenefits();
+    });
+  }
+}

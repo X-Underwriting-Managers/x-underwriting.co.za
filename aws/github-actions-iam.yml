@@ -1,0 +1,132 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  IAM OIDC provider and deployment roles for GitHub Actions CI/CD.
+  Grants test/main branch access to the test S3 bucket and production/main
+  branch access to the production S3 bucket. No long-lived credentials needed.
+
+Parameters:
+  GitHubOrg:
+    Type: String
+    Default: X-Underwriting-Managers
+  GitHubRepo:
+    Type: String
+    Default: x-underwriting.co.za
+  CloudFrontDistributionIdTest:
+    Type: String
+    Description: CloudFront distribution ID for the test environment
+  CloudFrontDistributionIdProduction:
+    Type: String
+    Description: CloudFront distribution ID for the production environment
+
+Resources:
+
+  # ── OIDC Identity Provider ──────────────────────────────────────────────────
+  # Only create this once per AWS account. If it already exists, import it
+  # into the stack or remove this resource and reference the existing ARN.
+  GitHubOIDCProvider:
+    Type: AWS::IAM::OIDCProvider
+    Properties:
+      Url: https://token.actions.githubusercontent.com
+      ClientIdList:
+        - sts.amazonaws.com
+      ThumbprintList:
+        - 6938fd4d98bab03faadb97b34396831e3780aea1
+        - 1c58a3a8518e8759bf075b76b750d4f2df264fcd
+
+  # ── IAM Role — Test ─────────────────────────────────────────────────────────
+  GitHubActionsRoleTest:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: github-actions-deploy-test
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !GetAtt GitHubOIDCProvider.Arn
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                token.actions.githubusercontent.com:aud: sts.amazonaws.com
+              StringLike:
+                token.actions.githubusercontent.com:sub:
+                  !Sub "repo:${GitHubOrg}/${GitHubRepo}:ref:refs/heads/test/main"
+      Policies:
+        - PolicyName: deploy-test
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: S3SyncTest
+                Effect: Allow
+                Action:
+                  - s3:PutObject
+                  - s3:GetObject
+                  - s3:DeleteObject
+                  - s3:GetObjectAcl
+                  - s3:PutObjectAcl
+                Resource: arn:aws:s3:::websitetest.x-underwriting.co.za/*
+              - Sid: S3ListTest
+                Effect: Allow
+                Action:
+                  - s3:ListBucket
+                  - s3:GetBucketLocation
+                Resource: arn:aws:s3:::websitetest.x-underwriting.co.za
+              - Sid: CloudFrontInvalidateTest
+                Effect: Allow
+                Action:
+                  - cloudfront:CreateInvalidation
+                Resource:
+                  !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistributionIdTest}"
+
+  # ── IAM Role — Production ───────────────────────────────────────────────────
+  GitHubActionsRoleProduction:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: github-actions-deploy-production
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !GetAtt GitHubOIDCProvider.Arn
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                token.actions.githubusercontent.com:aud: sts.amazonaws.com
+              StringLike:
+                token.actions.githubusercontent.com:sub:
+                  !Sub "repo:${GitHubOrg}/${GitHubRepo}:ref:refs/heads/production/main"
+      Policies:
+        - PolicyName: deploy-production
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: S3SyncProduction
+                Effect: Allow
+                Action:
+                  - s3:PutObject
+                  - s3:GetObject
+                  - s3:DeleteObject
+                  - s3:GetObjectAcl
+                  - s3:PutObjectAcl
+                Resource: arn:aws:s3:::x-underwriting.co.za/*
+              - Sid: S3ListProduction
+                Effect: Allow
+                Action:
+                  - s3:ListBucket
+                  - s3:GetBucketLocation
+                Resource: arn:aws:s3:::x-underwriting.co.za
+              - Sid: CloudFrontInvalidateProduction
+                Effect: Allow
+                Action:
+                  - cloudfront:CreateInvalidation
+                Resource:
+                  !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${CloudFrontDistributionIdProduction}"
+
+Outputs:
+  RoleArnTest:
+    Description: Paste this value into the GitHub 'test' environment secret AWS_ROLE_ARN
+    Value: !GetAtt GitHubActionsRoleTest.Arn
+  RoleArnProduction:
+    Description: Paste this value into the GitHub 'production' environment secret AWS_ROLE_ARN
+    Value: !GetAtt GitHubActionsRoleProduction.Arn

@@ -13,7 +13,7 @@ jobs:
   deploy:
     name: Sync to S3 (Production)
     runs-on: ubuntu-latest
-    environment: production
+    environment: Production
 
     steps:
       - name: Checkout

@@ -13,7 +13,7 @@ jobs:
   deploy:
     name: Sync to S3 (Test)
     runs-on: ubuntu-latest
-    environment: test
+    environment: Test
 
     steps:
       - name: Checkout

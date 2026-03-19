@@ -58,3 +58,16 @@ if (benefitsGrid && benefitsToggle) {
     });
   }
 }
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  if (!q) return;
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(open => open.classList.remove('open'));
+    // Open this one if it wasn't open
+    if (!isOpen) item.classList.add('open');
+  });
+});

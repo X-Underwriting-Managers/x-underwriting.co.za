@@ -284,7 +284,10 @@ section { padding: 88px 60px; position: relative; }
   color: #0369a1; background: #e0f2fe; border-color: #7dd3fc;
 }
 .ben-plan-tag.vertex {
-  color: #334155; background: #e2e8f0; border-color: #94a3b8;
+  color: #0e7490; background: #cffafe; border-color: #67e8f9;
+}
+.ben-plan-tag.shared {
+  color: #475569; background: #f1f5f9; border-color: #cbd5e1;
 }
 .ben-plan-tag.none {
   color: #94a3b8; background: #f8fafc; border-color: #e2e8f0;
@@ -504,6 +507,7 @@ footer {
 .f-brand .f-logo { display: flex; align-items: center; margin-bottom: 10px; }
 .f-logo-img { height: 32px; width: auto; display: block; }
 .f-legal { font-size: 11px; color: var(--slate-600); line-height: 1.7; max-width: 340px; }
+.f-compass-logo { height: 56px; width: auto; display: block; margin-top: 14px; opacity: 0.7; }
 .f-col h4 { font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--slate-500); margin-bottom: 12px; }
 .f-col ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
 .f-col a { font-size: 13px; color: var(--slate-500); text-decoration: none; transition: color 0.25s; }
@@ -512,6 +516,27 @@ footer {
 /* ── ACTIVE NAV LINK ── */
 .nav-links a.active { color: var(--white); }
 
+/* ── CONTACT PAGE ── */
+.contact-info-list { display: flex; flex-direction: column; gap: 20px; }
+.contact-info-item { display: flex; align-items: flex-start; gap: 14px; }
+.contact-info-icon { width: 36px; height: 36px; background: var(--slate-100); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--cyan-dark); flex-shrink: 0; }
+.contact-info-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate-500); margin-bottom: 3px; }
+.contact-info-val { font-size: 15px; font-weight: 500; color: var(--text-head); }
+.contact-info-val a { color: var(--text-head); text-decoration: none; transition: color 0.2s; }
+.contact-info-val a:hover { color: var(--cyan-dark); }
+
+.contact-form-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 36px; }
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.cf-group { display: flex; flex-direction: column; gap: 6px; }
+.cf-label { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--slate-500); }
+.cf-input { font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text-head); background: var(--slate-50, #f8fafc); border: 1px solid var(--border); border-radius: 4px; padding: 10px 14px; outline: none; transition: border-color 0.2s; width: 100%; box-sizing: border-box; }
+.cf-input:focus { border-color: var(--cyan-dark); }
+.cf-select { appearance: none; cursor: pointer; }
+.cf-textarea { resize: vertical; min-height: 120px; }
+.cf-submit { align-self: flex-start; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+.cf-success { display: none; font-size: 13px; color: #0e7490; background: #cffafe; border: 1px solid #67e8f9; border-radius: 4px; padding: 12px 16px; margin-top: 4px; }
+
 /* ── PAGE HERO (inner pages) ── */
 .page-hero {
   background: var(--slate-900);
@@ -519,7 +544,7 @@ footer {
   position: relative; overflow: hidden;
 }
 .page-hero-bg {
-  position: absolute; inset: 0;
+  position: absolute; inset: 0; pointer-events: none;
   background-image:
     linear-gradient(rgba(203,213,225,0.06) 1px, transparent 1px),
     linear-gradient(90deg, rgba(203,213,225,0.06) 1px, transparent 1px);
@@ -829,6 +854,7 @@ footer {
   .nav-burger { display: flex; }
   .nav-login { display: none; }
   section, #hero, #contact { padding: 60px 20px; }
+  #submit { grid-template-columns: 1fr; }
   .page-hero { padding: 110px 20px 52px; }
   footer { padding: 28px 20px; flex-direction: column; }
   .plans-grid, .ben-grid { grid-template-columns: 1fr; }

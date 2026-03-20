@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | X Underwriting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo">
+    <img src="images/logo.png" alt="X Underwriting Managers" class="logo-img">
+  </a>
+  <ul class="nav-links">
+    <li><a href="gap-cover.html">Gap Cover</a></li>
+    <li><a href="benefits.html">Benefits</a></li>
+    <li><a href="brokers.html">Brokers</a></li>
+    <li><a href="claims.html">Claims</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <div class="nav-r">
+    <a href="#" class="nav-login">Login</a>
+    <a href="brokers.html#quote" class="nav-cta">Get a Quote</a>
+    <button class="nav-burger" id="navBurger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <ul>
+    <li><a href="gap-cover.html">Gap Cover</a></li>
+    <li><a href="benefits.html">Benefits</a></li>
+    <li><a href="brokers.html">Brokers</a></li>
+    <li><a href="claims.html">Claims</a></li>
+    <li><a href="documents.html">Documents</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="brokers.html#quote">Get a Quote</a></li>
+  </ul>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-glow"></div>
+  <div class="page-hero-eyebrow">Get in touch</div>
+  <h1 class="page-hero-h1">We Are Here <span>to Help</span></h1>
+  <p class="page-hero-p">Whether you have a question about your cover, need help with a claim, or want to become an accredited broker, our team is ready to assist.</p>
+  <div class="page-hero-btns">
+    <a href="#form" class="btn-primary">Send a Message</a>
+    <a href="#details" class="btn-secondary">Contact Details <span class="arr">→</span></a>
+  </div>
+</div>
+
+<!-- CONTACT DETAILS + FORM -->
+<section id="details" style="display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+  <div>
+    <div class="s-label reveal">Our details</div>
+    <h2 class="s-h2 reveal">Contact Information</h2>
+    <p class="s-p reveal d1" style="margin-bottom: 32px;">Reach us directly during office hours, or send a message using the form and we will respond within 1 business day.</p>
+
+    <div class="contact-info-list reveal">
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 17z"/></svg>
+        </div>
+        <div>
+          <div class="contact-info-label">Telephone</div>
+          <div class="contact-info-val"><a href="tel:+27180040206">(018) 004 0206</a></div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact-info-label">General Enquiries</div>
+          <div class="contact-info-val"><a href="mailto:info@x-underwriting.co.za">info@x-underwriting.co.za</a></div>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-info-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="contact-info-label">Office Hours</div>
+          <div class="contact-info-val">Monday to Friday, 08:00 to 17:00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT FORM -->
+  <div id="form" class="contact-form-wrap reveal">
+    <div class="s-label" style="margin-bottom:20px;">Send a message</div>
+    <form class="contact-form" onsubmit="handleContactForm(event)">
+      <div class="cf-row">
+        <div class="cf-group">
+          <label class="cf-label" for="cf-name">Full Name</label>
+          <input class="cf-input" type="text" id="cf-name" name="name" placeholder="Jane Smith" required>
+        </div>
+        <div class="cf-group">
+          <label class="cf-label" for="cf-email">Email Address</label>
+          <input class="cf-input" type="email" id="cf-email" name="email" placeholder="jane@example.com" required>
+        </div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-group">
+          <label class="cf-label" for="cf-phone">Phone Number</label>
+          <input class="cf-input" type="tel" id="cf-phone" name="phone" placeholder="(012) 345 6789">
+        </div>
+        <div class="cf-group">
+          <label class="cf-label" for="cf-subject">Subject</label>
+          <select class="cf-input cf-select" id="cf-subject" name="subject" required>
+            <option value="" disabled selected>Select a topic</option>
+            <option value="general">General Enquiry</option>
+            <option value="claims">Claims Assistance</option>
+            <option value="broker">Become a Broker</option>
+            <option value="quote">Request a Quote</option>
+            <option value="complaint">Complaint</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="cf-group">
+        <label class="cf-label" for="cf-message">Message</label>
+        <textarea class="cf-input cf-textarea" id="cf-message" name="message" placeholder="How can we help you?" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary cf-submit">Send Message</button>
+      <div class="cf-success" id="cfSuccess">Thank you, your message has been sent. We will be in touch within 1 business day.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-brand">
+    <div class="f-logo">
+      <img src="images/logo.png" alt="X Underwriting Managers" class="f-logo-img">
+    </div>
+    <div class="f-legal">
+      Underwritten by Compass Insurance Company Limited ("Compass Insure"), a licensed non-life insurer and authorised financial services provider, FSP 12148.<br>
+      X Underwriting Managers (Pty) Ltd acts as authorised representative providing administrative and intermediary services on behalf of Compass Insure.<br>
+      X Underwriting Managers is not a medical scheme.
+    </div>
+    <img src="images/compass_logo.png" alt="Compass Insurance" class="f-compass-logo">
+  </div>
+  <div class="f-col">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gap-cover.html">Gap Cover</a></li>
+      <li><a href="brokers.html">Brokers</a></li>
+      <li><a href="claims.html">Claims</a></li>
+      <li><a href="documents.html">Documents</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Portals</h4>
+    <ul>
+      <li><a href="#">Xcelerate Admin Platform</a></li>
+      <li><a href="#">Training Portal</a></li>
+      <li><a href="#">Submit a Claim</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
+    <h4>Legal</h4>
+    <ul>
+      <li><a href="documents.html#complaints">Complaints Procedure</a></li>
+      <li><a href="documents.html#conflict">Conflict of Interest Policy</a></li>
+      <li><a href="documents.html#popia">POPIA</a></li>
+      <li><a href="#">Compass Insure (FSP 12148)</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function handleContactForm(e) {
+  e.preventDefault();
+  document.getElementById('cfSuccess').style.display = 'block';
+  e.target.reset();
+}
+</script>
+</body>
+</html>

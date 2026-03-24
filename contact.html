@@ -181,10 +181,54 @@
 
 <script src="js/main.js"></script>
 <script>
-function handleContactForm(e) {
+async function handleContactForm(e) {
   e.preventDefault();
-  document.getElementById('cfSuccess').style.display = 'block';
-  e.target.reset();
+  const form = e.target;
+  const btn  = form.querySelector('button[type="submit"]');
+  const origText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const name    = escapeHtml(document.getElementById('cf-name').value);
+  const email   = escapeHtml(document.getElementById('cf-email').value);
+  const phone   = escapeHtml(document.getElementById('cf-phone').value) || 'Not provided';
+  const subject = document.getElementById('cf-subject').value;
+  const message = escapeHtml(document.getElementById('cf-message').value);
+
+  const subjectLabels = {
+    general: 'General Enquiry', claims: 'Claims Assistance',
+    broker: 'Become a Broker', quote: 'Request a Quote',
+    complaint: 'Complaint', other: 'Other'
+  };
+  const subjectLabel = subjectLabels[subject] || subject;
+
+  const htmlBody = `
+    <h2 style="font-family:sans-serif;color:#0a1628;">Contact Form Submission</h2>
+    <table style="font-family:sans-serif;font-size:14px;border-collapse:collapse;">
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Name</td><td style="padding:6px 0;">${name}</td></tr>
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Email</td><td style="padding:6px 0;"><a href="mailto:${email}">${email}</a></td></tr>
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Phone</td><td style="padding:6px 0;">${phone}</td></tr>
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Subject</td><td style="padding:6px 0;">${subjectLabel}</td></tr>
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;vertical-align:top;">Message</td><td style="padding:6px 0;">${message.replace(/\n/g, '<br>')}</td></tr>
+    </table>
+  `;
+
+  const successEl = document.getElementById('cfSuccess');
+  try {
+    const res = await sendEmail(`Contact: ${subjectLabel} – ${name}`, htmlBody);
+    if (!res.ok) throw new Error(res.status);
+    successEl.textContent = 'Thank you, your message has been sent. We will be in touch within 1 business day.';
+    successEl.style.color = '';
+    successEl.style.display = 'block';
+    form.reset();
+  } catch {
+    successEl.textContent = 'Sorry, there was an error sending your message. Please email us directly at info@x-underwriting.co.za.';
+    successEl.style.color = '#e53e3e';
+    successEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = origText;
+  }
 }
 </script>
 </body>

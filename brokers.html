@@ -95,34 +95,26 @@
     <div class="form-panel reveal d1">
       <div class="form-title">Get a Quote</div>
       <div class="form-sub">A broker will contact you within one business day.</div>
-      <div class="form-body">
+      <form class="form-body" id="quoteForm" onsubmit="handleQuoteForm(event)">
         <div class="f-row2">
-          <input type="text" class="inp" placeholder="First Name">
-          <input type="text" class="inp" placeholder="Last Name">
+          <input type="text" class="inp" id="q-first" placeholder="First Name" required>
+          <input type="text" class="inp" id="q-last" placeholder="Last Name" required>
         </div>
-        <input type="email" class="inp" placeholder="Email Address">
-        <input type="tel" class="inp" placeholder="Contact Number">
-        <input type="text" class="inp" placeholder="Address (to find nearest broker)">
+        <input type="email" class="inp" id="q-email" placeholder="Email Address" required>
+        <input type="tel" class="inp" id="q-phone" placeholder="Contact Number" required>
+        <input type="text" class="inp" id="q-address" placeholder="Address (to find nearest broker)">
         <div class="f-row2">
-          <select class="sel">
-            <option value="">Medical Aid Scheme</option>
-            <option>Discovery Health</option>
-            <option>Bonitas</option>
-            <option>Medihelp</option>
-            <option>Momentum Health</option>
-            <option>GEMS</option>
-            <option>Fedhealth</option>
-            <option>Other</option>
-          </select>
-          <select class="sel">
+          <input type="text" class="inp" id="q-scheme" placeholder="Medical Aid Scheme">
+          <select class="sel" id="q-plan">
             <option value="">Plan Interest</option>
             <option>Vertex</option>
             <option>Apex</option>
             <option>Not Sure, Advise Me</option>
           </select>
         </div>
-        <button class="btn-submit">Request Quote</button>
-      </div>
+        <button type="submit" class="btn-submit" id="q-btn">Request Quote</button>
+        <div class="cf-success" id="quoteSuccess" style="display:none;">Thank you. Your enquiry will be sent to a broker partner in your area.</div>
+      </form>
     </div>
   </div>
 </section>
@@ -287,5 +279,51 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script>
+async function handleQuoteForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('q-btn');
+  const origText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const first   = escapeHtml(document.getElementById('q-first').value);
+  const last    = escapeHtml(document.getElementById('q-last').value);
+  const email   = escapeHtml(document.getElementById('q-email').value);
+  const phone   = escapeHtml(document.getElementById('q-phone').value);
+  const address = escapeHtml(document.getElementById('q-address').value) || 'Not provided';
+  const scheme  = escapeHtml(document.getElementById('q-scheme').value) || 'Not specified';
+  const plan    = escapeHtml(document.getElementById('q-plan').value) || 'Not specified';
+
+  const htmlBody = `
+    <h2 style="font-family:sans-serif;color:#0a1628;">Quote Request</h2>
+    <table style="font-family:sans-serif;font-size:14px;border-collapse:collapse;">
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Name</td><td style="padding:6px 0;">${first} ${last}</td></tr>
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Email</td><td style="padding:6px 0;"><a href="mailto:${email}">${email}</a></td></tr>
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Phone</td><td style="padding:6px 0;">${phone}</td></tr>
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Address</td><td style="padding:6px 0;">${address}</td></tr>
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Medical Aid Scheme</td><td style="padding:6px 0;">${scheme}</td></tr>
+      <tr><td style="padding:6px 16px 6px 0;font-weight:600;color:#555;">Plan Interest</td><td style="padding:6px 0;">${plan}</td></tr>
+    </table>
+  `;
+
+  const successEl = document.getElementById('quoteSuccess');
+  try {
+    const res = await sendEmail(`Quote Request – ${first} ${last}`, htmlBody);
+    if (!res.ok) throw new Error(res.status);
+    successEl.textContent = 'Thank you. Your enquiry will be sent to a broker partner in your area.';
+    successEl.style.color = '';
+    successEl.style.display = 'block';
+    document.getElementById('quoteForm').reset();
+  } catch {
+    successEl.textContent = 'Sorry, there was an error submitting your request. Please email us at info@x-underwriting.co.za.';
+    successEl.style.color = '#e53e3e';
+    successEl.style.display = 'block';
+  } finally {
+    btn.disabled = false;
+    btn.textContent = origText;
+  }
+}
+</script>
 </body>
 </html>

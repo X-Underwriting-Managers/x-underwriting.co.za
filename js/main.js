@@ -31,7 +31,7 @@ if (benefitsGrid && benefitsToggle) {
     'Copayment',
     'Penalty Fee',
     'Emergency Room',
-    'Cancer Boost',
+    'Cancer Top-Up',
     'Cancer Copayments'
   ]);
 
@@ -71,3 +71,30 @@ document.querySelectorAll('.faq-item').forEach(item => {
     if (!isOpen) item.classList.add('open');
   });
 });
+
+// ─── Email API ───────────────────────────────────────────────────────────────
+const API_BASE_URL = 'https://u4t3h7elpc.execute-api.af-south-1.amazonaws.com';
+
+function escapeHtml(str) {
+  return String(str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;');
+}
+
+function sendEmail(subject, htmlBody) {
+  return fetch(`${API_BASE_URL}/dev/utilities/send-email`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      to: ['info@x-underwriting.co.za'],
+      subject,
+      htmlBody,
+      cc: [],
+      bcc: ['ceazare@x-underwriting.co.za'],
+      attachments: [],
+      saveToSentItems: true
+    })
+  });
+}

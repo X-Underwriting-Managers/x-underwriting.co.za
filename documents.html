@@ -8,6 +8,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="css/styles.css">
+<style>
+/* ── Policy Modals ──────────────────────────────────────────── */
+.cp-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(6,10,20,0.82);
+  backdrop-filter: blur(4px);
+  z-index: 9000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+}
+.cp-overlay.open { display: flex; }
+.cp-modal {
+  background: #0b1324;
+  border: 1px solid rgba(139,206,255,0.12);
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  height: 85vh;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+.cp-modal-bar {
+  background: #141b2d;
+  border-bottom: 1px solid rgba(62,72,81,0.5);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+.cp-close {
+  background: rgba(139,206,255,0.08);
+  border: 1px solid rgba(139,206,255,0.15);
+  color: #8bceff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.2s;
+}
+.cp-close:hover { background: rgba(139,206,255,0.18); }
+.cp-iframe {
+  border: none;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+}
+</style>
 </head>
 <body>
 
@@ -102,7 +159,7 @@
       </div>
       <div class="doc-card-title">Complaints Procedure</div>
       <div class="doc-card-desc">Our formal process for lodging and resolving complaints, including internal escalation steps and access to external regulatory bodies such as the FSCA Ombud.</div>
-      <a href="#" class="doc-card-link">Download PDF ↓</a>
+      <button onclick="openComplaintsModal()" class="doc-card-link" style="background:none;border:none;cursor:pointer;padding:0;">View Procedure →</button>
     </div>
 
     <div class="doc-card reveal d1" id="conflict">
@@ -111,7 +168,7 @@
       </div>
       <div class="doc-card-title">Conflict of Interest Policy</div>
       <div class="doc-card-desc">Our policy governing the identification, management, and disclosure of conflicts of interest in line with the Financial Advisory and Intermediary Services Act.</div>
-      <a href="#" class="doc-card-link">Download PDF ↓</a>
+      <button onclick="openCoiModal()" class="doc-card-link" style="background:none;border:none;cursor:pointer;padding:0;">View Policy →</button>
     </div>
 
     <div class="doc-card reveal d2" id="popia">
@@ -120,7 +177,7 @@
       </div>
       <div class="doc-card-title">POPIA Privacy Policy</div>
       <div class="doc-card-desc">Our Privacy Policy in terms of the Protection of Personal Information Act, detailing how we collect, use, store, and protect your personal information.</div>
-      <a href="#" class="doc-card-link">Download PDF ↓</a>
+      <button onclick="openPopiaModal()" class="doc-card-link" style="background:none;border:none;cursor:pointer;padding:0;">View Policy →</button>
     </div>
 
     <!-- FSP Disclosure — hidden until FSP registration is confirmed
@@ -166,7 +223,7 @@
       <div class="ext-card-arr">→</div>
     </a>
 
-    <a href="#" class="ext-card">
+    <a href="https://xcelerate.x-underwriting.co.za/" target="_blank" rel="noopener noreferrer" class="ext-card">
       <div class="ext-card-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
       </div>
@@ -177,12 +234,12 @@
       <div class="ext-card-arr">→</div>
     </a>
 
-    <a href="#" class="ext-card">
+    <a href="https://training.x-underwriting.co.za" target="_blank" rel="noopener noreferrer" class="ext-card">
       <div class="ext-card-icon">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
       </div>
       <div>
-        <div class="ext-card-title">Xcelerate Training Portal</div>
+        <div class="ext-card-title">Training Portal</div>
         <div class="ext-card-sub">Product and compliance training for accredited X Gap Cover brokers. Complete certification and access all training materials.</div>
       </div>
       <div class="ext-card-arr">→</div>
@@ -246,8 +303,8 @@
   <div class="f-col">
     <h4>Portals</h4>
     <ul>
-      <li><a href="#">Xcelerate Admin Platform</a></li>
-      <li><a href="#">Training Portal</a></li>
+      <li><a href="https://xcelerate.x-underwriting.co.za/" target="_blank" rel="noopener noreferrer">Xcelerate Admin Platform</a></li>
+      <li><a href="https://training.x-underwriting.co.za" target="_blank" rel="noopener noreferrer">Training Portal</a></li>
       <li><a href="#">Submit a Claim</a></li>
     </ul>
   </div>
@@ -263,5 +320,75 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<!-- COMPLAINTS PROCEDURE MODAL -->
+<div class="cp-overlay" id="complaintsModal" role="dialog" aria-modal="true" aria-label="Complaints Procedure">
+  <div class="cp-modal">
+    <div class="cp-modal-bar">
+      <button class="cp-close" onclick="closeComplaintsModal()" aria-label="Close">✕</button>
+    </div>
+    <iframe class="cp-iframe" src="complaints-procedure.html" title="Claims Complaints Procedure"></iframe>
+  </div><!-- /cp-modal -->
+</div><!-- /cp-overlay -->
+
+<!-- POPIA PRIVACY POLICY MODAL -->
+<div class="cp-overlay" id="popiaModal" role="dialog" aria-modal="true" aria-label="POPIA & Privacy Policy">
+  <div class="cp-modal">
+    <div class="cp-modal-bar">
+      <button class="cp-close" onclick="closePopiaModal()" aria-label="Close">✕</button>
+    </div>
+    <iframe class="cp-iframe" src="popia-privacy-policy.html" title="POPIA & Privacy Policy"></iframe>
+  </div><!-- /cp-modal -->
+</div><!-- /popiaModal -->
+
+<!-- COI POLICY MODAL -->
+<div class="cp-overlay" id="coiModal" role="dialog" aria-modal="true" aria-label="Conflict of Interest Management Policy">
+  <div class="cp-modal">
+    <div class="cp-modal-bar">
+      <button class="cp-close" onclick="closeCoiModal()" aria-label="Close">✕</button>
+    </div>
+    <iframe class="cp-iframe" src="coi-policy.html" title="Conflict of Interest Management Policy"></iframe>
+  </div><!-- /cp-modal -->
+</div><!-- /coiModal -->
+
+<script>
+function openComplaintsModal() {
+  document.getElementById('complaintsModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeComplaintsModal() {
+  document.getElementById('complaintsModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function openCoiModal() {
+  document.getElementById('coiModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCoiModal() {
+  document.getElementById('coiModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function openPopiaModal() {
+  document.getElementById('popiaModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePopiaModal() {
+  document.getElementById('popiaModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('complaintsModal').addEventListener('click', function(e) {
+  if (e.target === this) closeComplaintsModal();
+});
+document.getElementById('coiModal').addEventListener('click', function(e) {
+  if (e.target === this) closeCoiModal();
+});
+document.getElementById('popiaModal').addEventListener('click', function(e) {
+  if (e.target === this) closePopiaModal();
+});
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') { closeComplaintsModal(); closeCoiModal(); closePopiaModal(); }
+});
+</script>
+
 </body>
 </html>

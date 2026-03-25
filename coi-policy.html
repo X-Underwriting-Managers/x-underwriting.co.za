@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conflict of Interest Management Policy — X Underwriting Managers</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; line-height: 1.6; }
+
+/* Hero */
+.cp-hero { background: #141b2d; padding: 3.5rem 3rem 3rem; position: relative; overflow: hidden; }
+.cp-hero::after { content: ''; position: absolute; top: -60px; right: -60px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(0,178,255,0.07) 0%, transparent 70%); pointer-events: none; }
+.cp-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.cp-chip { display: inline-flex; align-items: center; background: #1e3a52; color: #8bceff; font-family: 'DM Mono', monospace; font-size: 0.6375rem; letter-spacing: 0.08em; padding: 0.28rem 0.7rem; border-radius: 9999px; margin-bottom: 1.5rem; }
+.cp-chip::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #00b2ff; margin-right: 0.45rem; }
+.cp-h1 { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 700; color: #e8f0f7; line-height: 1.15; margin-bottom: 1.25rem; }
+.cp-h1 span { color: #8bceff; }
+.cp-meta { display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; }
+.cp-meta-row { display: flex; flex-direction: column; gap: 0.15rem; }
+.cp-meta-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #a0bfd4; letter-spacing: 0.1em; text-transform: uppercase; }
+.cp-meta-value { font-family: 'DM Mono', monospace; font-size: 0.775rem; color: #e8f0f7; }
+
+/* Sections */
+.cp-section { padding: 2.5rem 3rem; border-top: 1px solid rgba(62,72,81,0.5); }
+.cp-section:nth-child(odd) { background: #0b1324; }
+.cp-section:nth-child(even) { background: #141b2d; }
+.cp-slabel { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.cp-sh2 { font-family: 'Orbitron', sans-serif; font-size: 1.05rem; font-weight: 600; color: #e8f0f7; margin-bottom: 1.25rem; }
+.cp-p { font-size: 0.8125rem; color: #bdc8d2; line-height: 1.75; max-width: 640px; margin-bottom: 1.25rem; }
+
+/* Steps (used for lettered declaration items) */
+.cp-steps { display: flex; flex-direction: column; gap: 0; }
+.cp-step { display: grid; grid-template-columns: 3rem 1fr; gap: 0 1.25rem; position: relative; }
+.cp-step:not(:last-child) .cp-step-line { position: absolute; left: 1.5rem; top: 3rem; bottom: 0; width: 1px; background: linear-gradient(to bottom, #00b2ff 0%, rgba(0,178,255,0.06) 100%); transform: translateX(-50%); }
+.cp-step-num { width: 3rem; height: 3rem; border-radius: 50%; background: #222a3c; border: 1px solid rgba(139,206,255,0.2); display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 0.6875rem; color: #8bceff; flex-shrink: 0; position: relative; z-index: 1; }
+.cp-step-body { padding-bottom: 2rem; padding-top: 0.5rem; }
+.cp-step-title { font-size: 0.9375rem; font-weight: 500; color: #e8f0f7; margin-bottom: 0.4rem; }
+.cp-step-desc { font-size: 0.8125rem; color: #bdc8d2; line-height: 1.65; }
+
+/* Footer */
+.cp-footer { background: #141b2d; padding: 1.75rem 3rem; border-top: 1px solid rgba(62,72,81,0.5); }
+.cp-footer-disc { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #a0bfd4; letter-spacing: 0.03em; line-height: 1.7; margin-bottom: 0.5rem; }
+.cp-footer-reg { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: rgba(139,206,255,0.35); letter-spacing: 0.08em; }
+
+/* COI-specific */
+.coi-def-block { background: #222a3c; border-radius: 0.6rem; padding: 1.5rem 1.75rem; margin-top: 1.5rem; border-left: 3px solid #00b2ff; }
+.coi-def-term { font-family: 'DM Mono', monospace; font-size: 0.6875rem; color: #8bceff; letter-spacing: 0.08em; margin-bottom: 0.5rem; }
+.coi-def-body { font-size: 0.8125rem; color: #bdc8d2; line-height: 1.65; }
+.coi-def-list { list-style: none; margin-top: 0.65rem; display: flex; flex-direction: column; gap: 0.35rem; }
+.coi-def-list li { font-size: 0.8125rem; color: #bdc8d2; padding-left: 1rem; position: relative; }
+.coi-def-list li::before { content: '–'; position: absolute; left: 0; color: #3e4851; }
+
+.coi-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; margin-top: 1rem; }
+.coi-card { background: #222a3c; border-radius: 0.6rem; padding: 1.25rem 1.5rem; position: relative; overflow: hidden; }
+.coi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #8bceff, #00b2ff); }
+.coi-card-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+.coi-card-txt { font-size: 0.7875rem; color: #bdc8d2; line-height: 1.55; }
+
+.coi-bullet-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; max-width: 680px; }
+.coi-bullet-list li { font-size: 0.8125rem; color: #bdc8d2; padding-left: 1.25rem; position: relative; line-height: 1.6; }
+.coi-bullet-list li::before { content: '✓'; position: absolute; left: 0; color: #00b2ff; font-size: 0.7rem; }
+
+.coi-role-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.coi-role-title { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.75rem; }
+
+.coi-note { background: rgba(0,178,255,0.06); border: 1px solid rgba(139,206,255,0.15); border-radius: 0.6rem; padding: 1.1rem 1.4rem; margin-top: 1.25rem; }
+.coi-note-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.coi-note-body { font-size: 0.7875rem; color: #bdc8d2; line-height: 1.65; }
+
+.coi-table-wrap { overflow-x: auto; margin-bottom: 1.75rem; }
+.coi-table { width: 100%; border-collapse: collapse; font-size: 0.7875rem; }
+.coi-table th { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.1em; text-transform: uppercase; text-align: left; padding: 0.65rem 1rem; background: #222a3c; white-space: nowrap; }
+.coi-table td { padding: 0.65rem 1rem; color: #bdc8d2; vertical-align: top; line-height: 1.5; }
+.coi-table tr:nth-child(odd) td { background: rgba(34,42,60,0.5); }
+.coi-table tr:nth-child(even) td { background: rgba(20,27,45,0.4); }
+.coi-table-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.6rem; margin-top: 1.5rem; display: block; }
+
+@media (max-width: 600px) {
+  .cp-hero, .cp-section, .cp-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .cp-h1 { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="cp-hero">
+  <h1 class="cp-h1">Conflict of <span>Interest</span> Management Policy</h1>
+</div>
+
+<!-- 01 Introduction -->
+<div class="cp-section">
+  <p class="cp-slabel">01 — Introduction</p>
+  <h2 class="cp-sh2">Purpose &amp; Scope</h2>
+  <p class="cp-p">X Underwriting Managers (Pty) Ltd ("the FSP") is required to maintain effective organisational and administrative arrangements to identify, disclose and manage conflicts of interest. The FSP aims to avoid, and where not possible mitigate, any conflict of interest in the rendering of financial services between itself, its representatives and clients.</p>
+  <p class="cp-p">This policy gives effect to Section 3A of the General Code of Conduct for Authorised Financial Services Providers and Representatives (GCOC) and provides for management of conflicts of interest in compliance with both the FAIS Act and the GCOC.</p>
+  <div class="coi-def-block">
+    <p class="coi-def-term">GCOC Definition — Conflict of Interest</p>
+    <p class="coi-def-body">Any situation in which a provider or representative has an actual or potential interest that may, in rendering a financial service to a client:</p>
+    <ul class="coi-def-list">
+      <li>Influence the objective exercise of obligations to a client; or</li>
+      <li>Prevent the rendering of an unbiased and fair financial service, or acting in the interests of that client</li>
+    </ul>
+    <p class="coi-def-body" style="margin-top:0.65rem;">Including but not limited to: a financial interest; an ownership interest; or any relationship with a third party.</p>
+  </div>
+</div>
+
+<!-- 02 General Principles -->
+<div class="cp-section">
+  <p class="cp-slabel">02 — General Principles</p>
+  <h2 class="cp-sh2">Our Commitment</h2>
+  <div class="coi-cards">
+    <div class="coi-card">
+      <p class="coi-card-label">Proactive Identification</p>
+      <p class="coi-card-txt">We identify and manage potential or actual conflicts of interest before any client becomes aware, ensuring clients are not unduly prejudiced.</p>
+    </div>
+    <div class="coi-card">
+      <p class="coi-card-label">Client Disclosure</p>
+      <p class="coi-card-txt">When engaging with a new client we inform them of this conflict-of-interest management policy via our disclosure document and how it may be obtained.</p>
+    </div>
+    <div class="coi-card">
+      <p class="coi-card-label">Integrity &amp; Professionalism</p>
+      <p class="coi-card-txt">Conflicts of interest affecting clients could undermine the integrity of our business. Early identification is vitally important.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 03 Roles -->
+<div class="cp-section">
+  <p class="cp-slabel">03 — Roles &amp; Responsibilities</p>
+  <h2 class="cp-sh2">Who Is Responsible</h2>
+  <div class="coi-role-grid">
+    <div>
+      <p class="coi-role-title">Management / Key Individuals</p>
+      <ul class="coi-bullet-list">
+        <li>Responsible for oversight of the FSP and all representatives</li>
+        <li>Implement appropriate processes and procedures for effective COI risk management</li>
+        <li>Implement the conflict-of-interest policy, procedures and controls</li>
+        <li>Assess seriousness of identified conflicts and determine how they are managed</li>
+        <li>Review COI procedures and their efficacy at least annually</li>
+      </ul>
+    </div>
+    <div>
+      <p class="coi-role-title">All Employees / Representatives</p>
+      <ul class="coi-bullet-list">
+        <li>Obliged to report actual, perceived or potential conflicts of interest</li>
+        <li>Failure to notify management may result in disciplinary action</li>
+        <li>Must report conflicts even when confident an objective service will be provided</li>
+        <li>Complete annual COI Declarations and update the Register of Interests</li>
+        <li>Seek advice from the Compliance Officer where uncertainty exists</li>
+      </ul>
+    </div>
+    <div>
+      <p class="coi-role-title">Compliance Officer</p>
+      <ul class="coi-bullet-list">
+        <li>Assists management in handling COI situations</li>
+        <li>Evaluates complaints received about failure to disclose a relevant interest</li>
+        <li>Prepares COI management reports for management consideration</li>
+        <li>COI is a standing agenda item for all management meetings</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 04 Identification -->
+<div class="cp-section">
+  <p class="cp-slabel">04 — Identification</p>
+  <h2 class="cp-sh2">Identifying Conflicts of Interest</h2>
+  <p class="cp-p">A conflict exists where the interests of the FSP or its associates compete directly or indirectly with the interests of clients, and which could significantly prejudice the client. In determining whether a conflict exists, we consider whether the FSP, a representative, associate or employee:</p>
+  <ul class="coi-bullet-list">
+    <li>Is likely to make a financial gain, or avoid a financial loss, at the expense of the client</li>
+    <li>Has an interest in the outcome of a service that is distinct from the client's interest in that outcome</li>
+    <li>Has a financial or other incentive to favour another client, group of clients or third party over the client</li>
+    <li>Receives an inducement from a person other than the client in relation to a service provided</li>
+    <li>Is involved in the same professional activity as the client</li>
+  </ul>
+  <span class="coi-table-label" style="margin-top:1.75rem;">Common examples of conflicts</span>
+  <div class="coi-cards">
+    <div class="coi-card">
+      <p class="coi-card-label">Related Payments</p>
+      <p class="coi-card-txt">Remuneration, benefits or incentives paid by product suppliers to the FSP.</p>
+    </div>
+    <div class="coi-card">
+      <p class="coi-card-label">Privileged Information</p>
+      <p class="coi-card-txt">Use of sensitive or privileged information about a client.</p>
+    </div>
+    <div class="coi-card">
+      <p class="coi-card-label">Competing Client Interests</p>
+      <p class="coi-card-txt">Acting for different clients whose interests conflict materially.</p>
+    </div>
+    <div class="coi-card">
+      <p class="coi-card-label">Confidential Information</p>
+      <p class="coi-card-txt">Holding client information which, if disclosed or used, would affect services provided.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 05 Declaration -->
+<div class="cp-section">
+  <p class="cp-slabel">05 — Declaration</p>
+  <h2 class="cp-sh2">Declaring Conflicts of Interest</h2>
+  <p class="cp-p">Relevant employees (including Key Individuals, Representatives, Management and Directors) must declare any private interests that might affect the performance of their duties. Declarations are made via annual COI Declarations and maintained in the Register of Interests.</p>
+  <span class="coi-table-label">Types of conflicts to declare</span>
+  <div class="cp-steps">
+    <div class="cp-step">
+      <div class="cp-step-num">A</div>
+      <div class="cp-step-line"></div>
+      <div class="cp-step-body">
+        <p class="cp-step-title">Other Employment</p>
+        <p class="cp-step-desc">Employees may not engage, directly or indirectly, in any other business, enterprise or employment without prior written consent. Such activity may create a conflict or risk disclosure of confidential information.</p>
+      </div>
+    </div>
+    <div class="cp-step">
+      <div class="cp-step-num">B</div>
+      <div class="cp-step-line"></div>
+      <div class="cp-step-body">
+        <p class="cp-step-title">Service on Boards &amp; Committees</p>
+        <p class="cp-step-desc">Employees must obtain approval before accepting any position on a board of directors, advisory board or committee of any entity, unless the appointment is at the request of the FSP.</p>
+      </div>
+    </div>
+    <div class="cp-step">
+      <div class="cp-step-num">C</div>
+      <div class="cp-step-line"></div>
+      <div class="cp-step-body">
+        <p class="cp-step-title">Investment in Private Companies</p>
+        <p class="cp-step-desc">Employees who find themselves able to invest in clients, partners or suppliers of the FSP must understand the potential conflict and disclose accordingly.</p>
+      </div>
+    </div>
+    <div class="cp-step">
+      <div class="cp-step-num">D</div>
+      <div class="cp-step-body">
+        <p class="cp-step-title">Gifts &amp; Financial Interests</p>
+        <p class="cp-step-desc">No employee may obtain material personal benefits because of their position. All gifts received from a product provider or associate must be approved and entered in the Gift Register regardless of monetary value.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 06 Acceptable Financial Interest -->
+<div class="cp-section">
+  <p class="cp-slabel">06 — Acceptable Financial Interest</p>
+  <h2 class="cp-sh2">What Financial Interests May Be Received</h2>
+  <p class="cp-p">In terms of Section 3A(1) of the GCOC, the FSP and its representatives may only receive or offer the following financial interests from or to a third party:</p>
+  <ul class="coi-bullet-list">
+    <li>Commission authorised under the Long-term Insurance Act, Short-term Insurance Act or Medical Schemes Act</li>
+    <li>Fees authorised under the above Acts, if reasonably commensurate to the service rendered</li>
+    <li>Fees for financial services where commission is not paid, if agreed to in writing by the client and stoppable at the client's discretion</li>
+    <li>Fees or remuneration for services rendered to a third party, if reasonably commensurate to the service</li>
+    <li>An immaterial financial interest (not exceeding R1 000 per calendar year from the same third party)</li>
+    <li>A financial interest for which fair value or remuneration reasonably commensurate to its value is paid at the time of receipt</li>
+  </ul>
+  <div class="coi-note">
+    <p class="coi-note-label">Important condition</p>
+    <p class="coi-note-body">Financial interests may only be received or offered if they are reasonably commensurate with the service rendered; do not result in double remuneration for a similar service; conflicts are effectively mitigated; and payment does not impede the delivery of fair outcomes to clients.</p>
+  </div>
+</div>
+
+<!-- 07 Avoidance -->
+<div class="cp-section">
+  <p class="cp-slabel">07 — Avoidance</p>
+  <h2 class="cp-sh2">Avoiding Conflicts of Interest</h2>
+  <p class="cp-p">The FSP does not permit the offering of financial interests to representatives for:</p>
+  <ul class="coi-bullet-list">
+    <li>Giving preference to the quantity of business secured to the exclusion of service quality and fair client outcomes</li>
+    <li>Giving preference to a specific product supplier where more than one may be recommended</li>
+    <li>Giving preference to a specific product of a supplier where more than one product may be recommended</li>
+  </ul>
+  <p class="cp-p" style="margin-top:1.25rem;">Where a conflict is so serious that it cannot be adequately managed, it must be avoided entirely. All conflicts must be assessed for impact and reported to the Compliance Officer and/or Key Individual, who will determine how to proceed — either with caution, with appropriate disclosures, or by avoiding the conflict altogether.</p>
+  <div class="coi-note">
+    <p class="coi-note-label">Sign-on bonuses</p>
+    <p class="coi-note-body">No Key Individual or representative may receive a sign-on bonus from any person. No person may offer or provide a sign-on bonus to any person within the FSP.</p>
+  </div>
+</div>
+
+<!-- 08 Control & Disclosure -->
+<div class="cp-section">
+  <p class="cp-slabel">08 — Control &amp; Disclosure</p>
+  <h2 class="cp-sh2">Controlling &amp; Disclosing Conflicts</h2>
+  <p class="cp-p">Where a conflict is identified and proceeding is appropriate, it is normally managed through a combination of internal controls and disclosure. Depending on the circumstances, it may be appropriate to:</p>
+  <div class="coi-cards">
+    <div class="coi-card">
+      <p class="coi-card-label">Disclose</p>
+      <p class="coi-card-txt">Disclose the conflict of interest to the client in writing at the earliest reasonable opportunity.</p>
+    </div>
+    <div class="coi-card">
+      <p class="coi-card-label">Reassign</p>
+      <p class="coi-card-txt">Allocate another representative to provide the service to the affected client.</p>
+    </div>
+    <div class="coi-card">
+      <p class="coi-card-label">Decline</p>
+      <p class="coi-card-txt">Decline to provide the service to the client where the conflict cannot be adequately managed.</p>
+    </div>
+    <div class="coi-card">
+      <p class="coi-card-label">Escalate</p>
+      <p class="coi-card-txt">Initiate internal or external disciplinary action, including referral to the Regulator where warranted.</p>
+    </div>
+  </div>
+  <p class="cp-p" style="margin-top:1.25rem;">Disclosures must include: the measures taken to avoid or mitigate the conflict; any ownership or financial interest held; and the nature of any third-party relationship that gives rise to the conflict, in sufficient detail for the client to understand its exact nature.</p>
+</div>
+
+
+<div class="cp-footer">
+  <p class="cp-footer-disc">X Underwriting Managers (Pty) Ltd acts as authorised representative providing administrative and intermediary services on behalf of Compass Insure. Compass Insurance Company Limited ("Compass Insure") is a licensed non-life insurer and authorised financial services provider, FSP 12148.</p>
+  <p class="cp-footer-reg">FAIS Act 2002 · GCOC Section 3A · Policy effective 1 September 2025 · Reg No: 2019/410474/07</p>
+</div>
+
+</body>
+</html>

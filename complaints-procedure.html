@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claims Complaints Procedure — X Underwriting Managers</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; line-height: 1.6; }
+
+/* Hero */
+.cp-hero { background: #141b2d; padding: 3.5rem 3rem 3rem; position: relative; overflow: hidden; }
+.cp-hero::after { content: ''; position: absolute; top: -60px; right: -60px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(0,178,255,0.07) 0%, transparent 70%); pointer-events: none; }
+.cp-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.cp-chip { display: inline-flex; align-items: center; background: #1e3a52; color: #8bceff; font-family: 'DM Mono', monospace; font-size: 0.6375rem; letter-spacing: 0.08em; padding: 0.28rem 0.7rem; border-radius: 9999px; margin-bottom: 1.5rem; }
+.cp-chip::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #00b2ff; margin-right: 0.45rem; }
+.cp-h1 { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 700; color: #e8f0f7; line-height: 1.15; margin-bottom: 1.25rem; }
+.cp-h1 span { color: #8bceff; }
+.cp-meta { display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; }
+.cp-meta-row { display: flex; flex-direction: column; gap: 0.15rem; }
+.cp-meta-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #a0bfd4; letter-spacing: 0.1em; text-transform: uppercase; }
+.cp-meta-value { font-family: 'DM Mono', monospace; font-size: 0.775rem; color: #e8f0f7; }
+
+/* Sections */
+.cp-section { padding: 2.5rem 3rem; border-top: 1px solid rgba(62,72,81,0.5); }
+.cp-section:nth-child(odd) { background: #0b1324; }
+.cp-section:nth-child(even) { background: #141b2d; }
+.cp-slabel { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.cp-sh2 { font-family: 'Orbitron', sans-serif; font-size: 1.05rem; font-weight: 600; color: #e8f0f7; margin-bottom: 1.25rem; }
+.cp-p { font-size: 0.8125rem; color: #bdc8d2; line-height: 1.75; max-width: 640px; margin-bottom: 1.25rem; }
+
+/* Mini cards */
+.cp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.75rem; }
+.cp-mini-card { background: #222a3c; border-radius: 0.6rem; padding: 1rem 1.25rem; position: relative; overflow: hidden; }
+.cp-mini-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #8bceff, #00b2ff); }
+.cp-mini-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+.cp-mini-txt { font-size: 0.7875rem; color: #bdc8d2; line-height: 1.5; }
+
+/* Contact block */
+.cp-contact { background: #222a3c; border-radius: 0.75rem; padding: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin-bottom: 1.5rem; }
+.cp-contact-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.cp-contact-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #a0bfd4; letter-spacing: 0.1em; text-transform: uppercase; }
+.cp-contact-value { font-family: 'DM Mono', monospace; font-size: 0.875rem; color: #8bceff; }
+.cp-include-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.cp-include-item { background: #222a3c; border-radius: 0.4rem; padding: 0.6rem 1rem; font-family: 'DM Mono', monospace; font-size: 0.7rem; color: #e8f0f7; }
+.cp-include-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem; }
+
+/* Steps */
+.cp-steps { display: flex; flex-direction: column; gap: 0; }
+.cp-step { display: grid; grid-template-columns: 3rem 1fr; gap: 0 1.25rem; position: relative; }
+.cp-step:not(:last-child) .cp-step-line { position: absolute; left: 1.5rem; top: 3rem; bottom: 0; width: 1px; background: linear-gradient(to bottom, #00b2ff 0%, rgba(0,178,255,0.06) 100%); transform: translateX(-50%); }
+.cp-step-num { width: 3rem; height: 3rem; border-radius: 50%; background: #222a3c; border: 1px solid rgba(139,206,255,0.2); display: flex; align-items: center; justify-content: center; font-family: 'DM Mono', monospace; font-size: 0.6875rem; color: #8bceff; flex-shrink: 0; position: relative; z-index: 1; }
+.cp-step-body { padding-bottom: 2rem; padding-top: 0.5rem; }
+.cp-step-title { font-size: 0.9375rem; font-weight: 500; color: #e8f0f7; margin-bottom: 0.4rem; }
+.cp-step-desc { font-size: 0.8125rem; color: #bdc8d2; line-height: 1.65; }
+.cp-step-tag { display: inline-block; font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #00b2ff; margin-top: 0.4rem; letter-spacing: 0.05em; }
+
+/* Timeframe cards */
+.cp-tf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0.75rem; }
+.cp-tf-card { background: #222a3c; border-radius: 0.6rem; padding: 1.25rem 1.5rem; position: relative; overflow: hidden; }
+.cp-tf-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #8bceff, #00b2ff); }
+.cp-tf-num { font-family: 'Orbitron', sans-serif; font-size: 2rem; font-weight: 700; color: #8bceff; line-height: 1; margin-bottom: 0.2rem; }
+.cp-tf-unit { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #a0bfd4; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.cp-tf-desc { font-size: 0.7875rem; color: #bdc8d2; line-height: 1.5; }
+
+/* Outcome cards */
+.cp-outcome-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.cp-outcome-card { background: #222a3c; border-radius: 0.75rem; padding: 1.5rem; }
+.cp-outcome-bar { height: 2px; border-radius: 2px; margin-bottom: 1rem; }
+.cp-outcome-bar.upheld { background: linear-gradient(90deg, #00b2ff, #8bceff); }
+.cp-outcome-bar.rejected { background: linear-gradient(90deg, #3e4851, #5a6a7a); }
+.cp-outcome-title { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; font-weight: 600; color: #e8f0f7; margin-bottom: 0.75rem; letter-spacing: 0.04em; }
+.cp-outcome-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.cp-outcome-list li { font-size: 0.7875rem; color: #bdc8d2; padding-left: 1rem; position: relative; line-height: 1.5; }
+.upheld .cp-outcome-list li::before { content: '✓'; position: absolute; left: 0; color: #00b2ff; font-size: 0.7rem; }
+.rejected .cp-outcome-list li::before { content: '○'; position: absolute; left: 0; color: #3e4851; font-size: 0.7rem; }
+
+/* Escalation */
+.cp-esc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.75rem; }
+.cp-esc-card { background: #222a3c; border-radius: 0.6rem; padding: 1.25rem 1.5rem; }
+.cp-esc-title { font-family: 'Orbitron', sans-serif; font-size: 0.7rem; font-weight: 600; color: #8bceff; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.cp-esc-body { font-size: 0.7875rem; color: #bdc8d2; line-height: 1.55; }
+
+/* Footer */
+.cp-footer { background: #141b2d; padding: 1.75rem 3rem; border-top: 1px solid rgba(62,72,81,0.5); }
+.cp-footer-disc { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #a0bfd4; letter-spacing: 0.03em; line-height: 1.7; margin-bottom: 0.5rem; }
+.cp-footer-reg { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: rgba(139,206,255,0.35); letter-spacing: 0.08em; }
+
+@media (max-width: 600px) {
+  .cp-hero, .cp-section, .cp-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .cp-h1 { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="cp-hero">
+  <h1 class="cp-h1">Claims <span>Complaints</span> Procedure</h1>
+</div>
+
+<!-- 01 Definition -->
+<div class="cp-section">
+  <p class="cp-slabel">01 — Definition</p>
+  <h2 class="cp-sh2">What Counts as a Claims Complaint?</h2>
+  <p class="cp-p">A claims complaint is any expression of dissatisfaction relating to a claim — verbal or written — that has not been resolved immediately. If you are unhappy with any aspect of how your claim was handled, you have the right to lodge a formal complaint.</p>
+  <div class="cp-cards">
+    <div class="cp-mini-card">
+      <p class="cp-mini-label">Claim Decision</p>
+      <p class="cp-mini-txt">Your claim was declined or only partially paid and you believe this is incorrect.</p>
+    </div>
+    <div class="cp-mini-card">
+      <p class="cp-mini-label">Claim Delay</p>
+      <p class="cp-mini-txt">Your claim or payment was unreasonably delayed without adequate communication.</p>
+    </div>
+    <div class="cp-mini-card">
+      <p class="cp-mini-label">Unfair Treatment</p>
+      <p class="cp-mini-txt">You were treated unfairly or the claims process was unclear, confusing or poorly administered.</p>
+    </div>
+    <div class="cp-mini-card">
+      <p class="cp-mini-label">Policy Terms</p>
+      <p class="cp-mini-txt">You believe the terms and conditions of your policy were incorrectly applied to your claim.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 02 Submission -->
+<div class="cp-section">
+  <p class="cp-slabel">02 — Submission</p>
+  <h2 class="cp-sh2">How to Lodge Your Complaint</h2>
+  <p class="cp-p">Complaints may be submitted by the policyholder, a beneficiary, or an authorised representative. We do not impose any unreasonable barriers to submission.</p>
+  <div class="cp-contact">
+    <div class="cp-contact-item">
+      <span class="cp-contact-label">Email</span>
+      <span class="cp-contact-value">complaints@x-underwriting.co.za</span>
+    </div>
+    <div class="cp-contact-item">
+      <span class="cp-contact-label">Written Correspondence</span>
+      <span class="cp-contact-value" style="font-size:0.8rem;">Post or hand-deliver to our registered address</span>
+    </div>
+    <div class="cp-contact-item">
+      <span class="cp-contact-label">Verbal Submission</span>
+      <span class="cp-contact-value" style="font-size:0.8rem;">Recorded in writing by our Complaints Officer</span>
+    </div>
+  </div>
+  <p class="cp-include-label">Please include in your submission</p>
+  <div class="cp-include-grid">
+    <div class="cp-include-item">Policy number</div>
+    <div class="cp-include-item">Claim number</div>
+    <div class="cp-include-item">Description of the complaint</div>
+    <div class="cp-include-item">Your desired outcome (if known)</div>
+  </div>
+</div>
+
+<!-- 03 Process -->
+<div class="cp-section">
+  <p class="cp-slabel">03 — Process</p>
+  <h2 class="cp-sh2">What Happens Next</h2>
+  <div class="cp-steps">
+    <div class="cp-step">
+      <div class="cp-step-num">01</div>
+      <div class="cp-step-line"></div>
+      <div class="cp-step-body">
+        <p class="cp-step-title">Acknowledgement</p>
+        <p class="cp-step-desc">We confirm receipt of your complaint in writing within 3 business days. You will receive confirmation that your complaint is under investigation, the expected timeframe for resolution, and a reminder of your right to escalate if dissatisfied.</p>
+        <span class="cp-step-tag">⏳ Within 3 business days</span>
+      </div>
+    </div>
+    <div class="cp-step">
+      <div class="cp-step-num">02</div>
+      <div class="cp-step-line"></div>
+      <div class="cp-step-body">
+        <p class="cp-step-title">Independent Review</p>
+        <p class="cp-step-desc">Your complaint is assigned to a reviewer who was not involved in the original claims assessment. They will examine the full claim file, policy terms, supporting documentation, and assess whether the claim was handled fairly. We may request additional information from you where necessary.</p>
+        <span class="cp-step-tag">⏳ Fairness, objectivity &amp; full file review</span>
+      </div>
+    </div>
+    <div class="cp-step">
+      <div class="cp-step-num">03</div>
+      <div class="cp-step-line"></div>
+      <div class="cp-step-body">
+        <p class="cp-step-title">Resolution &amp; Written Outcome</p>
+        <p class="cp-step-desc">All outcomes are communicated to you in writing. If your complaint is upheld, any benefit due will be paid promptly and corrective steps will be implemented. If your complaint is not upheld, you will receive clear written reasons with policy terms and factual findings explained.</p>
+        <span class="cp-step-tag">⏳ Full written explanation in all cases</span>
+      </div>
+    </div>
+    <div class="cp-step">
+      <div class="cp-step-num">04</div>
+      <div class="cp-step-body">
+        <p class="cp-step-title">Escalation (if required)</p>
+        <p class="cp-step-desc">If you remain dissatisfied, you have the right to escalate your complaint to an independent regulatory body at no cost to you. Details are provided in your outcome letter, and your complaint remains open for six months after the outcome to allow for escalation.</p>
+        <span class="cp-step-tag">⏳ Right to external recourse preserved</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 Timeframes -->
+<div class="cp-section">
+  <p class="cp-slabel">04 — Timeframes</p>
+  <h2 class="cp-sh2">Resolution Timeframes</h2>
+  <div class="cp-tf-grid">
+    <div class="cp-tf-card">
+      <div class="cp-tf-num">3</div>
+      <div class="cp-tf-unit">Business Days</div>
+      <div class="cp-tf-desc">Written acknowledgement of your complaint issued from date of receipt.</div>
+    </div>
+    <div class="cp-tf-card">
+      <div class="cp-tf-num">15</div>
+      <div class="cp-tf-unit">Working Days</div>
+      <div class="cp-tf-desc">Target resolution for straightforward complaints. Progress updates provided every 15 working days where a matter is ongoing.</div>
+    </div>
+    <div class="cp-tf-card">
+      <div class="cp-tf-num">25</div>
+      <div class="cp-tf-unit">Working Days</div>
+      <div class="cp-tf-desc">Maximum timeframe for complex complaints requiring additional investigation. You will be kept informed throughout.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 Outcomes -->
+<div class="cp-section">
+  <p class="cp-slabel">05 — Outcomes</p>
+  <h2 class="cp-sh2">Possible Outcomes</h2>
+  <div class="cp-outcome-grid">
+    <div class="cp-outcome-card upheld">
+      <div class="cp-outcome-bar upheld"></div>
+      <p class="cp-outcome-title">Complaint Upheld</p>
+      <ul class="cp-outcome-list">
+        <li>The original claim decision is corrected where applicable</li>
+        <li>Any benefit due is paid without unreasonable delay</li>
+        <li>Compensation or goodwill payments are made where appropriate</li>
+        <li>Corrective actions are implemented to prevent recurrence</li>
+      </ul>
+    </div>
+    <div class="cp-outcome-card rejected">
+      <div class="cp-outcome-bar rejected"></div>
+      <p class="cp-outcome-title">Complaint Not Upheld</p>
+      <ul class="cp-outcome-list">
+        <li>Clear written reasons are provided for the decision</li>
+        <li>Relevant policy terms and factual findings are explained</li>
+        <li>Your right to escalate to an external body is confirmed</li>
+        <li>The complaint remains open for six months post-outcome</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 06 Escalation -->
+<div class="cp-section">
+  <p class="cp-slabel">06 — External Recourse</p>
+  <h2 class="cp-sh2">Escalation Options</h2>
+  <p class="cp-p">If you are dissatisfied with the outcome of your complaint, you have the right to refer your matter to an independent body at no cost to you. Contact details will be provided in your final response letter.</p>
+  <div class="cp-esc-grid">
+    <div class="cp-esc-card">
+      <p class="cp-esc-title">National Financial Ombud Scheme</p>
+      <p class="cp-esc-body">For complaints related to the insurer — including claim decisions, payment disputes, and policy interpretation. This is an independent, free service available to policyholders.</p>
+    </div>
+    <div class="cp-esc-card">
+      <p class="cp-esc-title">FAIS Ombud</p>
+      <p class="cp-esc-body">For complaints related to the conduct of an intermediary or financial adviser — including advice received and product recommendations. Also an independent, free service.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cp-footer">
+  <div class="cp-meta" style="margin-bottom:1.25rem;">
+    <div class="cp-meta-row">
+      <span class="cp-meta-label">Underwritten by</span>
+      <span class="cp-meta-value">Compass Insurance Company Limited</span>
+    </div>
+    <div class="cp-meta-row">
+      <span class="cp-meta-label">Compass Insure FSP Number</span>
+      <span class="cp-meta-value">12148</span>
+    </div>
+    <div class="cp-meta-row">
+      <span class="cp-meta-label">Complaints Email</span>
+      <span class="cp-meta-value">complaints@x-underwriting.co.za</span>
+    </div>
+  </div>
+  <p class="cp-footer-disc">X Underwriting Managers (Pty) Ltd acts as authorised representative providing administrative and intermediary services on behalf of Compass Insure. Compass Insurance Company Limited ("Compass Insure") is a licensed non-life insurer and authorised financial services provider, FSP 12148.</p>
+  <p class="cp-footer-reg">PPR Rule 18 · TCF Outcome 6 · FAIS General Code of Conduct</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>POPIA &amp; Privacy Policy — X Underwriting Managers</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; font-size: 0.875rem; line-height: 1.6; }
+
+/* Hero */
+.cp-hero { background: #141b2d; padding: 3.5rem 3rem 3rem; position: relative; overflow: hidden; }
+.cp-hero::after { content: ''; position: absolute; top: -60px; right: -60px; width: 360px; height: 360px; background: radial-gradient(circle, rgba(0,178,255,0.07) 0%, transparent 70%); pointer-events: none; }
+.cp-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem; }
+.cp-chip { display: inline-flex; align-items: center; background: #1e3a52; color: #8bceff; font-family: 'DM Mono', monospace; font-size: 0.6375rem; letter-spacing: 0.08em; padding: 0.28rem 0.7rem; border-radius: 9999px; margin-bottom: 1.5rem; }
+.cp-chip::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: #00b2ff; margin-right: 0.45rem; }
+.cp-h1 { font-family: 'Orbitron', sans-serif; font-size: 1.8rem; font-weight: 700; color: #e8f0f7; line-height: 1.15; margin-bottom: 1.25rem; }
+.cp-h1 span { color: #8bceff; }
+.cp-meta { display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; }
+.cp-meta-row { display: flex; flex-direction: column; gap: 0.15rem; }
+.cp-meta-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #a0bfd4; letter-spacing: 0.1em; text-transform: uppercase; }
+.cp-meta-value { font-family: 'DM Mono', monospace; font-size: 0.775rem; color: #e8f0f7; }
+
+/* Sections */
+.cp-section { padding: 2.5rem 3rem; border-top: 1px solid rgba(62,72,81,0.5); }
+.cp-section:nth-child(odd) { background: #0b1324; }
+.cp-section:nth-child(even) { background: #141b2d; }
+.cp-slabel { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.6rem; }
+.cp-sh2 { font-family: 'Orbitron', sans-serif; font-size: 1.05rem; font-weight: 600; color: #e8f0f7; margin-bottom: 1.25rem; }
+.cp-p { font-size: 0.8125rem; color: #bdc8d2; line-height: 1.8; max-width: 760px; margin-bottom: 1rem; }
+
+/* Cards */
+.pp-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 1.25rem; }
+.pp-card { background: #222a3c; border-radius: 0.6rem; padding: 1.25rem 1.5rem; position: relative; overflow: hidden; }
+.pp-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #8bceff, #00b2ff); }
+.pp-card-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+.pp-card-txt { font-size: 0.7875rem; color: #bdc8d2; line-height: 1.55; }
+
+/* Definition blocks */
+.pp-def { background: #222a3c; border-radius: 0.6rem; padding: 1.25rem 1.5rem; margin-bottom: 0.75rem; border-left: 3px solid #00b2ff; }
+.pp-def-term { font-family: 'DM Mono', monospace; font-size: 0.6875rem; color: #8bceff; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+.pp-def-body { font-size: 0.7875rem; color: #bdc8d2; line-height: 1.65; }
+
+/* Bullet list */
+.pp-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.75rem; max-width: 760px; }
+.pp-list li { font-size: 0.8125rem; color: #bdc8d2; padding-left: 1.25rem; position: relative; line-height: 1.65; }
+.pp-list li::before { content: '✓'; position: absolute; left: 0; color: #00b2ff; font-size: 0.7rem; }
+
+/* Note block */
+.pp-note { background: rgba(0,178,255,0.06); border: 1px solid rgba(139,206,255,0.15); border-radius: 0.6rem; padding: 1.1rem 1.4rem; margin-top: 1.25rem; max-width: 760px; }
+.pp-note-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
+.pp-note-body { font-size: 0.7875rem; color: #bdc8d2; line-height: 1.65; }
+
+/* Rights grid */
+.pp-rights { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin-top: 1.25rem; }
+.pp-right-card { background: #222a3c; border-radius: 0.6rem; padding: 1.25rem 1.5rem; }
+.pp-right-title { font-family: 'Orbitron', sans-serif; font-size: 0.65rem; font-weight: 600; color: #8bceff; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.pp-right-body { font-size: 0.7875rem; color: #bdc8d2; line-height: 1.55; }
+
+/* Sub-label */
+.pp-sublabel { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #8bceff; letter-spacing: 0.12em; text-transform: uppercase; margin: 1.5rem 0 0.75rem; display: block; }
+
+/* Contact block */
+.pp-contact { background: #222a3c; border-radius: 0.75rem; padding: 1.5rem 2rem; display: flex; flex-wrap: wrap; gap: 1.5rem 2.5rem; margin-top: 1.25rem; }
+.pp-contact-item { display: flex; flex-direction: column; gap: 0.2rem; }
+.pp-contact-label { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #a0bfd4; letter-spacing: 0.1em; text-transform: uppercase; }
+.pp-contact-value { font-family: 'DM Mono', monospace; font-size: 0.875rem; color: #8bceff; }
+
+/* Footer */
+.cp-footer { background: #141b2d; padding: 1.75rem 3rem; border-top: 1px solid rgba(62,72,81,0.5); }
+.cp-footer-disc { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: #a0bfd4; letter-spacing: 0.03em; line-height: 1.7; margin-bottom: 0.5rem; }
+.cp-footer-reg { font-family: 'DM Mono', monospace; font-size: 0.6375rem; color: rgba(139,206,255,0.35); letter-spacing: 0.08em; }
+
+@media (max-width: 600px) {
+  .cp-hero, .cp-section, .cp-footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .cp-h1 { font-size: 1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<div class="cp-hero">
+  <h1 class="cp-h1">POPIA &amp; <span>Privacy</span> Policy</h1>
+</div>
+
+<!-- 01 Introduction -->
+<div class="cp-section">
+  <p class="cp-slabel">01 — Introduction</p>
+  <h2 class="cp-sh2">Who We Are &amp; What This Policy Covers</h2>
+  <p class="cp-p">X Underwriting Managers (Pty) Ltd ("we", "us", "our", or "X Underwriting") acts as an authorised representative providing administrative and intermediary services on behalf of Compass Insurance Company Limited ("Compass Insure"), a licensed non-life insurer and authorised financial services provider, FSP 12148.</p>
+  <p class="cp-p">This Privacy Policy explains how we collect, use, store, share and protect personal information in compliance with the Protection of Personal Information Act 4 of 2013 ("POPIA"), the Promotion of Access to Information Act 2 of 2000 ("PAIA"), and all applicable South African data protection legislation.</p>
+  <p class="cp-p">This policy applies to all personal information collected through our website, applications, communications, and in the course of providing insurance-related services. By engaging with us, you acknowledge that you have read and understood this policy.</p>
+  <p class="cp-p">We may update this policy from time to time. We will notify you of material changes via a prominent notice prior to those changes taking effect.</p>
+</div>
+
+<!-- 02 Definitions -->
+<div class="cp-section">
+  <p class="cp-slabel">02 — Definitions</p>
+  <h2 class="cp-sh2">Key Terms</h2>
+  <div class="pp-def">
+    <p class="pp-def-term">Personal Information</p>
+    <p class="pp-def-body">Any information relating to an identifiable, living, natural person or existing juristic person, including but not limited to: name, identity number, contact details, financial information, health information, biometric information, and correspondence.</p>
+  </div>
+  <div class="pp-def">
+    <p class="pp-def-term">De-identified Information</p>
+    <p class="pp-def-body">Information from which all personal identifiers have been removed such that the individual cannot reasonably be re-identified. De-identified information is no longer considered personal information under POPIA and may be used for analytical, statistical, research, and machine learning purposes.</p>
+  </div>
+  <div class="pp-def">
+    <p class="pp-def-term">Processing</p>
+    <p class="pp-def-body">Any operation or activity concerning personal information, including collection, receipt, recording, organisation, storage, updating, retrieval, use, dissemination, merging, linking, restriction, degradation, erasure or destruction.</p>
+  </div>
+  <div class="pp-def">
+    <p class="pp-def-term">Responsible Party</p>
+    <p class="pp-def-body">X Underwriting Managers (Pty) Ltd, as the entity that determines the purpose of and means for processing your personal information.</p>
+  </div>
+  <div class="pp-def">
+    <p class="pp-def-term">Data Subject</p>
+    <p class="pp-def-body">The natural or juristic person to whom personal information relates — in most cases, this is you as our policyholder, beneficiary, or website visitor.</p>
+  </div>
+</div>
+
+<!-- 03 Information We Collect -->
+<div class="cp-section">
+  <p class="cp-slabel">03 — Information We Collect</p>
+  <h2 class="cp-sh2">What Personal Information We Process</h2>
+  <p class="cp-p">We collect personal information that is necessary, relevant and adequate for the purposes set out in this policy. The categories of information we may collect include:</p>
+  <div class="pp-cards">
+    <div class="pp-card">
+      <p class="pp-card-label">Identity Information</p>
+      <p class="pp-card-txt">Full name, identity or passport number, date of birth, gender, nationality.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Contact Details</p>
+      <p class="pp-card-txt">Email address, phone number, residential and postal address.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Financial Information</p>
+      <p class="pp-card-txt">Banking details for premium collection and claim payments, payment history.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Health Information</p>
+      <p class="pp-card-txt">Medical aid membership details, medical records and clinical information relevant to claims assessment.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Policy Information</p>
+      <p class="pp-card-txt">Policy number, cover type, beneficiary details, claims history.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Usage &amp; Technical Data</p>
+      <p class="pp-card-txt">IP address, browser type, device identifiers, pages visited, time and date of visits, and other diagnostic data collected when you use our website or applications.</p>
+    </div>
+  </div>
+  <p class="cp-p" style="margin-top:1.25rem;">Where you contact us by phone, email, post or any other method, we may retain those contact details and any additional information you provide for future reference and service delivery.</p>
+  <div class="pp-note">
+    <p class="pp-note-label">Incomplete submissions</p>
+    <p class="pp-note-body">We may retain information you provide on our website or application even if you do not complete a registration or transaction. This data may be used to follow up with you and to improve our online processes.</p>
+  </div>
+</div>
+
+<!-- 04 Use of Information -->
+<div class="cp-section">
+  <p class="cp-slabel">04 — Use of Information</p>
+  <h2 class="cp-sh2">Why We Process Your Personal Information</h2>
+  <p class="cp-p">We process your personal information for the following purposes, each of which has a lawful basis under POPIA:</p>
+  <ul class="pp-list">
+    <li>To provide, administer and manage your insurance cover and related services</li>
+    <li>To assess, process and pay claims</li>
+    <li>To verify your identity and conduct necessary due diligence</li>
+    <li>To communicate with you about your policy, including renewals, amendments and cancellations</li>
+    <li>To comply with our legal and regulatory obligations under FAIS, POPIA, PAIA and applicable insurance legislation</li>
+    <li>To detect, prevent and investigate fraud, money laundering and other unlawful activities</li>
+    <li>To provide customer support and respond to queries or complaints</li>
+    <li>To send you service-related notifications, including changes to products or policies</li>
+    <li>To conduct market research and improve our products and services</li>
+    <li>To monitor and analyse usage of our website and applications</li>
+    <li>To send you marketing communications where you have opted in — you may opt out at any time</li>
+    <li>For internal record keeping and business administration</li>
+  </ul>
+  <div class="pp-note">
+    <p class="pp-note-label">De-identified data &amp; machine learning</p>
+    <p class="pp-note-body">We may use de-identified, aggregated data — from which all personal identifiers have been irreversibly removed — for analytical, statistical, actuarial, research, and machine learning purposes. This includes training models to improve our underwriting processes, claims assessment, fraud detection, service design, and operational efficiency. Such de-identified data is not subject to POPIA's restrictions. We will never attempt to re-identify de-identified data.</p>
+  </div>
+</div>
+
+<!-- 05 Cookies -->
+<div class="cp-section">
+  <p class="cp-slabel">05 — Cookies</p>
+  <h2 class="cp-sh2">Cookie Policy</h2>
+  <p class="cp-p">Our website uses cookies — small text files stored on your device — to personalise your experience and improve site functionality. Each cookie is unique to your web browser and contains anonymous information such as a unique identifier and the website's domain name.</p>
+  <span class="pp-sublabel">Types of cookies we use</span>
+  <div class="pp-cards">
+    <div class="pp-card">
+      <p class="pp-card-label">Necessary Cookies</p>
+      <p class="pp-card-txt">Essential for the website to function correctly. They allow you to navigate and use core features such as account access.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Functionality Cookies</p>
+      <p class="pp-card-txt">Remember your preferences and choices to provide a more personalised experience on return visits.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Analytical Cookies</p>
+      <p class="pp-card-txt">Collect aggregated, non-personal statistical data about how visitors use our website, helping us improve the user experience.</p>
+    </div>
+  </div>
+  <p class="cp-p" style="margin-top:1.25rem;">You have the right to accept or decline cookies through your browser settings. Declining certain cookies may limit your ability to use some features of our website. We may use Google Analytics to monitor and analyse website usage — you can opt out by installing the Google Analytics opt-out browser add-on.</p>
+</div>
+
+<!-- 06 Sharing Information -->
+<div class="cp-section">
+  <p class="cp-slabel">06 — Sharing Your Information</p>
+  <h2 class="cp-sh2">Who We Share Your Information With</h2>
+  <p class="cp-p">We do not sell, rent or lease your personal information to third parties. We may share your information only in the following circumstances and only to the extent necessary:</p>
+  <ul class="pp-list">
+    <li><strong style="color:#e8f0f7;">Compass Insure:</strong> As the licensed insurer underwriting your policy, receives personal information necessary for policy administration, claims assessment and regulatory compliance.</li>
+    <li><strong style="color:#e8f0f7;">Service providers and operators:</strong> Third-party service providers who assist us in delivering our services, bound by strict confidentiality obligations and data processing agreements in line with POPIA.</li>
+    <li><strong style="color:#e8f0f7;">Brokers and intermediaries:</strong> Your appointed broker or financial adviser, where relevant to the administration of your policy.</li>
+    <li><strong style="color:#e8f0f7;">Regulatory and legal authorities:</strong> Where we are legally required to disclose information, including to the FSCA, SARS, law enforcement agencies or courts of law.</li>
+    <li><strong style="color:#e8f0f7;">Fraud prevention:</strong> To assist with fraud protection, credit risk assessment and the prevention of financial crime.</li>
+    <li><strong style="color:#e8f0f7;">Business transfers:</strong> In the event of a merger, acquisition or asset sale, subject to equivalent privacy protections.</li>
+  </ul>
+</div>
+
+<!-- 07 Storage & Retention -->
+<div class="cp-section">
+  <p class="cp-slabel">07 — Storage &amp; Retention</p>
+  <h2 class="cp-sh2">How We Store &amp; Retain Your Information</h2>
+  <p class="cp-p">Your personal information is stored on secure servers in controlled environments, protected through appropriate physical, electronic and administrative safeguards.</p>
+  <p class="cp-p">We retain your personal information only for as long as is necessary to fulfil the purposes for which it was collected, including:</p>
+  <ul class="pp-list">
+    <li>For as long as your policy is active and for a reasonable period thereafter</li>
+    <li>To comply with legal and regulatory record-keeping requirements under applicable insurance and financial services legislation</li>
+    <li>To resolve disputes, enforce agreements and defend legal claims</li>
+  </ul>
+  <p class="cp-p" style="margin-top:1rem;">When your information is no longer required, we will securely delete or de-identify it in accordance with our data retention schedule.</p>
+  <div class="pp-note">
+    <p class="pp-note-label">Cross-border transfers</p>
+    <p class="pp-note-body">Where personal information is transferred outside South Africa, we will ensure that the recipient country or organisation provides an adequate level of protection, or that appropriate safeguards are in place as required by POPIA section 72.</p>
+  </div>
+</div>
+
+<!-- 08 Security -->
+<div class="cp-section">
+  <p class="cp-slabel">08 — Security</p>
+  <h2 class="cp-sh2">How We Protect Your Information</h2>
+  <p class="cp-p">We implement appropriate technical and organisational measures to prevent unauthorised access, disclosure, alteration or destruction of your data, including encryption of data in transit (SSL/TLS), access controls, secure server environments and regular security reviews.</p>
+  <p class="cp-p">Please be aware that no method of electronic transmission or storage is completely secure. Where we have issued you a password to access parts of our website or systems, you are responsible for keeping that password confidential.</p>
+  <div class="pp-note">
+    <p class="pp-note-label">Security incidents</p>
+    <p class="pp-note-body">In the event of a security compromise that is likely to affect you adversely, we will notify you and the Information Regulator as required by section 22 of POPIA, without undue delay.</p>
+  </div>
+</div>
+
+<!-- 09 Your Rights -->
+<div class="cp-section">
+  <p class="cp-slabel">09 — Your Rights</p>
+  <h2 class="cp-sh2">Your Rights Under POPIA</h2>
+  <p class="cp-p">As a data subject, you have the following rights in relation to your personal information. You may exercise these rights by contacting our Information Officer.</p>
+  <div class="pp-rights">
+    <div class="pp-right-card">
+      <p class="pp-right-title">Right to Access</p>
+      <p class="pp-right-body">Request confirmation of whether we hold personal information about you and access that information.</p>
+    </div>
+    <div class="pp-right-card">
+      <p class="pp-right-title">Right to Correction</p>
+      <p class="pp-right-body">Request that we correct or update inaccurate, incomplete or outdated personal information we hold about you.</p>
+    </div>
+    <div class="pp-right-card">
+      <p class="pp-right-title">Right to Deletion</p>
+      <p class="pp-right-body">Request deletion or destruction of your personal information where we are no longer lawfully entitled to retain it.</p>
+    </div>
+    <div class="pp-right-card">
+      <p class="pp-right-title">Right to Object</p>
+      <p class="pp-right-body">Object to the processing of your personal information on reasonable grounds, including for direct marketing purposes.</p>
+    </div>
+    <div class="pp-right-card">
+      <p class="pp-right-title">Right to Withdraw Consent</p>
+      <p class="pp-right-body">Where processing is based on your consent, withdraw that consent at any time without affecting prior processing.</p>
+    </div>
+    <div class="pp-right-card">
+      <p class="pp-right-title">Right to Complain</p>
+      <p class="pp-right-body">Lodge a complaint with the Information Regulator of South Africa if you believe your rights under POPIA have been infringed.</p>
+    </div>
+  </div>
+  <div class="pp-note">
+    <p class="pp-note-label">Information Regulator contact details</p>
+    <p class="pp-note-body">The Information Regulator (South Africa) · JD House, 27 Stiemens Street, Braamfontein, Johannesburg, 2001 · Email: inforeg@justice.gov.za · Website: www.inforegulator.org.za</p>
+  </div>
+</div>
+
+<!-- 10 Children's Privacy -->
+<div class="cp-section">
+  <p class="cp-slabel">10 — Children's Privacy</p>
+  <h2 class="cp-sh2">Protection of Minors</h2>
+  <p class="cp-p">Our services and website are not directed at persons under the age of 18. We do not knowingly collect personal information from children without verifiable parental or guardian consent.</p>
+  <p class="cp-p">If you are a parent or guardian and believe a child has provided us with personal information without your consent, please contact our Information Officer immediately. We will take prompt steps to remove that information from our records.</p>
+  <p class="cp-p">Where a minor is a beneficiary under a policy held by an adult, we will process only the minimum personal information of that minor necessary for the administration of the policy.</p>
+</div>
+
+<!-- 11 Third-Party Links -->
+<div class="cp-section">
+  <p class="cp-slabel">11 — Third-Party Links</p>
+  <h2 class="cp-sh2">External Websites &amp; Applications</h2>
+  <p class="cp-p">Our website and applications may contain links to external websites. Once you navigate away from our platforms, we have no control over those external sites and are not responsible for the protection of any information you provide to them.</p>
+  <p class="cp-p">We encourage you to review the privacy policy of any external website you visit. Those sites are governed by their own privacy practices, not by this policy.</p>
+</div>
+
+<!-- 12 Marketing -->
+<div class="cp-section">
+  <p class="cp-slabel">12 — Marketing Communications</p>
+  <h2 class="cp-sh2">Direct Marketing &amp; Opt-Out</h2>
+  <p class="cp-p">We may use your personal information to send you marketing communications about our products and services where you have subscribed or where we have a legitimate interest to do so under POPIA.</p>
+  <p class="cp-p">You may opt out at any time by following the unsubscribe link in any marketing email, or by contacting our Information Officer. Opting out of marketing will not affect service-related communications necessary for the administration of your policy.</p>
+</div>
+
+<!-- 13 Contact -->
+<div class="cp-section">
+  <p class="cp-slabel">13 — Contact &amp; Complaints</p>
+  <h2 class="cp-sh2">How to Reach Us</h2>
+  <p class="cp-p">If you have any questions, concerns or requests relating to this policy or our handling of your personal information, please contact our Information Officer. We will acknowledge your request within a reasonable time and respond substantively within 30 days.</p>
+  <div class="pp-contact">
+    <div class="pp-contact-item">
+      <span class="pp-contact-label">Email</span>
+      <span class="pp-contact-value">info@x-underwriting.co.za</span>
+    </div>
+    <div class="pp-contact-item">
+      <span class="pp-contact-label">Phone</span>
+      <span class="pp-contact-value">(018) 004 0206</span>
+    </div>
+    <div class="pp-contact-item">
+      <span class="pp-contact-label">Website</span>
+      <span class="pp-contact-value">x-underwriting.co.za</span>
+    </div>
+  </div>
+  <p class="cp-p" style="margin-top:1.25rem;">If you are not satisfied with our response, you have the right to escalate your complaint to the Information Regulator of South Africa at <strong style="color:#e8f0f7;">inforeg@justice.gov.za</strong>.</p>
+</div>
+
+<div class="cp-footer">
+  <p class="cp-footer-disc">X Underwriting Managers (Pty) Ltd acts as authorised representative providing administrative and intermediary services on behalf of Compass Insure. Compass Insurance Company Limited ("Compass Insure") is a licensed non-life insurer and authorised financial services provider, FSP 12148. Reg No: 2019/410474/07.</p>
+  <p class="cp-footer-reg">POPIA Act 4 of 2013 · PAIA Act 2 of 2000 · FAIS Act 37 of 2002 · Last reviewed March 2026</p>
+</div>
+
+</body>
+</html>

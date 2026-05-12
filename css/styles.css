@@ -64,8 +64,30 @@ nav.sc { border-bottom-color: var(--border-ac); }
 .nav-links a:hover { color: var(--white); }
 
 .nav-r { display: flex; gap: 12px; align-items: center; }
-.nav-login { font-size: 13px; font-weight: 500; color: var(--slate-500); text-decoration: none; transition: color 0.25s; }
+.nav-login-wrap { position: relative; }
+.nav-login {
+  font-size: 13px; font-weight: 500; color: var(--slate-500);
+  background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; gap: 4px;
+  transition: color 0.25s; padding: 0; font-family: inherit;
+}
 .nav-login:hover { color: var(--white); }
+.nav-login-arr { font-size: 10px; transition: transform 0.2s; display: inline-block; }
+.nav-login-wrap.open .nav-login-arr { transform: rotate(180deg); }
+.nav-login-drop {
+  display: none; position: absolute; top: calc(100% + 12px); right: 0;
+  background: rgba(2, 6, 23, 0.98); backdrop-filter: blur(16px);
+  border: 1px solid var(--border-ac); border-radius: 8px;
+  min-width: 210px; padding: 6px; z-index: 300;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+.nav-login-wrap.open .nav-login-drop { display: block; }
+.nav-login-drop a {
+  display: block; padding: 10px 14px; font-size: 13px; font-weight: 500;
+  color: var(--slate-400); text-decoration: none; border-radius: 6px;
+  transition: background 0.2s, color 0.2s; white-space: nowrap;
+}
+.nav-login-drop a:hover { background: rgba(255,255,255,0.06); color: var(--white); }
 .nav-cta {
   font-size: 13px; font-weight: 600; color: var(--slate-900);
   background: var(--cyan); padding: 9px 22px; text-decoration: none;
@@ -852,7 +874,7 @@ footer {
   nav { padding: 0 20px; }
   .nav-links { display: none; }
   .nav-burger { display: flex; }
-  .nav-login { display: none; }
+  .nav-login-wrap { display: none; }
   section, #hero, #contact { padding: 60px 20px; }
   #submit { grid-template-columns: 1fr; }
   .page-hero { padding: 110px 20px 52px; }

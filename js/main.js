@@ -9,6 +9,21 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => nav.classList.toggle('sc', window.scrollY > 50));
 
+// Login dropdown
+const loginWrap = document.getElementById('loginWrap');
+const loginToggle = document.getElementById('loginToggle');
+if (loginWrap && loginToggle) {
+  loginToggle.addEventListener('click', e => {
+    e.stopPropagation();
+    const isOpen = loginWrap.classList.toggle('open');
+    loginToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('click', () => {
+    loginWrap.classList.remove('open');
+    loginToggle.setAttribute('aria-expanded', 'false');
+  });
+}
+
 // Mobile hamburger menu
 const burger = document.getElementById('navBurger');
 const mobileMenu = document.getElementById('navMobile');

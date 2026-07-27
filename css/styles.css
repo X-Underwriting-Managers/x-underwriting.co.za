@@ -855,8 +855,39 @@ footer {
 .ben-row.ben-row-head .ben-row-vertex { color: var(--slate-500); font-weight: 500; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
 .ben-nil { color: var(--slate-300); }
 
+/* ── BROKER REGISTRATION ── */
+.why-panel-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.why-panel-btns .btn-primary { display: inline-flex; align-items: center; justify-content: center; }
+
+.btn-outline {
+  font-size: 14px; font-weight: 600; color: var(--text-head);
+  background: transparent; border: 1px solid var(--border);
+  padding: 12px 26px; text-decoration: none; border-radius: 4px;
+  display: inline-flex; align-items: center; justify-content: center;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+}
+.btn-outline:hover { border-color: var(--cyan-dark); color: var(--cyan-dark); background: var(--slate-100); }
+
+.cf-req { color: var(--cyan-dark); }
+
+.reg-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+
+.demo-card {
+  background: var(--white); border: 1px solid var(--border-ac); border-radius: 6px;
+  padding: 28px; margin-top: 32px;
+}
+.demo-card-icon {
+  width: 38px; height: 38px; border-radius: 4px;
+  background: rgba(14,165,233,0.07); border: 1px solid rgba(14,165,233,0.18);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--cyan-dark); margin-bottom: 14px;
+}
+.demo-card-title { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 16px; color: var(--text-head); margin-bottom: 8px; }
+.demo-card-txt { font-size: 13px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; }
+
 /* ── RESPONSIVE ── */
 @media (max-width: 1100px) {
+  .reg-layout { grid-template-columns: 1fr; }
   .ben-summary-intro { grid-template-columns: 1fr; }
   .ben-row { grid-template-columns: 1fr 170px 170px; }
   .ben-intro, .broker-layout, .become-layout, .gap-edu { grid-template-columns: 1fr; }
@@ -885,6 +916,7 @@ footer {
   .stats-bar { flex-wrap: wrap; }
   .stat { flex-basis: 50%; }
   .f-row2 { grid-template-columns: 1fr; }
+  .cf-row { grid-template-columns: 1fr; }
   .why-x-grid { grid-template-columns: 1fr; }
   .claim-steps { grid-template-columns: 1fr; }
   .doc-grid { grid-template-columns: 1fr; }

@@ -98,16 +98,18 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-function sendEmail(subject, htmlBody) {
+// opts lets a form override the default recipients, e.g.
+// sendEmail(subject, body, { to: ['someone@x-underwriting.co.za'], bcc: [] })
+function sendEmail(subject, htmlBody, opts = {}) {
   return fetch(`${API_BASE_URL}/dev/utilities/send-email`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      to: ['info@x-underwriting.co.za'],
+      to: opts.to || ['info@x-underwriting.co.za'],
       subject,
       htmlBody,
-      cc: [],
-      bcc: ['ceazare@x-underwriting.co.za'],
+      cc: opts.cc || [],
+      bcc: opts.bcc || ['ceazare@x-underwriting.co.za'],
       attachments: [],
       saveToSentItems: true
     })

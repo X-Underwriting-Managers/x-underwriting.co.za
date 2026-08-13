@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gap Cover | X Underwriting</title>
+<meta name="description" content="Four X Gap Cover plans across two rating models. Nexus 1 and Nexus 2 are rated per life, Vertex and Apex are rated per policy. Compare benefits, limits and premiums.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="images/favicon.png">
@@ -17,7 +18,19 @@
     <img src="images/logo.png" alt="X Underwriting Managers" class="logo-img">
   </a>
   <ul class="nav-links">
-    <li><a href="gap-cover.html" class="active">Gap Cover</a></li>
+    <li class="nav-drop-wrap">
+      <a href="gap-cover.html" class="active">Gap Cover <span class="nav-drop-arr">▾</span></a>
+      <div class="nav-drop">
+        <a href="nexus-1.html">Nexus 1<span>Essential · rated per life</span></a>
+        <a href="nexus-2.html">Nexus 2<span>Enhanced · rated per life</span></a>
+        <div class="nav-drop-sep"></div>
+        <a href="vertex.html">Vertex<span>Advanced · rated per policy</span></a>
+        <a href="apex.html">Apex<span>Comprehensive · rated per policy</span></a>
+        <div class="nav-drop-sep"></div>
+        <a href="gap-cover.html">Gap Cover Overview</a>
+        <a href="gap-cover.html#compare-all">Compare All Four</a>
+      </div>
+    </li>
     <li><a href="benefits.html">Benefits</a></li>
     <li><a href="brokers.html">Brokers</a></li>
     <li><a href="claims.html">Claims</a></li>
@@ -41,6 +54,10 @@
 <div class="nav-mobile" id="navMobile">
   <ul>
     <li><a href="gap-cover.html">Gap Cover</a></li>
+    <li class="nav-mobile-sub"><a href="nexus-1.html">Nexus 1</a></li>
+    <li class="nav-mobile-sub"><a href="nexus-2.html">Nexus 2</a></li>
+    <li class="nav-mobile-sub"><a href="vertex.html">Vertex</a></li>
+    <li class="nav-mobile-sub"><a href="apex.html">Apex</a></li>
     <li><a href="benefits.html">Benefits</a></li>
     <li><a href="brokers.html">Brokers</a></li>
     <li><a href="claims.html">Claims</a></li>
@@ -56,10 +73,10 @@
   <div class="page-hero-glow"></div>
   <div class="page-hero-eyebrow">X Gap Cover</div>
   <h1 class="page-hero-h1">Comprehensive Cover for Every <span>Medical Shortfall</span></h1>
-  <p class="page-hero-p">From in-hospital specialist shortfalls to cancer diagnosis payouts, X Gap Cover protects you and your family at every stage of the healthcare journey.</p>
+  <p class="page-hero-p">Four plans across two rating models. Nexus 1 and Nexus 2 are rated per life, so every member pays the lowest premium their own age allows. Vertex and Apex are rated per policy on the eldest life.</p>
   <div class="page-hero-btns">
-    <a href="#plans" class="btn-primary">Compare Plans</a>
-    <a href="brokers.html#quote" class="btn-secondary">Get a Quote <span class="arr">→</span></a>
+    <a href="#plans" class="btn-primary">See the Four Plans</a>
+    <a href="#calculator" class="btn-secondary">Work Out Your Premium <span class="arr">→</span></a>
   </div>
 </div>
 
@@ -127,14 +144,245 @@
   </div>
 </section>
 
+<!-- HOW THE RANGE IS RATED -->
+<section id="rating" style="background:var(--slate-200);">
+  <div class="s-label reveal">How the range works</div>
+  <h2 class="s-h2 reveal">Two Ways to Be Rated</h2>
+  <p class="s-p reveal d1">The four plans divide into two families. The difference is not only what is covered, but how the premium is calculated and how every limit is applied.</p>
+
+  <div class="rating-split">
+    <div class="rating-card hl reveal">
+      <span class="rating-card-tag per-life">Rated per life</span>
+      <div class="rating-card-h">Nexus 1 &amp; Nexus 2</div>
+      <p class="rating-card-p">The new-generation options. A separate premium is charged for each insured person on the Schedule of Insurance, based on the age band that person actually falls into.</p>
+      <ul class="rating-card-list">
+        <li>Nobody carries the cost of another age band. A younger member is never priced on an older member's rate.</li>
+        <li>No distinction between the principal member and an adult dependant. Each life is simply rated on its own.</li>
+        <li>Rand limits and claim counts apply <strong>per insured person per annum</strong>. A two-claim benefit is two claims each. The Medical Scheme Premium Waiver is the one exception, capped per policy.</li>
+        <li>The policyholder remains the sole contracting party and is liable for the total premium payable.</li>
+      </ul>
+      <div class="rating-card-plans">
+        <span class="ben-plan-tag nexus1">Nexus 1 · 14 benefits · From R113 p/m per adult life</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · 19 benefits · From R130 p/m per adult life</span>
+      </div>
+    </div>
+    <div class="rating-card reveal d1">
+      <span class="rating-card-tag per-policy">Rated per policy</span>
+      <div class="rating-card-h">Vertex &amp; Apex</div>
+      <p class="rating-card-p">Our traditional gap cover options. One premium is charged for the policy as a whole, on an individual or family rate, with the rating age determined by the eldest insured person.</p>
+      <ul class="rating-card-list">
+        <li>The eldest life sets the age band for everybody on the policy.</li>
+        <li>Family cover is one adult plus up to three child dependants. Additional children may be added at R40 on Vertex and R50 on Apex.</li>
+        <li>Rand limits and claim counts apply <strong>per beneficiary per policy</strong>. A four-claim benefit is four claims for the policy, not four each.</li>
+        <li>Child dependants are covered to age 21, or 27 for full-time students.</li>
+      </ul>
+      <div class="rating-card-plans">
+        <span class="ben-plan-tag vertex">Vertex · 11 benefits · From R450 p/m</span>
+        <span class="ben-plan-tag apex">Apex · 19 benefits · From R550 p/m</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cmp-note reveal" style="max-width:none;margin-top:24px;">
+    <strong>Why this matters when you compare limits.</strong> The same rand figure is not worth the same under each model. A R2 000 Hospital Account Shortfall benefit with two claims applies to the policy as a whole on Vertex and Apex, but to each insured person on Nexus 1 and Nexus 2. On a family of three, that is the difference between two claims and six. Always read a limit together with the unit it is stated in.
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="plans" style="background:var(--bg-page);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="s-label reveal">Plans</div>
+  <h2 class="s-h2 reveal">Choose the Right Plan for You</h2>
+  <p class="s-p reveal d1">Four plans, grouped by how they are rated. All four carry the same Overall Annual Limit of R223 000 and the same 500% in-hospital gap benefit.</p>
+
+  <!-- NEW GENERATION FAMILY -->
+  <div class="plan-family reveal">
+    <div class="plan-family-hd">
+      <div class="plan-family-name">New-Generation Gap Cover</div>
+      <span class="plan-family-rating per-life">Rated per life</span>
+      <p class="plan-family-note">A separate premium for each insured person, on their own age band. Limits and claim counts apply per insured person unless the benefit states otherwise.</p>
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan" id="nexus-1">
+        <div class="plan-label">Essential Gap Cover · 14 benefits</div>
+        <div class="plan-name">NEXUS 1</div>
+        <div class="plan-desc">Core protection against the shortfalls that create the largest and most frequent bills, at a premium that reflects your own age.</div>
+        <div class="plan-price">R113 <span>/month</span></div>
+        <div class="plan-price-label">Per adult life, aged 22 to 24 · From</div>
+        <ul class="plan-feats">
+          <li><span class="ck">✓</span> Gap Cover (500% additional)</li>
+          <li><span class="ck">✓</span> Co-Payments (up to OAL)</li>
+          <li><span class="ck">✓</span> Penalty Fees (R15 000 · 1 claim each)</li>
+          <li><span class="ck">✓</span> Sub-Limit Enhancer (R20 000 / R2 000)</li>
+          <li><span class="ck">✓</span> Hospital Account Shortfalls (R2 000 · 2 claims each)</li>
+          <li><span class="ck">✓</span> Emergency Room (R4 000 each per annum)</li>
+          <li><span class="ck">✓</span> Preventative Care (R1 000 each)</li>
+          <li><span class="ck">✓</span> Trauma Counselling (R3 000 each)</li>
+          <li><span class="ck">✓</span> Cancer Co-Payments &amp; Top-Up (up to OAL)</li>
+          <li><span class="ck">✓</span> Initial Cancer Diagnosis (R20 000)</li>
+          <li><span class="ck">✓</span> Premium Waiver (6 months)</li>
+          <li><span class="ck">✓</span> Medical Scheme Premium Waiver (max R6 000 p/m)</li>
+          <li><span class="ck">✓</span> Accidental Death (R10 000)</li>
+        </ul>
+        <a href="nexus-1.html" class="btn-plan">View Full Plan</a>
+        <div class="plan-links">
+          <a href="brokers.html#quote">Get a Quote</a>
+          <span class="sep">·</span>
+          <a href="https://xunderwritingmanagers-public.s3.af-south-1.amazonaws.com/website-documents/brochures/nexus1.pdf" target="_blank" rel="noopener noreferrer">Brochure ↓</a>
+        </div>
+      </div>
+
+      <div class="plan featured" id="nexus-2">
+        <div class="plan-label">Enhanced Gap Cover · 19 benefits</div>
+        <div class="plan-badge">Most Popular</div>
+        <div class="plan-name">NEXUS 2</div>
+        <div class="plan-desc">Our broadest cover, in and out of hospital, with limits applied per insured person rather than shared across the policy.</div>
+        <div class="plan-price">R130 <span>/month</span></div>
+        <div class="plan-price-label">Per adult life, aged 22 to 24 · From</div>
+        <ul class="plan-feats">
+          <li><span class="ck">✓</span> Every Nexus 1 benefit, plus:</li>
+          <li><span class="ck">✓</span> Gap Cover incl. BMI (R5 000 per claim)</li>
+          <li><span class="ck">✓</span> Robotic Surgery (500% up to R20 000)</li>
+          <li><span class="ck">✓</span> Sub-Limit Enhancer (R40 000 / R2 000)</li>
+          <li><span class="ck">✓</span> Appliance Shortfall (R5 000 each per annum)</li>
+          <li><span class="ck">✓</span> Emergency Room (R5 000 each per annum)</li>
+          <li><span class="ck">✓</span> Specialist Consultations (R1 000 · 2 claims each)</li>
+          <li><span class="ck">✓</span> Primary Care Consultations (R500 · 2 claims each)</li>
+          <li><span class="ck">✓</span> Preventative Care (R1 500 each)</li>
+          <li><span class="ck">✓</span> Trauma Counselling (R5 000 each)</li>
+          <li><span class="ck">✓</span> Initial Cancer Diagnosis (R25 000)</li>
+          <li><span class="ck">✓</span> Breast Reconstruction (500% / R40 000)</li>
+          <li><span class="ck">✓</span> Accidental Death (R15 000)</li>
+        </ul>
+        <a href="nexus-2.html" class="btn-plan">View Full Plan</a>
+        <div class="plan-links">
+          <a href="brokers.html#quote">Get a Quote</a>
+          <span class="sep">·</span>
+          <a href="https://xunderwritingmanagers-public.s3.af-south-1.amazonaws.com/website-documents/brochures/nexus2.pdf" target="_blank" rel="noopener noreferrer">Brochure ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- TRADITIONAL FAMILY -->
+  <div class="plan-family reveal">
+    <div class="plan-family-hd">
+      <div class="plan-family-name">Traditional Gap Cover</div>
+      <span class="plan-family-rating per-policy">Rated per policy</span>
+      <p class="plan-family-note">One premium for the policy, on an individual or family rate. The rating age is set by the eldest insured person.</p>
+    </div>
+
+    <div class="plans-grid">
+      <div class="plan" id="vertex">
+        <div class="plan-label">Advanced Gap Cover · 11 benefits</div>
+        <div class="plan-name">VERTEX</div>
+        <div class="plan-desc">Broad in-hospital and emergency benefits, sub-limit enhancement, and full cancer protection, all in one solid plan.</div>
+        <div class="plan-price">R450 <span>/month</span></div>
+        <div class="plan-price-label">Individual, aged 18 to 54 · From</div>
+        <ul class="plan-feats">
+          <li><span class="ck">✓</span> Gap Cover (500% additional)</li>
+          <li><span class="ck">✓</span> Co-Payments (up to OAL)</li>
+          <li><span class="ck">✓</span> Penalty Fees (R15 000 · 3 claims)</li>
+          <li><span class="ck">✓</span> Sub-Limit Enhancer (R40 000 / R2 000)</li>
+          <li><span class="ck">✓</span> Hospital Account Shortfalls (R2 500 · 4 claims)</li>
+          <li><span class="ck">✓</span> Private Room Upgrade (1 per annum)</li>
+          <li><span class="ck">✓</span> Emergency Room (R20 000 per annum)</li>
+          <li><span class="ck">✓</span> Cancer Co-Payments &amp; Top-Up (up to OAL)</li>
+          <li><span class="ck">✓</span> Initial Diagnosis of Cancer (R25 000)</li>
+          <li><span class="ck">✓</span> Premium Waiver (6 months)</li>
+          <li><span class="ck">✓</span> Accidental Death (R8 000)</li>
+        </ul>
+        <a href="vertex.html" class="btn-plan">View Full Plan</a>
+        <div class="plan-links">
+          <a href="brokers.html#quote">Get a Quote</a>
+          <span class="sep">·</span>
+          <a href="https://xunderwritingmanagers-public.s3.af-south-1.amazonaws.com/website-documents/brochures/vertex.pdf" target="_blank" rel="noopener noreferrer">Brochure ↓</a>
+        </div>
+      </div>
+
+      <div class="plan" id="apex">
+        <div class="plan-label">Comprehensive Gap Cover · 19 benefits</div>
+        <div class="plan-name">APEX</div>
+        <div class="plan-desc">The widest per-policy cover we offer, adding day-to-day consultations, robotic surgery, appliances and breast reconstruction to the Vertex core.</div>
+        <div class="plan-price">R550 <span>/month</span></div>
+        <div class="plan-price-label">Individual, aged 18 to 54 · From</div>
+        <ul class="plan-feats">
+          <li><span class="ck">✓</span> Every Vertex benefit, plus:</li>
+          <li><span class="ck">✓</span> Gap Cover incl. BMI (R5 000 per claim)</li>
+          <li><span class="ck">✓</span> Robotic Surgery (R20 000 per claim)</li>
+          <li><span class="ck">✓</span> Appliance Shortfall (R8 000 per annum)</li>
+          <li><span class="ck">✓</span> Emergency Room (R25 000 per annum)</li>
+          <li><span class="ck">✓</span> Specialist Consultations (R1 500 · 4 claims)</li>
+          <li><span class="ck">✓</span> Primary Care Consultations (R500 · 4 claims)</li>
+          <li><span class="ck">✓</span> Preventative Care (R1 500 · 2 claims)</li>
+          <li><span class="ck">✓</span> Trauma Counselling (R10 000)</li>
+          <li><span class="ck">✓</span> Breast Reconstruction (500% / R40 000)</li>
+          <li><span class="ck">✓</span> Medical Scheme Premium Waiver</li>
+          <li><span class="ck">✓</span> Accidental Death (R10 000)</li>
+        </ul>
+        <a href="apex.html" class="btn-plan">View Full Plan</a>
+        <div class="plan-links">
+          <a href="brokers.html#quote">Get a Quote</a>
+          <span class="sep">·</span>
+          <a href="https://xunderwritingmanagers-public.s3.af-south-1.amazonaws.com/website-documents/brochures/apex.pdf" target="_blank" rel="noopener noreferrer">Brochure ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- PREMIUM CALCULATOR -->
+<section id="calculator" style="background:var(--slate-200);">
+  <div class="s-label reveal">Premium calculator</div>
+  <h2 class="s-h2 reveal">What Would Your Policy Cost?</h2>
+  <p class="s-p reveal d1">Because Nexus is rated per life, the premium only exists once you add up the actual people on the policy. Add each member below to see the total.</p>
+
+  <div class="calc reveal">
+    <div class="calc-panel">
+      <div class="calc-panel-h">Who is on the policy?</div>
+      <div class="calc-panel-sub">Add every person to be insured and select the age band each falls into. Child dependants are covered to age 21, or 27 for full-time students.</div>
+      <div class="calc-lives" id="calcLives"></div>
+      <button type="button" class="calc-add" id="calcAdd">+ Add another life</button>
+    </div>
+
+    <div class="calc-out">
+      <div class="calc-out-head">Estimated monthly premium</div>
+      <div class="calc-total hl">
+        <div class="calc-total-l">Nexus 2 <small>Enhanced · 19 benefits · per life</small></div>
+        <div class="calc-total-v" id="calcN2">R0</div>
+      </div>
+      <div class="calc-total">
+        <div class="calc-total-l">Nexus 1 <small>Essential · 14 benefits · per life</small></div>
+        <div class="calc-total-v" id="calcN1">R0</div>
+      </div>
+      <div class="calc-sub">
+        <div class="calc-sub-h">For comparison, rated per policy</div>
+        <div class="calc-sub-row">
+          <span class="l">Apex <span id="calcPolicyBasis"></span></span>
+          <span class="v" id="calcApex">R0</span>
+        </div>
+        <div class="calc-sub-row">
+          <span class="l">Vertex</span>
+          <span class="v" id="calcVertex">R0</span>
+        </div>
+        <div class="calc-sub-note" id="calcPolicyNote"></div>
+      </div>
+      <div class="calc-foot">
+        Indicative figures only, based on the current rate tables and subject to change. Vertex and Apex are quoted only where the household fits their per-policy structure of one adult plus up to three child dependants, rated on the eldest life; other households show no per-policy equivalent. Your broker will confirm the final premium. Benefit limits differ between the two families — see the comparison below.
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BENEFITS -->
-<section id="benefits" style="background:var(--slate-200);">
+<section id="benefits" style="background:var(--bg-page);border-top:1px solid var(--border);">
   <div class="ben-intro">
     <div class="reveal">
       <div class="s-label">Coverage detail</div>
       <h2 class="s-h2">Cover that goes beyond the gap</h2>
     </div>
-    <p class="s-p reveal d1">From in-hospital shortfalls to cancer diagnosis payouts, our benefit suite is designed to protect you and your family at every stage of the healthcare journey.</p>
+    <p class="s-p reveal d1">Nineteen benefits across the range. Nexus 1 and Nexus 2 limits are stated per insured person; Vertex and Apex limits are stated per policy.</p>
   </div>
 
   <div class="ben-grid" id="benefitsGrid">
@@ -143,145 +391,134 @@
     <div class="ben-card reveal">
       <div class="ben-tag">In-Hospital</div>
       <div class="ben-title">Gap Cover</div>
-      <div class="ben-txt">Covers the shortfall between what your medical scheme pays and what doctors and specialists charge in hospital. 500% additional cover. BMI-related procedures are covered on Apex only, up to R5 000 per claim, and excluded on Vertex.</div>
+      <div class="ben-txt">Covers the difference between the medical scheme rate and what service providers charge for approved in-hospital, day hospital and in-room procedures.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · Additional 500% up to OAL</span>
-        <span class="ben-plan-tag apex">Apex · BMI up to R5 000 per claim</span>
-        <span class="ben-plan-tag none">Vertex · BMI excluded</span>
+        <span class="ben-plan-tag shared">All four plans · 500% additional, up to OAL</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 &amp; Apex · BMI up to R5 000 per claim</span>
+        <span class="ben-plan-tag none">Nexus 1 &amp; Vertex · BMI excluded</span>
       </div>
     </div>
 
     <div class="ben-card reveal d1">
       <div class="ben-tag">In-Hospital</div>
       <div class="ben-title">Robotic Surgery</div>
-      <div class="ben-txt">Covers the shortfall for robotic-assisted surgical procedures performed in hospital when your scheme does not pay the full cost.</div>
+      <div class="ben-txt">Shortfalls on authorised robotic or computer-assisted surgical procedures. Experimental or unapproved uses of robotic technology are excluded.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R20 000 per claim</span>
-        <span class="ben-plan-tag none">Vertex · Not included</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · 500% up to R20 000 per claim</span>
+        <span class="ben-plan-tag apex">Apex · Up to R20 000 per claim</span>
+        <span class="ben-plan-tag none">Nexus 1 &amp; Vertex · Not included</span>
       </div>
     </div>
 
     <div class="ben-card reveal d2">
       <div class="ben-tag">In-Hospital</div>
       <div class="ben-title">Co-Payments</div>
-      <div class="ben-txt">Covers co-payments, excesses, or deductibles imposed by your medical scheme for specified procedures and hospital admission fees.</div>
+      <div class="ben-txt">Co-payments, including those expressed as a percentage, excesses or deductibles imposed by your medical scheme for specified procedures, hospital admission fees, scans or surgical procedures.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · Up to OAL</span>
+        <span class="ben-plan-tag shared">All four plans · Up to OAL</span>
       </div>
     </div>
 
     <div class="ben-card reveal">
       <div class="ben-tag">In-Hospital</div>
-      <div class="ben-title">Penalty Fee</div>
-      <div class="ben-txt">Covers the penalty when you use a hospital not on your medical scheme's network, being the stated amount or percentage charged by your scheme. 3 claims per policy per annum.</div>
+      <div class="ben-title">Penalty Fees</div>
+      <div class="ben-txt">Covers the penalty fee charged for the voluntary use of a non-designated or partial cover network hospital, whether the scheme charges a rand amount or a percentage. Administration charge co-payments excluded.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · R15 000</span>
+        <span class="ben-plan-tag shared">All four plans · R15 000 per claim</span>
+        <span class="ben-plan-tag nexus">Nexus 1 &amp; 2 · 1 claim per person p/a</span>
+        <span class="ben-plan-tag vertex">Vertex &amp; Apex · 3 claims per policy p/a</span>
       </div>
     </div>
 
     <div class="ben-card reveal d1">
       <div class="ben-tag">In-Hospital</div>
       <div class="ben-title">Sub-Limit Enhancer</div>
-      <div class="ben-txt">Covers shortfalls when you exceed scheme benefit limits for MRI and CT scans, cochlear implants, intraocular lenses, internal prostheses, and TAVI valves. Any other sub-limit: R2 000 per claim.</div>
+      <div class="ben-txt">Covers shortfalls when scheme sub-limits are exceeded for MRI and CT scans, cochlear implants, intraocular lenses, internal prostheses and TAVI valves. Any other sub-limit is covered to R2 000 per claim.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · R40 000 / R2 000</span>
+        <span class="ben-plan-tag nexus1">Nexus 1 · R20 000 specified, R20 000 p/a aggregate</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · R40 000 specified, R40 000 p/a aggregate</span>
+        <span class="ben-plan-tag vertex">Vertex &amp; Apex · R40 000 specified</span>
       </div>
     </div>
 
     <div class="ben-card reveal d2">
       <div class="ben-tag">In-Hospital</div>
-      <div class="ben-title">Hospital Account Shortfall</div>
-      <div class="ben-txt">Covers shortfalls on hospital accounts, with 4 claims per policy per annum. Includes 1 private room upgrade per policy per annum (R2 500).</div>
+      <div class="ben-title">Hospital Account Shortfalls</div>
+      <div class="ben-txt">Shortfalls on the hospital account for items such as consumables, and take-home medication scripted and dispensed by the hospital pharmacy on the day of discharge.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · R2 500 per claim</span>
+        <span class="ben-plan-tag nexus">Nexus 1 &amp; 2 · R2 000 · 2 claims each · No room upgrade</span>
+        <span class="ben-plan-tag vertex">Vertex &amp; Apex · R2 500 · 4 claims · 1 room upgrade</span>
       </div>
     </div>
 
     <div class="ben-card reveal">
-      <div class="ben-tag">In-Hospital</div>
-      <div class="ben-title">Appliance Shortfall Benefit</div>
-      <div class="ben-txt">Covers shortfalls for hearing aids, wheelchairs, CPAP machines, humidifiers, insulin pumps, glucometers, nebulisers, and Mirena devices.</div>
+      <div class="ben-tag">Appliances</div>
+      <div class="ben-title">Appliance Shortfall</div>
+      <div class="ben-txt">Shortfalls on hearing aids, wheelchairs, CPAP machines, humidifiers, insulin pumps, glucometers, nebulisers and Mirena devices, where the scheme has a defined rand limit.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R8 000 per annum</span>
-        <span class="ben-plan-tag none">Vertex · Not included</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · R5 000 each p/a</span>
+        <span class="ben-plan-tag apex">Apex · R8 000 p/a</span>
+        <span class="ben-plan-tag none">Nexus 1 &amp; Vertex · Not included</span>
       </div>
     </div>
 
-    <!-- EMERGENCY ROOM -->
+    <!-- EMERGENCY -->
     <div class="ben-card reveal d1">
-      <div class="ben-tag">Emergency Room</div>
-      <div class="ben-title">Emergency Room, Annual Sub-Limit</div>
-      <div class="ben-txt">Total annual sub-limit for all emergency room visits, per policy. Accident and illness benefits accumulate to this sub-limit.</div>
+      <div class="ben-tag">Emergency</div>
+      <div class="ben-title">Emergency Room</div>
+      <div class="ben-txt">Costs directly related to the initial emergency event at a registered casualty facility. Illness claims are after hours only for beneficiaries 8 and older. Ambulance costs and follow-up visits excluded.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R25 000 per annum</span>
-        <span class="ben-plan-tag vertex">Vertex · R20 000 per annum</span>
+        <span class="ben-plan-tag nexus1">Nexus 1 · R4 000 each p/a</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · R5 000 each p/a</span>
+        <span class="ben-plan-tag vertex">Vertex · R20 000 p/a</span>
+        <span class="ben-plan-tag apex">Apex · R25 000 p/a</span>
       </div>
     </div>
 
+    <!-- OUT OF HOSPITAL -->
     <div class="ben-card reveal d2">
-      <div class="ben-tag">Emergency Room</div>
-      <div class="ben-title">Emergency Room, Accident</div>
-      <div class="ben-txt">Costs directly related to the initial accidental event, subject to the sub-limit.</div>
-      <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · R2 500 per claim</span>
-      </div>
-    </div>
-
-    <div class="ben-card reveal">
-      <div class="ben-tag">Emergency Room</div>
-      <div class="ben-title">Emergency Room, Illness (8 years and older)</div>
-      <div class="ben-txt">Covers emergency room visits for illness in beneficiaries aged 8 and older, subject to the sub-limit.</div>
-      <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · R2 500 per claim</span>
-      </div>
-    </div>
-
-    <div class="ben-card reveal d1">
-      <div class="ben-tag">Emergency Room</div>
-      <div class="ben-title">Emergency Room, Illness (younger than 8 years)</div>
-      <div class="ben-txt">Covers emergency room visits for illness in beneficiaries younger than 8 years, subject to the sub-limit.</div>
-      <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · R5 000 per claim</span>
-      </div>
-    </div>
-
-    <!-- DAY-TO-DAY -->
-    <div class="ben-card reveal d2">
-      <div class="ben-tag">Day-to-Day</div>
+      <div class="ben-tag">Out of Hospital</div>
       <div class="ben-title">Specialist Consultations</div>
-      <div class="ben-txt">Covers out-of-hospital specialist consultation shortfalls, with 4 claims per policy per annum.</div>
+      <div class="ben-txt">The shortfall on a specialist consultation fee where the scheme has paid a portion. Excludes tests, scans and any charges unrelated to the consultation.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R1 500 per claim</span>
-        <span class="ben-plan-tag none">Vertex · Not included</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · R1 000 per claim · 2 claims each p/a</span>
+        <span class="ben-plan-tag apex">Apex · R1 500 per claim · 4 claims p/a</span>
+        <span class="ben-plan-tag none">Nexus 1 &amp; Vertex · Not included</span>
       </div>
     </div>
 
     <div class="ben-card reveal">
-      <div class="ben-tag">Day-to-Day</div>
+      <div class="ben-tag">Out of Hospital</div>
       <div class="ben-title">Primary Care Consultations</div>
-      <div class="ben-txt">Day-to-day visits to GPs, dentists, physiotherapists, chiropractors, and other providers covered by your medical scheme option. 4 claims per policy per annum.</div>
+      <div class="ben-txt">Day-to-day visits: GPs, dentists, chiropractors, physiotherapists, biokineticists, occupational therapists, homeopaths and audiologists recognised and paid for by your medical scheme option.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R500 per claim</span>
-        <span class="ben-plan-tag none">Vertex · Not included</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · R500 per claim · 2 claims each p/a</span>
+        <span class="ben-plan-tag apex">Apex · R500 per claim · 4 claims p/a</span>
+        <span class="ben-plan-tag none">Nexus 1 &amp; Vertex · Not included</span>
       </div>
     </div>
 
+    <!-- WELLNESS -->
     <div class="ben-card reveal d1">
-      <div class="ben-tag">Day-to-Day</div>
+      <div class="ben-tag">Wellness</div>
       <div class="ben-title">Preventative Care</div>
-      <div class="ben-txt">Covers selected preventative screenings and check-ups, encouraging proactive health management throughout the year. 2 claims per policy per annum.</div>
+      <div class="ben-txt">The gap portion on pap smears, cholesterol and blood glucose tests, flu vaccination, childhood immunisation, bone density scans, PSA tests, mammograms and contraceptive implantation.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R1 500 per claim</span>
+        <span class="ben-plan-tag nexus1">Nexus 1 · R1 000 per claim · 1 claim each p/a</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · R1 500 per claim · 1 claim each p/a</span>
+        <span class="ben-plan-tag apex">Apex · R1 500 per claim · 2 claims p/a</span>
         <span class="ben-plan-tag none">Vertex · Not included</span>
       </div>
     </div>
 
     <div class="ben-card reveal d2">
-      <div class="ben-tag">Day-to-Day</div>
+      <div class="ben-tag">Mental Health</div>
       <div class="ben-title">Trauma Counselling</div>
-      <div class="ben-txt">Supports you and your family after a traumatic event, including hijacking, violent crime, and dread disease diagnosis. Limit per policy per annum.</div>
+      <div class="ben-txt">Counselling with a registered medical professional within six months of a qualifying traumatic incident, including dread disease diagnosis, hijacking and violent crime.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R10 000</span>
+        <span class="ben-plan-tag nexus1">Nexus 1 · R3 000 each p/a</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · R5 000 each p/a</span>
+        <span class="ben-plan-tag apex">Apex · R10 000 p/a</span>
         <span class="ben-plan-tag none">Vertex · Not included</span>
       </div>
     </div>
@@ -289,80 +526,74 @@
     <!-- CANCER -->
     <div class="ben-card reveal">
       <div class="ben-tag">Cancer</div>
-      <div class="ben-title">Cancer Co-Payment</div>
-      <div class="ben-txt">Covers cancer treatment co-payments required by your medical scheme throughout your treatment journey.</div>
+      <div class="ben-title">Cancer Co-Payments</div>
+      <div class="ben-txt">Percentage co-payments on ongoing cancer treatment and biological drugs, applied once the medical scheme cancer benefit is exhausted and treatment continues on the registered treatment plan.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · Up to OAL</span>
+        <span class="ben-plan-tag shared">All four plans · Up to OAL</span>
       </div>
     </div>
 
     <div class="ben-card reveal d1">
       <div class="ben-tag">Cancer</div>
       <div class="ben-title">Cancer Top-Up</div>
-      <div class="ben-txt">Additional protection once your scheme's cancer benefit limits are reached, ensuring continued cover throughout your treatment.</div>
+      <div class="ben-txt">Covers ongoing treatment as per the scheme's registered treatment plan where the option has a defined rand limit for cancer and that limit has been reached.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · Up to OAL</span>
+        <span class="ben-plan-tag shared">All four plans · Up to OAL</span>
       </div>
     </div>
 
     <div class="ben-card reveal d2">
       <div class="ben-tag">Cancer</div>
-      <div class="ben-title">Initial Diagnosis Benefit</div>
-      <div class="ben-txt">Once-off lump sum paid upon a first-time Stage 2 or higher cancer diagnosis, where the beneficiary is younger than 65 at the date of diagnosis. One claim per beneficiary, lifetime limit.</div>
+      <div class="ben-title">Initial Diagnosis of Cancer</div>
+      <div class="ben-txt">Once-off lump sum on a first diagnosis of malignant cancer from stage 2 onwards, where the beneficiary is under 65 at the date of diagnosis. Skin cancer excluded, save for metastatic melanoma at stage 4. Not subject to the OAL.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · R25 000 lump sum</span>
+        <span class="ben-plan-tag nexus1">Nexus 1 · R20 000 lump sum</span>
+        <span class="ben-plan-tag nexus2">Nexus 2, Vertex &amp; Apex · R25 000 lump sum</span>
       </div>
     </div>
 
     <div class="ben-card reveal">
       <div class="ben-tag">Cancer</div>
       <div class="ben-title">Breast Reconstruction</div>
-      <div class="ben-txt">After a medically necessary mastectomy: reconstruction of the affected breast with an additional 500% cover, reconstruction of the unaffected breast up to R40 000, and a breast prosthesis sub-limit of R4 000. One claim per beneficiary, lifetime limit.</div>
+      <div class="ben-txt">An additional 500% of the scheme rate for reconstruction of the affected breast post-mastectomy, plus reconstruction of the unaffected breast including artificial prostheses. No cover for subsequent reconstruction.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · Affected breast additional 500%</span>
-        <span class="ben-plan-tag apex">Apex · Unaffected breast R40 000</span>
-        <span class="ben-plan-tag apex">Apex · Prosthesis R4 000</span>
-        <span class="ben-plan-tag none">Vertex · Not included</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 &amp; Apex · +500% affected · R40 000 unaffected, incl. R4 000 prosthesis</span>
+        <span class="ben-plan-tag none">Nexus 1 &amp; Vertex · Not included</span>
       </div>
     </div>
 
-    <!-- VALUE-ADDED -->
+    <!-- SUPPORT -->
     <div class="ben-card reveal d1">
-      <div class="ben-tag">Value-Added</div>
+      <div class="ben-tag">Support</div>
       <div class="ben-title">Premium Waiver</div>
-      <div class="ben-txt">In the event of the accidental death or total permanent disability of the principal insured, your X Gap Cover premium is waived for 6 months.</div>
+      <div class="ben-txt">On the accidental death or total permanent disability of the principal policyholder, the premiums payable are waived for six months. Cannot be transferred, ceded or converted to cash. Not subject to the OAL.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag shared">Apex &amp; Vertex · 6 months</span>
+        <span class="ben-plan-tag shared">All four plans · 6 months</span>
+        <span class="ben-plan-tag nexus">Nexus 1 &amp; 2 · Waived for all remaining insured persons</span>
       </div>
     </div>
 
     <div class="ben-card reveal d2">
-      <div class="ben-tag">Value-Added</div>
-      <div class="ben-title">Accidental Death</div>
-      <div class="ben-txt">Once-off cash payout in the event of accidental death, providing immediate financial support to your family.</div>
+      <div class="ben-tag">Support</div>
+      <div class="ben-title">Medical Scheme Premium Waiver</div>
+      <div class="ben-txt">Pays an amount equal to the medical scheme contribution of surviving dependants for six months after the event, subject to a monthly cap for the policy as a whole. Not subject to the OAL.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R10 000</span>
-        <span class="ben-plan-tag vertex">Vertex · R8 000</span>
+        <span class="ben-plan-tag nexus1">Nexus 1 · Max R6 000 p/m per policy</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · Max R7 500 p/m per policy</span>
+        <span class="ben-plan-tag apex">Apex · R3 000 p/m individual, R6 000 p/m family</span>
+        <span class="ben-plan-tag none">Vertex · Not included</span>
       </div>
     </div>
 
     <div class="ben-card reveal">
-      <div class="ben-tag">Value-Added</div>
-      <div class="ben-title">Medical Scheme Premium Cover, Individuals</div>
-      <div class="ben-txt">Should the principal member pass away accidentally or become totally and permanently disabled, we pay the individual medical scheme premium for up to 6 months.</div>
+      <div class="ben-tag">Support</div>
+      <div class="ben-title">Accidental Death</div>
+      <div class="ben-txt">Paid to the nominated beneficiary on the accidental death of any insured person on the policy, on receipt of the death certificate. Not subject to the OAL.</div>
       <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R3 000/month · 6 months</span>
-        <span class="ben-plan-tag none">Vertex · Not included</span>
-      </div>
-    </div>
-
-    <div class="ben-card reveal d1">
-      <div class="ben-tag">Value-Added</div>
-      <div class="ben-title">Medical Scheme Premium Cover, Families</div>
-      <div class="ben-txt">Should the principal member pass away accidentally or become totally and permanently disabled, we pay the family medical scheme premium for up to 6 months.</div>
-      <div class="ben-plan-tags">
-        <span class="ben-plan-tag apex">Apex · R6 000/month · 6 months</span>
-        <span class="ben-plan-tag none">Vertex · Not included</span>
+        <span class="ben-plan-tag nexus1">Nexus 1 · R10 000 once-off</span>
+        <span class="ben-plan-tag nexus2">Nexus 2 · R15 000 once-off</span>
+        <span class="ben-plan-tag vertex">Vertex · R8 000 once-off</span>
+        <span class="ben-plan-tag apex">Apex · R10 000 once-off</span>
       </div>
     </div>
 
@@ -372,141 +603,241 @@
   </div>
 </section>
 
-<!-- PLANS -->
-<section id="plans" style="background:var(--bg-page);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="s-label reveal">Plans</div>
-  <h2 class="s-h2 reveal">Choose the Right Plan for You</h2>
-  <p class="s-p reveal d1">Two plans designed to protect you and your family from unexpected medical shortfalls, both with full access to our comprehensive benefit suite.</p>
-
-  <div class="plans-grid">
-    <div class="plan reveal" id="vertex">
-      <div class="plan-label">Option 01</div>
-      <div class="plan-name">VERTEX</div>
-      <div class="plan-desc">Broad in-hospital and emergency benefits, sub-limit enhancement, and cancer protection, all in one solid plan.</div>
-      <div class="plan-price">R450 <span>/month</span></div>
-      <div class="plan-price-label">Individual, aged 18 to 54 · From</div>
-      <ul class="plan-feats">
-        <li><span class="ck">✓</span> Gap Cover (500% additional)</li>
-        <li><span class="ck">✓</span> Co-Payments (up to OAL)</li>
-        <li><span class="ck">✓</span> Penalty Fee Cover (R15 000 · 3 claims)</li>
-        <li><span class="ck">✓</span> Sub-Limit Enhancer (R40 000 / R2 000)</li>
-        <li><span class="ck">✓</span> Hospital Account Shortfall (R2 500)</li>
-        <li><span class="ck">✓</span> Private Room Upgrade (R2 500)</li>
-        <li><span class="ck">✓</span> Emergency Room (R20 000 per annum)</li>
-        <li><span class="ck">✓</span> Cancer Co-Payment &amp; Top-Up (OAL)</li>
-        <li><span class="ck">✓</span> Initial Diagnosis Benefit (R25 000)</li>
-        <li><span class="ck">✓</span> Premium Waiver (6 months)</li>
-        <li><span class="ck">✓</span> Accidental Death (R8 000)</li>
-      </ul>
-      <a href="brokers.html#quote" class="btn-plan">Get a Quote</a>
-      <a href="documents.html#brochures" class="btn-brochure">Download Brochure ↓</a>
-    </div>
-
-    <div class="plan featured reveal d1" id="apex">
-      <div class="plan-label">Option 02</div>
-      <div class="plan-badge">Most Popular</div>
-      <div class="plan-name">APEX</div>
-      <div class="plan-desc">The widest range of benefits, including all Vertex cover plus day-to-day consultations, trauma counselling, robotic surgery, and more.</div>
-      <div class="plan-price">R550 <span>/month</span></div>
-      <div class="plan-price-label">Individual, aged 18 to 54 · From</div>
-      <ul class="plan-feats">
-        <li><span class="ck">✓</span> All Vertex Plan benefits</li>
-        <li><span class="ck">✓</span> Robotic Surgery (R20 000)</li>
-        <li><span class="ck">✓</span> Appliance Shortfall (R8 000)</li>
-        <li><span class="ck">✓</span> Emergency Room (R25 000 per annum)</li>
-        <li><span class="ck">✓</span> Specialist Consultations (R1 500 · 4 claims)</li>
-        <li><span class="ck">✓</span> Primary Care Consultations (R500 · 4 claims)</li>
-        <li><span class="ck">✓</span> Preventative Care (R1 500 · 2 claims)</li>
-        <li><span class="ck">✓</span> Trauma Counselling (R10 000)</li>
-        <li><span class="ck">✓</span> Breast Reconstruction (500% / R40 000 / R4 000)</li>
-        <li><span class="ck">✓</span> Accidental Death (R10 000)</li>
-        <li><span class="ck">✓</span> Medical Scheme Premium Cover</li>
-      </ul>
-      <a href="brokers.html#quote" class="btn-plan">Get a Quote</a>
-      <a href="documents.html#brochures" class="btn-brochure">Download Brochure ↓</a>
-    </div>
-  </div>
-</section>
-
-<!-- COMPARISON TABLE -->
+<!-- COMPARISON TABLES -->
 <section id="compare" style="background:var(--slate-200);">
   <div class="s-label reveal">Benefit comparison</div>
   <h2 class="s-h2 reveal">Compare All Benefits</h2>
-  <p class="s-p reveal d1">A full side-by-side breakdown of every benefit and limit across both plans.</p>
+  <p class="s-p reveal d1">Compare within a family, where limits share the same unit, or across all four at once. The Overall Annual Limit is R223 000 from 1 April 2026 on every plan.</p>
 
-  <div class="tbl-wrap reveal">
-    <table>
-      <thead>
-        <tr>
-          <th>Benefit</th>
-          <th class="hl">Apex</th>
-          <th>Vertex</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="tgh"><td colspan="3">In-Hospital</td></tr>
-        <tr><td>Gap Cover (additional)</td><td>500%</td><td>500%</td></tr>
-        <tr><td>BMI-Related Procedures (per claim)</td><td>R 5 000.00</td><td><span class="ds">—</span></td></tr>
-        <tr><td>Robotic Surgery (per claim)</td><td>R 20 000.00</td><td><span class="ds">—</span></td></tr>
-        <tr><td>Co-Payments</td><td>Up to OAL</td><td>Up to OAL</td></tr>
-        <tr><td>Penalty Fee (3 per policy per annum)</td><td>R 15 000.00</td><td>R 15 000.00</td></tr>
-        <tr>
-          <td>
-            Sub-Limit Enhancer, R40 000 per claim for:<br>
-            <span class="lim">&nbsp;&nbsp;&nbsp;· MRI and CT scans<br>
-            &nbsp;&nbsp;&nbsp;· Cochlear implants<br>
-            &nbsp;&nbsp;&nbsp;· Intraocular lenses<br>
-            &nbsp;&nbsp;&nbsp;· Internal prostheses<br>
-            &nbsp;&nbsp;&nbsp;· Transcatheter Aortic Valve Implantation (TAVI) valves<br><br>
-            Any other sub-limit: R2 000 per claim.</span>
-          </td>
-          <td>R 40 000.00<br><br><br><br><br><br><span class="lim">R 2 000.00</span></td>
-          <td>R 40 000.00<br><br><br><br><br><br><span class="lim">R 2 000.00</span></td>
-        </tr>
-        <tr><td>Hospital Account Shortfall (4 per policy per annum)</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
-        <tr><td>Private Room Upgrades (1 per policy per annum)</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
-        <tr><td>Appliance Shortfall Benefit</td><td>R 8 000.00</td><td><span class="ds">—</span></td></tr>
-        <tr class="tgh"><td colspan="3">Emergency Room</td></tr>
-        <tr><td>Emergency Room, Annual Sub-Limit per policy per annum</td><td>R 25 000.00</td><td>R 20 000.00</td></tr>
-        <tr><td>Emergency Room, Accident (per claim, subject to sub-limit)</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
-        <tr><td>Emergency Room, Illness 8 years and older (per claim, subject to sub-limit)</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
-        <tr><td>Emergency Room, Illness younger than 8 years (per claim, subject to sub-limit)</td><td>R 5 000.00</td><td>R 5 000.00</td></tr>
-        <tr class="tgh"><td colspan="3">Day-to-Day</td></tr>
-        <tr><td>Specialist Consultations (4 per policy per annum)</td><td>R 1 500.00</td><td><span class="ds">—</span></td></tr>
-        <tr><td>Primary Care Consultations (4 per policy per annum)</td><td>R 500.00</td><td><span class="ds">—</span></td></tr>
-        <tr><td>Preventative Care (2 per policy per annum)</td><td>R 1 500.00</td><td><span class="ds">—</span></td></tr>
-        <tr><td>Trauma Counselling (limit per policy)</td><td>R 10 000.00</td><td><span class="ds">—</span></td></tr>
-        <tr class="tgh"><td colspan="3">Cancer</td></tr>
-        <tr><td>Cancer Co-Payment</td><td>Up to OAL</td><td>Up to OAL</td></tr>
-        <tr><td>Cancer Top-Up</td><td>Up to OAL</td><td>Up to OAL</td></tr>
-        <tr><td>Initial Diagnosis (1 per beneficiary, lifetime limit, Stage 2 and above, diagnosed younger than 65)</td><td>R 25 000.00</td><td>R 25 000.00</td></tr>
-        <tr><td>Reconstruction of Affected Breast (1 per beneficiary, lifetime limit)</td><td>Additional 500%</td><td><span class="ds">—</span></td></tr>
-        <tr><td>Reconstruction of Unaffected Breast (1 per beneficiary, lifetime limit)</td><td>R 40 000.00</td><td><span class="ds">—</span></td></tr>
-        <tr><td>Breast Prosthesis (sub-limit)</td><td>R 4 000.00</td><td><span class="ds">—</span></td></tr>
-        <tr class="tgh"><td colspan="3">Value-Added Benefits</td></tr>
-        <tr><td>Premium Waiver</td><td>6 Months</td><td>6 Months</td></tr>
-        <tr><td>Accidental Death</td><td>R 10 000.00</td><td>R 8 000.00</td></tr>
-        <tr><td>Medical Scheme Premium Cover, Individuals (6 months)</td><td>R 3 000.00</td><td><span class="ds">—</span></td></tr>
-        <tr><td>Medical Scheme Premium Cover, Families (6 months)</td><td>R 6 000.00</td><td><span class="ds">—</span></td></tr>
-        <tr class="tgh"><td colspan="3">Monthly Premiums</td></tr>
-        <tr><td>Individual, aged 18 to 54</td><td>R 550.00</td><td>R 450.00</td></tr>
-        <tr><td>Family, aged 18 to 54</td><td>R 700.00</td><td>R 560.00</td></tr>
-        <tr><td>Individual, aged 55 to 64</td><td>R 650.00</td><td>R 550.00</td></tr>
-        <tr><td>Family, aged 55 to 64</td><td>R 800.00</td><td>R 700.00</td></tr>
-        <tr><td>Individual, aged 65 and above</td><td>R 1 100.00</td><td>R 950.00</td></tr>
-        <tr><td>Family, aged 65 and above</td><td>R 1 450.00</td><td>R 1 150.00</td></tr>
-        <tr><td>Additional Child (from child 4 onwards)</td><td>R 50.00</td><td>R 40.00</td></tr>
-      </tbody>
-    </table>
+  <div class="seg-wrap reveal">
+    <div class="seg" data-seg="panel" data-seg-target="#compare .cmp-panel" role="tablist">
+      <button type="button" class="seg-btn active" data-value="nexus">Nexus 1 &amp; 2</button>
+      <button type="button" class="seg-btn" data-value="traditional">Vertex &amp; Apex</button>
+      <button type="button" class="seg-btn" data-value="all">All four plans</button>
+    </div>
+  </div>
+
+  <!-- NEXUS -->
+  <div class="cmp-panel active" id="compare-nexus" data-panel="nexus">
+    <div class="cmp-note" style="margin-top:32px;">
+      <strong>Rated per life.</strong> Every rand limit and claim count below applies per insured person per annum unless the row states otherwise. The policy premium is the sum of the premiums for everyone on the Schedule of Insurance.
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Nexus 1</th>
+            <th class="hl">Nexus 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tgh"><td colspan="3">In-Hospital</td></tr>
+          <tr><td>Gap Cover (additional)</td><td>500%</td><td>500%</td></tr>
+          <tr><td>BMI-Related Procedures (per claim)</td><td><span class="ds">—</span></td><td>R 5 000.00</td></tr>
+          <tr><td>Robotic Surgery (500% additional, per claim)</td><td><span class="ds">—</span></td><td>R 20 000.00</td></tr>
+          <tr><td>Co-Payments</td><td>Up to OAL</td><td>Up to OAL</td></tr>
+          <tr><td>Penalty Fees (1 per insured person per annum)</td><td>R 15 000.00</td><td>R 15 000.00</td></tr>
+          <tr>
+            <td>
+              Sub-Limit Enhancer, per claim for:<br>
+              <span class="lim">&nbsp;&nbsp;&nbsp;· MRI and CT scans<br>
+              &nbsp;&nbsp;&nbsp;· Cochlear implants<br>
+              &nbsp;&nbsp;&nbsp;· Intraocular lenses<br>
+              &nbsp;&nbsp;&nbsp;· Internal prostheses<br>
+              &nbsp;&nbsp;&nbsp;· Transcatheter Aortic Valve Implantation (TAVI) valves<br><br>
+              Any other sub-limit.</span>
+            </td>
+            <td>R 20 000.00<br><br><br><br><br><br><span class="lim">R 2 000.00</span></td>
+            <td>R 40 000.00<br><br><br><br><br><br><span class="lim">R 2 000.00</span></td>
+          </tr>
+          <tr><td>Sub-Limit Enhancer, annual aggregate per insured person</td><td>R 20 000.00</td><td>R 40 000.00</td></tr>
+          <tr><td>Hospital Account Shortfalls (2 per insured person per annum)</td><td>R 2 000.00</td><td>R 2 000.00</td></tr>
+          <tr><td>Private Room Upgrade</td><td><span class="ds">—</span></td><td><span class="ds">—</span></td></tr>
+          <tr><td>Appliance Shortfall Benefit (per insured person per annum)</td><td><span class="ds">—</span></td><td>R 5 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Emergency Room</td></tr>
+          <tr><td>Emergency Room, annual sub-limit per insured person</td><td>R 4 000.00</td><td>R 5 000.00</td></tr>
+          <tr><td>Emergency Room, accident (per claim)</td><td>R 2 000.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Emergency Room, illness 8 and older (per claim, after hours)</td><td>R 2 000.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Emergency Room, illness younger than 8 (per claim)</td><td>R 4 000.00</td><td>R 5 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Consultations &amp; Wellness</td></tr>
+          <tr><td>Specialist Consultations (2 per insured person per annum)</td><td><span class="ds">—</span></td><td>R 1 000.00</td></tr>
+          <tr><td>Primary Care Consultations (2 per insured person per annum, combined)</td><td><span class="ds">—</span></td><td>R 500.00</td></tr>
+          <tr><td>Preventative Care (1 per insured person per annum)</td><td>R 1 000.00</td><td>R 1 500.00</td></tr>
+          <tr><td>Trauma Counselling (per insured person per annum)</td><td>R 3 000.00</td><td>R 5 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Cancer</td></tr>
+          <tr><td>Cancer Co-Payments</td><td>Up to OAL</td><td>Up to OAL</td></tr>
+          <tr><td>Cancer Top-Up</td><td>Up to OAL</td><td>Up to OAL</td></tr>
+          <tr><td>Initial Cancer Diagnosis ✦ (stage 2+, before age 65)</td><td>R 20 000.00</td><td>R 25 000.00</td></tr>
+          <tr><td>Reconstruction of Affected Breast</td><td><span class="ds">—</span></td><td>Additional 500%</td></tr>
+          <tr><td>Reconstruction of Unaffected Breast</td><td><span class="ds">—</span></td><td>R 40 000.00</td></tr>
+          <tr><td>Breast Prosthesis (sub-limit)</td><td><span class="ds">—</span></td><td>R 4 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Support Benefits</td></tr>
+          <tr><td>Premium Waiver ✦ (all remaining insured persons)</td><td>6 Months</td><td>6 Months</td></tr>
+          <tr><td>Medical Scheme Premium Waiver ✦, principal member (per month)</td><td>R 2 000.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Medical Scheme Premium Waiver ✦, adult dependant (per month)</td><td>R 1 750.00</td><td>R 2 000.00</td></tr>
+          <tr><td>Medical Scheme Premium Waiver ✦, child dependant (per month)</td><td>R 750.00</td><td>R 1 000.00</td></tr>
+          <tr><td>Medical Scheme Premium Waiver ✦, policy cap (per month)</td><td>R 6 000.00</td><td>R 7 500.00</td></tr>
+          <tr><td>Accidental Death ✦</td><td>R 10 000.00</td><td>R 15 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Monthly Premiums, Per Insured Person</td></tr>
+          <tr><td>Age 0 to 21</td><td>R 30.00</td><td>R 50.00</td></tr>
+          <tr><td>Age 22 to 24</td><td>R 113.00</td><td>R 130.00</td></tr>
+          <tr><td>Age 25 to 34</td><td>R 140.00</td><td>R 161.00</td></tr>
+          <tr><td>Age 35 to 44</td><td>R 157.00</td><td>R 181.00</td></tr>
+          <tr><td>Age 45 to 54</td><td>R 184.00</td><td>R 212.00</td></tr>
+          <tr><td>Age 55 to 59</td><td>R 420.00</td><td>R 483.00</td></tr>
+          <tr><td>Age 60 to 64</td><td>R 580.00</td><td>R 667.00</td></tr>
+          <tr><td>Age 65 and over</td><td>R 730.00</td><td>R 840.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TRADITIONAL -->
+  <div class="cmp-panel" id="compare-traditional" data-panel="traditional">
+    <div class="cmp-note" style="margin-top:32px;">
+      <strong>Rated per policy.</strong> Every rand limit and claim count below applies per beneficiary per policy per annum. The rating age is determined by the eldest insured person.
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Vertex</th>
+            <th class="hl">Apex</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tgh"><td colspan="3">In-Hospital</td></tr>
+          <tr><td>Gap Cover (additional)</td><td>500%</td><td>500%</td></tr>
+          <tr><td>BMI-Related Procedures (per claim)</td><td><span class="ds">—</span></td><td>R 5 000.00</td></tr>
+          <tr><td>Robotic Surgery (per claim)</td><td><span class="ds">—</span></td><td>R 20 000.00</td></tr>
+          <tr><td>Co-Payments</td><td>Up to OAL</td><td>Up to OAL</td></tr>
+          <tr><td>Penalty Fees (3 per policy per annum)</td><td>R 15 000.00</td><td>R 15 000.00</td></tr>
+          <tr>
+            <td>
+              Sub-Limit Enhancer, per claim for:<br>
+              <span class="lim">&nbsp;&nbsp;&nbsp;· MRI and CT scans<br>
+              &nbsp;&nbsp;&nbsp;· Cochlear implants<br>
+              &nbsp;&nbsp;&nbsp;· Intraocular lenses<br>
+              &nbsp;&nbsp;&nbsp;· Internal prostheses<br>
+              &nbsp;&nbsp;&nbsp;· Transcatheter Aortic Valve Implantation (TAVI) valves<br><br>
+              Any other sub-limit.</span>
+            </td>
+            <td>R 40 000.00<br><br><br><br><br><br><span class="lim">R 2 000.00</span></td>
+            <td>R 40 000.00<br><br><br><br><br><br><span class="lim">R 2 000.00</span></td>
+          </tr>
+          <tr><td>Hospital Account Shortfalls (4 per policy per annum)</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Private Room Upgrade (1 per policy per annum)</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Appliance Shortfall Benefit (per annum)</td><td><span class="ds">—</span></td><td>R 8 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Emergency Room</td></tr>
+          <tr><td>Emergency Room, annual sub-limit per policy</td><td>R 20 000.00</td><td>R 25 000.00</td></tr>
+          <tr><td>Emergency Room, accident (per claim)</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Emergency Room, illness 8 and older (per claim, after hours)</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Emergency Room, illness younger than 8 (per claim)</td><td>R 5 000.00</td><td>R 5 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Consultations &amp; Wellness</td></tr>
+          <tr><td>Specialist Consultations (4 per policy per annum)</td><td><span class="ds">—</span></td><td>R 1 500.00</td></tr>
+          <tr><td>Primary Care Consultations (4 per policy per annum)</td><td><span class="ds">—</span></td><td>R 500.00</td></tr>
+          <tr><td>Preventative Care (2 per policy per annum)</td><td><span class="ds">—</span></td><td>R 1 500.00</td></tr>
+          <tr><td>Trauma Counselling (per policy per annum)</td><td><span class="ds">—</span></td><td>R 10 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Cancer</td></tr>
+          <tr><td>Cancer Co-Payments</td><td>Up to OAL</td><td>Up to OAL</td></tr>
+          <tr><td>Cancer Top-Up</td><td>Up to OAL</td><td>Up to OAL</td></tr>
+          <tr><td>Initial Diagnosis of Cancer ✦ (stage 2+, before age 65)</td><td>R 25 000.00</td><td>R 25 000.00</td></tr>
+          <tr><td>Reconstruction of Affected Breast</td><td><span class="ds">—</span></td><td>Additional 500%</td></tr>
+          <tr><td>Reconstruction of Unaffected Breast</td><td><span class="ds">—</span></td><td>R 40 000.00</td></tr>
+          <tr><td>Breast Prosthesis (sub-limit)</td><td><span class="ds">—</span></td><td>R 4 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Support Benefits</td></tr>
+          <tr><td>Premium Waiver ✦</td><td>6 Months</td><td>6 Months</td></tr>
+          <tr><td>Medical Scheme Premium Waiver ✦, individual (6 months)</td><td><span class="ds">—</span></td><td>R 3 000.00</td></tr>
+          <tr><td>Medical Scheme Premium Waiver ✦, family (6 months)</td><td><span class="ds">—</span></td><td>R 6 000.00</td></tr>
+          <tr><td>Accidental Death ✦</td><td>R 8 000.00</td><td>R 10 000.00</td></tr>
+          <tr class="tgh"><td colspan="3">Monthly Premiums, Per Policy</td></tr>
+          <tr><td>Individual, aged 18 to 54</td><td>R 450.00</td><td>R 550.00</td></tr>
+          <tr><td>Family, aged 18 to 54</td><td>R 560.00</td><td>R 700.00</td></tr>
+          <tr><td>Individual, aged 55 to 64</td><td>R 550.00</td><td>R 650.00</td></tr>
+          <tr><td>Family, aged 55 to 64</td><td>R 700.00</td><td>R 800.00</td></tr>
+          <tr><td>Individual, aged 65 and above</td><td>R 950.00</td><td>R 1 100.00</td></tr>
+          <tr><td>Family, aged 65 and above</td><td>R 1 150.00</td><td>R 1 450.00</td></tr>
+          <tr><td>Additional child (from child 4 onwards)</td><td>R 40.00</td><td>R 50.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ALL FOUR -->
+  <div class="cmp-panel" id="compare-all" data-panel="all">
+    <div class="cmp-note" style="margin-top:32px;">
+      <strong>Read the unit, not just the figure.</strong> Nexus 1 and Nexus 2 limits below are stated per insured person. Vertex and Apex limits are stated per beneficiary per policy. Identical rand amounts are therefore not equivalent across the two families. The one exception is the Medical Scheme Premium Waiver monthly cap, which applies to the policy as a whole on all four plans and is marked as such in the table. Premiums are excluded from this view because they are not calculated on the same basis — use the <a href="#calculator" style="color:var(--cyan-dark);">premium calculator</a> instead.
+    </div>
+    <div class="tbl-wrap">
+      <table class="wide">
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th class="hl">Nexus 1<span class="unit">per person</span></th>
+            <th class="hl">Nexus 2<span class="unit">per person</span></th>
+            <th>Vertex<span class="unit">per policy</span></th>
+            <th>Apex<span class="unit">per policy</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tgh"><td colspan="5">In-Hospital</td></tr>
+          <tr><td>Gap Cover (additional)</td><td>500%</td><td>500%</td><td>500%</td><td>500%</td></tr>
+          <tr><td>BMI-Related Procedures (per claim)</td><td><span class="ds">—</span></td><td>R 5 000.00</td><td><span class="ds">—</span></td><td>R 5 000.00</td></tr>
+          <tr><td>Robotic Surgery (per claim)</td><td><span class="ds">—</span></td><td>R 20 000.00</td><td><span class="ds">—</span></td><td>R 20 000.00</td></tr>
+          <tr><td>Co-Payments</td><td>Up to OAL</td><td>Up to OAL</td><td>Up to OAL</td><td>Up to OAL</td></tr>
+          <tr><td>Penalty Fees (per claim)</td><td>R 15 000.00</td><td>R 15 000.00</td><td>R 15 000.00</td><td>R 15 000.00</td></tr>
+          <tr><td>Penalty Fees, claims per annum</td><td>1</td><td>1</td><td>3</td><td>3</td></tr>
+          <tr><td>Sub-Limit Enhancer, specified items (per claim)</td><td>R 20 000.00</td><td>R 40 000.00</td><td>R 40 000.00</td><td>R 40 000.00</td></tr>
+          <tr><td>Sub-Limit Enhancer, any other sub-limit (per claim)</td><td>R 2 000.00</td><td>R 2 000.00</td><td>R 2 000.00</td><td>R 2 000.00</td></tr>
+          <tr><td>Sub-Limit Enhancer, annual aggregate</td><td>R 20 000.00</td><td>R 40 000.00</td><td><span class="ds">—</span></td><td><span class="ds">—</span></td></tr>
+          <tr><td>Hospital Account Shortfalls (per claim)</td><td>R 2 000.00</td><td>R 2 000.00</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Hospital Account Shortfalls, claims per annum</td><td>2</td><td>2</td><td>4</td><td>4</td></tr>
+          <tr><td>Private Room Upgrade</td><td><span class="ds">—</span></td><td><span class="ds">—</span></td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Appliance Shortfall Benefit (per annum)</td><td><span class="ds">—</span></td><td>R 5 000.00</td><td><span class="ds">—</span></td><td>R 8 000.00</td></tr>
+          <tr class="tgh"><td colspan="5">Emergency Room</td></tr>
+          <tr><td>Emergency Room, annual sub-limit</td><td>R 4 000.00</td><td>R 5 000.00</td><td>R 20 000.00</td><td>R 25 000.00</td></tr>
+          <tr><td>Emergency Room, accident (per claim)</td><td>R 2 000.00</td><td>R 2 500.00</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Emergency Room, illness 8 and older (per claim)</td><td>R 2 000.00</td><td>R 2 500.00</td><td>R 2 500.00</td><td>R 2 500.00</td></tr>
+          <tr><td>Emergency Room, illness younger than 8 (per claim)</td><td>R 4 000.00</td><td>R 5 000.00</td><td>R 5 000.00</td><td>R 5 000.00</td></tr>
+          <tr class="tgh"><td colspan="5">Consultations &amp; Wellness</td></tr>
+          <tr><td>Specialist Consultations (per claim)</td><td><span class="ds">—</span></td><td>R 1 000.00</td><td><span class="ds">—</span></td><td>R 1 500.00</td></tr>
+          <tr><td>Specialist Consultations, claims per annum</td><td><span class="ds">—</span></td><td>2</td><td><span class="ds">—</span></td><td>4</td></tr>
+          <tr><td>Primary Care Consultations (per claim)</td><td><span class="ds">—</span></td><td>R 500.00</td><td><span class="ds">—</span></td><td>R 500.00</td></tr>
+          <tr><td>Primary Care Consultations, claims per annum</td><td><span class="ds">—</span></td><td>2 combined</td><td><span class="ds">—</span></td><td>4</td></tr>
+          <tr><td>Preventative Care (per claim)</td><td>R 1 000.00</td><td>R 1 500.00</td><td><span class="ds">—</span></td><td>R 1 500.00</td></tr>
+          <tr><td>Preventative Care, claims per annum</td><td>1</td><td>1</td><td><span class="ds">—</span></td><td>2</td></tr>
+          <tr><td>Trauma Counselling (per annum)</td><td>R 3 000.00</td><td>R 5 000.00</td><td><span class="ds">—</span></td><td>R 10 000.00</td></tr>
+          <tr class="tgh"><td colspan="5">Cancer</td></tr>
+          <tr><td>Cancer Co-Payments</td><td>Up to OAL</td><td>Up to OAL</td><td>Up to OAL</td><td>Up to OAL</td></tr>
+          <tr><td>Cancer Top-Up</td><td>Up to OAL</td><td>Up to OAL</td><td>Up to OAL</td><td>Up to OAL</td></tr>
+          <tr><td>Initial Diagnosis of Cancer ✦</td><td>R 20 000.00</td><td>R 25 000.00</td><td>R 25 000.00</td><td>R 25 000.00</td></tr>
+          <tr><td>Reconstruction of Affected Breast</td><td><span class="ds">—</span></td><td>Additional 500%</td><td><span class="ds">—</span></td><td>Additional 500%</td></tr>
+          <tr><td>Reconstruction of Unaffected Breast</td><td><span class="ds">—</span></td><td>R 40 000.00</td><td><span class="ds">—</span></td><td>R 40 000.00</td></tr>
+          <tr><td>Breast Prosthesis (sub-limit)</td><td><span class="ds">—</span></td><td>R 4 000.00</td><td><span class="ds">—</span></td><td>R 4 000.00</td></tr>
+          <tr class="tgh"><td colspan="5">Support Benefits</td></tr>
+          <tr><td>Premium Waiver ✦</td><td>6 Months</td><td>6 Months</td><td>6 Months</td><td>6 Months</td></tr>
+          <tr><td>Medical Scheme Premium Waiver ✦, monthly cap<br><span class="lim">Per policy on all four plans, not per insured person.</span></td><td>R 6 000.00</td><td>R 7 500.00</td><td><span class="ds">—</span></td><td>R 6 000.00</td></tr>
+          <tr><td>Accidental Death ✦</td><td>R 10 000.00</td><td>R 15 000.00</td><td>R 8 000.00</td><td>R 10 000.00</td></tr>
+          <tr class="tgh"><td colspan="5">At a Glance</td></tr>
+          <tr><td>Total benefits</td><td>14</td><td>19</td><td>11</td><td>19</td></tr>
+          <tr><td>Overall Annual Limit</td><td>R 223 000.00</td><td>R 223 000.00</td><td>R 223 000.00</td><td>R 223 000.00</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <div class="tcs-block reveal">
     <div class="tcs-title">Terms and Conditions</div>
-    <p class="tcs-line">Information is subject to change. Premiums are reviewed and may be adjusted annually.</p>
+    <p class="tcs-line">Information is subject to change. Premiums are reviewed and may be adjusted annually. The policy wording prevails in the event of any discrepancy.</p>
     <ul class="tcs-list">
-      <li>Rating age is determined by the eldest insured person.</li>
-      <li>Family cover allows for 1 adult and 3 child dependants<sup>*</sup>. Additional child dependants may be added at additional cost.</li>
-      <li>Age category is determined by the oldest insured person.</li>
+      <li>✦ Benefits marked are not subject to the Overall Annual Limit. All other benefits are subject to the OAL of R223 000 from 1 April 2026.</li>
+      <li>On Vertex and Apex, the rating age is determined by the eldest insured person, and limits and claim counts apply per beneficiary per policy per annum.</li>
+      <li>Vertex and Apex family cover allows for 1 adult and 3 child dependants<sup>*</sup>. Additional child dependants may be added at R40 on Vertex and R50 on Apex.</li>
+      <li>On Nexus 1 and Nexus 2, a separate premium is charged for each insured person, with no distinction between the principal member and an adult dependant. Every limit and claim count applies per insured person per annum unless the benefit states otherwise; the Medical Scheme Premium Waiver is capped per policy.</li>
+      <li>Emergency Room illness claims are after hours only for beneficiaries older than 8. The higher per-claim figure applies to beneficiaries younger than 8.</li>
+      <li>Costs must be incurred within the borders of South Africa, from a registered medical professional with a valid practice number issued by the HPCSA.</li>
       <li><sup>*</sup> Any dependant covered on either the principal or adult dependant medical aid up to the age of 21.<sup>**</sup></li>
       <li><sup>**</sup> Full-time students covered on either the principal or adult dependant medical aid may be included as a child dependant up to the age of 27.</li>
     </ul>
@@ -518,7 +849,7 @@
   <div class="cta-mid-txt">
     <div class="cta-mid-label">Ready to get covered</div>
     <div class="cta-mid-h">Speak to an Accredited Broker Today</div>
-    <p class="cta-mid-p">A broker will assess your medical aid option, your lifestyle, and your family's needs, then recommend the plan that is right for you.</p>
+    <p class="cta-mid-p">A broker will assess your medical aid option, your household profile, and which rating model works out best for you, then recommend the right plan of the four.</p>
   </div>
   <div class="cta-mid-btns">
     <a href="brokers.html#quote" class="btn-primary">Get a Quote</a>
@@ -539,10 +870,21 @@
     <img src="images/compass_logo.png" alt="Compass Insurance" class="f-compass-logo">
   </div>
   <div class="f-col">
+    <h4>Plans</h4>
+    <ul>
+      <li><a href="nexus-1.html">Nexus 1</a></li>
+      <li><a href="nexus-2.html">Nexus 2</a></li>
+      <li><a href="vertex.html">Vertex</a></li>
+      <li><a href="apex.html">Apex</a></li>
+      <li><a href="gap-cover.html#compare-all">Compare All</a></li>
+    </ul>
+  </div>
+  <div class="f-col">
     <h4>Quick Links</h4>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="gap-cover.html">Gap Cover</a></li>
+      <li><a href="benefits.html">Benefits</a></li>
       <li><a href="brokers.html">Brokers</a></li>
       <li><a href="claims.html">Claims</a></li>
       <li><a href="documents.html">Documents</a></li>

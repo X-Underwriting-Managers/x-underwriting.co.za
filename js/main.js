@@ -169,16 +169,24 @@ if (calcLives && calcAdd) {
   const childCount = () => lives.filter(i => NEXUS_BANDS[i].child).length;
   const adultCount = () => lives.length - childCount();
 
-  // Vertex and Apex family cover is one adult plus up to three child dependants,
-  // and additional children are only rated in the 18 to 54 band. Any other
-  // household has no per-policy equivalent, so we decline to quote one rather
-  // than show a premium that cannot actually be bought.
+  // Vertex and Apex are rated per policy on the eldest life: an individual rate
+  // for a single life, otherwise the family rate. The only household with no
+  // per-policy equivalent at all is one with no adult, since these plans need a
+  // principal member.
   function policyIneligibleReason() {
-    const children = childCount();
-    const adults = adultCount();
-    if (adults === 0) return 'No per-policy equivalent: these plans require an adult principal member.';
-    if (adults > 1) return 'No per-policy equivalent: Vertex and Apex family cover is one adult plus up to three child dependants.';
-    if (children > 3 && eldestTier() !== '18-54') return 'No per-policy equivalent: additional child dependants are not rated above age 54.';
+    if (adultCount() === 0) return 'No per-policy equivalent: Vertex and Apex require an adult principal member.';
+    return null;
+  }
+
+  // Caveats worth surfacing that do not invalidate the quote
+  function policyCaveat() {
+    if (policyIneligibleReason()) return null;
+    if (childCount() > 3 && eldestTier() !== '18-54') {
+      return 'Additional child dependants beyond three are not rated above age 54, so the figure shown is the family rate alone.';
+    }
+    if (adultCount() > 1) {
+      return 'Rated as family cover on the eldest life. Confirm the dependant structure with your broker.';
+    }
     return null;
   }
 
@@ -186,9 +194,10 @@ if (calcLives && calcAdd) {
     if (policyIneligibleReason()) return null;
     const rates = POLICY_RATES[plan];
     const tier = eldestTier();
-    const children = childCount();
-    if (children === 0) return rates[tier].ind;
-    return rates[tier].fam + Math.max(0, children - 3) * rates.child;
+    if (lives.length === 1) return rates[tier].ind;
+    // Additional-child rates are only published for the 18 to 54 band
+    const extra = tier === '18-54' ? Math.max(0, childCount() - 3) * rates.child : 0;
+    return rates[tier].fam + extra;
   }
 
   function renderLives() {
@@ -247,13 +256,14 @@ if (calcLives && calcAdd) {
     const basis = document.getElementById('calcPolicyBasis');
     if (basis) {
       const tierLabel = { '18-54': '18 to 54', '55-64': '55 to 64', '65+': '65 and over' }[eldestTier()];
-      basis.textContent = reason ? '' : (childCount() === 0 ? 'individual' : 'family') + ', ' + tierLabel;
+      basis.textContent = reason ? '' : (lives.length === 1 ? 'individual' : 'family') + ', ' + tierLabel;
     }
 
+    const message = reason || policyCaveat();
     const note = document.getElementById('calcPolicyNote');
     if (note) {
-      note.textContent = reason || '';
-      note.style.display = reason ? 'block' : 'none';
+      note.textContent = message || '';
+      note.style.display = message ? 'block' : 'none';
     }
   }
 

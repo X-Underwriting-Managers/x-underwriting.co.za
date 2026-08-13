@@ -169,12 +169,18 @@ if (calcLives && calcAdd) {
   const childCount = () => lives.filter(i => NEXUS_BANDS[i].child).length;
   const adultCount = () => lives.length - childCount();
 
-  // Vertex and Apex are rated per policy on the eldest life: an individual rate
-  // for a single life, otherwise the family rate. The only household with no
-  // per-policy equivalent at all is one with no adult, since these plans need a
-  // principal member.
+  // Vertex and Apex are rated per policy on the eldest life: the individual rate
+  // for a single life, otherwise the family rate. Family cover is the principal
+  // member plus one adult dependant and up to three children. Extra children add
+  // to the premium; a third adult cannot be added at all.
+  const MAX_POLICY_ADULTS = 2;
+
   function policyIneligibleReason() {
-    if (adultCount() === 0) return 'No per-policy equivalent: Vertex and Apex require an adult principal member.';
+    const adults = adultCount();
+    if (adults === 0) return 'No per-policy equivalent: Vertex and Apex require an adult principal member.';
+    if (adults > MAX_POLICY_ADULTS) {
+      return 'No per-policy equivalent: Vertex and Apex family cover is the principal member plus one adult dependant. Further adults cannot be added to the policy.';
+    }
     return null;
   }
 
@@ -183,9 +189,6 @@ if (calcLives && calcAdd) {
     if (policyIneligibleReason()) return null;
     if (childCount() > 3 && eldestTier() !== '18-54') {
       return 'Additional child dependants beyond three are not rated above age 54, so the figure shown is the family rate alone.';
-    }
-    if (adultCount() > 1) {
-      return 'Rated as family cover on the eldest life. Confirm the dependant structure with your broker.';
     }
     return null;
   }

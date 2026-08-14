@@ -104,7 +104,7 @@ body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; 
   </div>
   <div class="pp-def">
     <p class="pp-def-term">De-identified Information</p>
-    <p class="pp-def-body">Information from which all personal identifiers have been removed such that the individual cannot reasonably be re-identified. De-identified information is no longer considered personal information under POPIA and may be used for analytical, statistical, research, and machine learning purposes.</p>
+    <p class="pp-def-body">Information from which all personal identifiers have been irreversibly removed such that the individual cannot reasonably be re-identified. De-identified information is no longer considered personal information under POPIA and may be used for analytical, statistical, actuarial and research purposes.</p>
   </div>
   <div class="pp-def">
     <p class="pp-def-term">Processing</p>
@@ -113,6 +113,10 @@ body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; 
   <div class="pp-def">
     <p class="pp-def-term">Responsible Party</p>
     <p class="pp-def-body">X Underwriting Managers (Pty) Ltd, as the entity that determines the purpose of and means for processing your personal information.</p>
+  </div>
+  <div class="pp-def">
+    <p class="pp-def-term">Operator</p>
+    <p class="pp-def-body">A person or organisation that processes personal information for us in terms of a contract or mandate, without coming under our direct authority. An operator may only process your information on our instructions, must treat it as confidential, and may not use it for its own purposes.</p>
   </div>
   <div class="pp-def">
     <p class="pp-def-term">Data Subject</p>
@@ -178,8 +182,12 @@ body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; 
     <li>For internal record keeping and business administration</li>
   </ul>
   <div class="pp-note">
-    <p class="pp-note-label">De-identified data &amp; machine learning</p>
-    <p class="pp-note-body">We may use de-identified, aggregated data — from which all personal identifiers have been irreversibly removed — for analytical, statistical, actuarial, research, and machine learning purposes. This includes training models to improve our underwriting processes, claims assessment, fraud detection, service design, and operational efficiency. Such de-identified data is not subject to POPIA's restrictions. We will never attempt to re-identify de-identified data.</p>
+    <p class="pp-note-label">Our own analytics</p>
+    <p class="pp-note-body">We use de-identified, aggregated data, from which all personal identifiers have been irreversibly removed, for analytical, statistical, actuarial and research purposes, and to develop and improve our own models for underwriting, claims assessment, fraud detection and service design.</p>
+  </div>
+  <div class="pp-note">
+    <p class="pp-note-label">Artificial intelligence used to administer your policy</p>
+    <p class="pp-note-body">We also use artificial intelligence tools supplied by third party operators to assist us with the day to day administration of your policy and claims. Where these tools process information that identifies you, they do so only on our instructions and under a written agreement that prohibits the operator from using your information for its own purposes, including training its models, and that requires the operator to impose the same obligations on anyone it appoints to assist it. Where such an operator is located outside South Africa, we transfer your information in accordance with section 72 of POPIA. We rely primarily on that binding agreement, which provides a level of protection substantially similar to that required by POPIA, and additionally on your consent where you have given it. Decisions affecting your cover, your premium or your claim are made by a suitably qualified person and never by automated means alone.</p>
   </div>
 </div>
 
@@ -226,16 +234,49 @@ body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; 
   <p class="cp-slabel">07 — Storage &amp; Retention</p>
   <h2 class="cp-sh2">How We Store &amp; Retain Your Information</h2>
   <p class="cp-p">Your personal information is stored on secure servers in controlled environments, protected through appropriate physical, electronic and administrative safeguards.</p>
-  <p class="cp-p">We retain your personal information only for as long as is necessary to fulfil the purposes for which it was collected, including:</p>
-  <ul class="pp-list">
-    <li>For as long as your policy is active and for a reasonable period thereafter</li>
-    <li>To comply with legal and regulatory record-keeping requirements under applicable insurance and financial services legislation</li>
-    <li>To resolve disputes, enforce agreements and defend legal claims</li>
-  </ul>
-  <p class="cp-p" style="margin-top:1rem;">When your information is no longer required, we will securely delete or de-identify it in accordance with our data retention schedule.</p>
+  <p class="cp-p">We retain your personal information only for as long as is necessary to fulfil the purposes for which it was collected, and to meet the record-keeping obligations placed on us by law. The periods below are indicative of how long we ordinarily hold each category of information:</p>
+  <div class="pp-cards">
+    <div class="pp-card">
+      <p class="pp-card-label">Policy &amp; Client Records</p>
+      <p class="pp-card-txt">5 years after your policy ends, as required by the FAIS General Code of Conduct.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Records of Advice</p>
+      <p class="pp-card-txt">5 years after the service was rendered, including transaction records and any advice given to you.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Claims &amp; Health Information</p>
+      <p class="pp-card-txt">5 years after the claim is finalised, including medical records and clinical information used to assess it.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Verification Records</p>
+      <p class="pp-card-txt">5 years after our relationship with you ends, as required by the Financial Intelligence Centre Act.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Accounting Records</p>
+      <p class="pp-card-txt">7 years, as required by the Companies Act 71 of 2008.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Telephone Recordings</p>
+      <p class="pp-card-txt">5 years, where we have recorded instructions or advice given over the telephone.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Incomplete Applications</p>
+      <p class="pp-card-txt">12 months from your last interaction, where you began a quote or application but did not complete it.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Website &amp; Cookie Data</p>
+      <p class="pp-card-txt">Up to 26 months for analytics data collected through our website and applications.</p>
+    </div>
+    <div class="pp-card">
+      <p class="pp-card-label">Marketing Preferences</p>
+      <p class="pp-card-txt">For as long as necessary to honour your choice, so that we do not contact you after you have opted out.</p>
+    </div>
+  </div>
+  <p class="cp-p" style="margin-top:1.25rem;">These periods are indicative minimums. We may hold information for longer where a claim, dispute, investigation or legal proceeding is active, or where a longer period is required by law. When your information is no longer required, we will securely delete or de-identify it in accordance with our data retention schedule.</p>
   <div class="pp-note">
     <p class="pp-note-label">Cross-border transfers</p>
-    <p class="pp-note-body">Where personal information is transferred outside South Africa, we will ensure that the recipient country or organisation provides an adequate level of protection, or that appropriate safeguards are in place as required by POPIA section 72.</p>
+    <p class="pp-note-body">Where personal information is transferred outside South Africa, we do so in accordance with section 72 of POPIA. We rely primarily on a binding written agreement with the recipient, which provides a level of protection substantially similar to that required by POPIA and which requires the recipient to impose the same obligations on anyone it appoints to assist it, and additionally on your consent where you have given it.</p>
   </div>
 </div>
 
@@ -247,7 +288,7 @@ body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; 
   <p class="cp-p">Please be aware that no method of electronic transmission or storage is completely secure. Where we have issued you a password to access parts of our website or systems, you are responsible for keeping that password confidential.</p>
   <div class="pp-note">
     <p class="pp-note-label">Security incidents</p>
-    <p class="pp-note-body">In the event of a security compromise that is likely to affect you adversely, we will notify you and the Information Regulator as required by section 22 of POPIA, without undue delay.</p>
+    <p class="pp-note-body">If there are reasonable grounds to believe that your personal information has been accessed or acquired by an unauthorised person, we will notify the Information Regulator and you as soon as reasonably possible after discovering the compromise, as required by section 22 of POPIA. We may delay notifying you only where a public body responsible for the detection or investigation of offences determines that earlier notice would impede a criminal investigation. We will notify you in writing, and our notice will give you enough information to allow you to take protective measures — a description of the possible consequences of the compromise, the measures we have taken or intend to take in response, what we recommend you do to reduce any harm, and the identity of the unauthorised person if we know it. We will also investigate the cause and take steps to prevent a recurrence.</p>
   </div>
 </div>
 
@@ -280,6 +321,10 @@ body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; 
     <div class="pp-right-card">
       <p class="pp-right-title">Right to Complain</p>
       <p class="pp-right-body">Lodge a complaint with the Information Regulator of South Africa if you believe your rights under POPIA have been infringed.</p>
+    </div>
+    <div class="pp-right-card">
+      <p class="pp-right-title">Rights Regarding Automated Decisions</p>
+      <p class="pp-right-body">Not be subject to a decision that has legal consequences for you, or affects you substantially, where that decision is based solely on automated processing. You may make representations about any such decision.</p>
     </div>
   </div>
   <div class="pp-note">
@@ -337,7 +382,7 @@ body { background: #0b1324; color: #bdc8d2; font-family: 'DM Sans', sans-serif; 
 
 <div class="cp-footer">
   <p class="cp-footer-disc">X Underwriting Managers (Pty) Ltd is an Authorised Financial Services Provider, FSP 55527. Underwritten by Compass Insurance Company Limited ("Compass Insure"), a licensed non-life insurer and authorised financial services provider, FSP 12148. Reg No: 2019/410474/07.</p>
-  <p class="cp-footer-reg">POPIA Act 4 of 2013 · PAIA Act 2 of 2000 · FAIS Act 37 of 2002 · Last reviewed March 2026</p>
+  <p class="cp-footer-reg">POPIA Act 4 of 2013 · PAIA Act 2 of 2000 · FAIS Act 37 of 2002 · Last reviewed August 2026</p>
 </div>
 
 </body>

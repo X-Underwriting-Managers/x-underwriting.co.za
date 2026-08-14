@@ -113,7 +113,7 @@ document.querySelectorAll('[data-seg]').forEach(seg => {
 // A link may name the comparison panel it wants, e.g. gap-cover.html#compare-all.
 // The target panel is display:none when the browser resolves the hash, so we
 // activate it and scroll to the section ourselves.
-(function openPanelFromHash() {
+function openPanelFromHash() {
   const id = (location.hash || '').replace('#', '');
   if (!id) return;
   const panel = document.getElementById(id);
@@ -127,7 +127,32 @@ document.querySelectorAll('[data-seg]').forEach(seg => {
 
   const section = panel.closest('section') || panel;
   requestAnimationFrame(() => section.scrollIntoView({ block: 'start' }));
-})();
+}
+
+openPanelFromHash();
+
+// Arriving from another page runs the call above, but the same link clicked
+// while already on this page only changes the fragment — no reload, so re-run
+// it. This also covers the back and forward buttons.
+window.addEventListener('hashchange', openPanelFromHash);
+
+// And if the fragment is already the one being asked for, no hashchange fires
+// at all — so handle the click itself. Matters when the reader has since
+// switched panels with the segmented control and clicks the link to come back.
+document.addEventListener('click', e => {
+  const link = e.target.closest && e.target.closest('a[href*="#compare-"]');
+  if (!link) return;
+
+  const url = new URL(link.href, location.href);
+  if (url.pathname !== location.pathname) return;  // another page — let it navigate
+
+  const panel = document.getElementById(url.hash.replace('#', ''));
+  if (!panel || !panel.classList.contains('cmp-panel')) return;
+
+  e.preventDefault();
+  if (location.hash === url.hash) openPanelFromHash();
+  else location.hash = url.hash;                   // fires hashchange
+});
 
 // ─── Per-life premium calculator ─────────────────────────────────────────────
 // Nexus is rated per life, so the only honest way to show a premium is to add

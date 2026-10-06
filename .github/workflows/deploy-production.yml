@@ -19,6 +19,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Write lead API config
+        # The landing page calls the Xcelerate lead API from the browser, so the
+        # key ends up public in js/lead-config.js; keeping it here keeps it out of git.
+        env:
+          LEAD_API_BASE: ${{ vars.XCELERATE_BASE_API }}
+          LEAD_API_KEY: ${{ secrets.XCELERATE_API_KEY }}
+        run: |
+          if [ -z "$LEAD_API_BASE" ] || [ -z "$LEAD_API_KEY" ]; then
+            echo "::warning::XCELERATE_BASE_API or XCELERATE_API_KEY is not set; broker leads will be emailed instead of sent to the CRM."
+          fi
+          jq -rn --arg base "$LEAD_API_BASE" --arg key "$LEAD_API_KEY" \
+            '"window.XU_LEAD_API = " + ({base: $base, key: $key} | tojson) + ";"' > js/lead-config.js
+
       - name: Configure AWS credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -32,7 +45,8 @@ jobs:
             --exclude ".git/*" \
             --exclude ".github/*" \
             --exclude ".gitignore" \
-            --exclude "aws/*"
+            --exclude "aws/*" \
+            --exclude "docs/*"
 
       - name: Invalidate CloudFront cache
         run: |

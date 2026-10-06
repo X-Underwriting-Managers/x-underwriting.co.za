@@ -1,2 +1,9 @@
 .claude/
 claude_chat.html
+
+# Raw Xcelerate media; only the compressed WebP/MP4 versions are published
+images/xcelerate/*.jpeg
+images/xcelerate/Xcelerate-Highlights.mp4
+
+# Written by the deploy workflows from GitHub environment settings
+js/lead-config.js

@@ -1,0 +1,84 @@
+/* Broker lead form card ("Get a broker walkthrough").
+   Shared by become-a-broker.html (broker-landing.css) and brokers.html
+   (styles.css), so every rule is scoped to .lead-card and the colours it needs
+   that styles.css lacks are set here. Behaviour lives in js/broker-landing.js. */
+.lead-card {
+  --cyan-ink:   #0369A1;
+  --error:      #B91C1C;
+  --text-muted: #475569;
+  background: #FFFFFF; color: #334155;
+  border-radius: 6px; border-top: 3px solid #38BDF8;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.35);
+  padding: 22px 18px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  line-height: 1.5;
+}
+.lead-card a { color: var(--cyan-ink); }
+.lead-card :focus-visible { outline: 3px solid #38BDF8; outline-offset: 2px; border-radius: 2px; }
+.lead-card .ic { width: 18px; height: 18px; flex-shrink: 0; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+.lead-card .btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 48px; padding: 12px 22px;
+  font: 600 15px/1.2 'DM Sans', sans-serif; text-align: center; text-decoration: none;
+  color: #020617; background: #38BDF8;
+  border: 2px solid #38BDF8; border-radius: 4px; cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+.lead-card .btn:hover { background: #0EA5E9; border-color: #0EA5E9; }
+.lead-card .btn-lg { min-height: 52px; padding: 14px 26px; font-size: 16px; }
+.lead-card .btn-block { width: 100%; }
+.lead-card .btn-outline { background: transparent; color: var(--cyan-ink); border-color: var(--cyan-ink); }
+.lead-card .btn-outline:hover { background: #E0F2FE; border-color: var(--cyan-ink); }
+.lead-card .btn[disabled] { opacity: 0.6; cursor: progress; }
+.lead-card .micro { font-size: 13px; color: var(--text-muted); margin-top: 8px; }
+
+.lead-h { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.3; color: #020617; margin-bottom: 6px; }
+.lead-p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
+.lead-card .f-grid { display: grid; gap: 12px; }
+.lead-card .fld { display: flex; flex-direction: column; gap: 5px; }
+.lead-card .fld label { font-size: 13px; font-weight: 600; color: #1E293B; }
+.lead-card .fld .opt { font-weight: 400; color: var(--text-muted); }
+.lead-card .fld input[type=text], .lead-card .fld input[type=tel], .lead-card .fld input[type=email], .lead-card .fld select {
+  width: 100%; min-height: 46px; padding: 10px 12px;
+  font: 400 16px/1.3 'DM Sans', sans-serif; color: #020617;
+  background: #F8FAFC; border: 1px solid #94A3B8; border-radius: 4px;
+  transition: border-color 0.2s, background 0.2s;
+  -webkit-appearance: none; appearance: none;
+}
+.lead-card .fld select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%23475569' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 12px center; padding-right: 34px;
+}
+.lead-card .fld input:focus, .lead-card .fld select:focus { border-color: var(--cyan-ink); background-color: #FFFFFF; outline: 2px solid #38BDF8; outline-offset: 0; }
+.lead-card .fld input::placeholder { color: #64748B; }
+.lead-card .fld.invalid input, .lead-card .fld.invalid select { border-color: var(--error); background-color: #FEF2F2; }
+.lead-card .fld.valid input, .lead-card .fld.valid select { border-color: #15803D; }
+.lead-card .fld-err { font-size: 13px; color: var(--error); min-height: 0; }
+.lead-card .fld-err:empty { display: none; }
+.lead-card .fld-consent { margin: 16px 0 14px; }
+.lead-card .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px !important; font-weight: 400 !important; color: #334155 !important; line-height: 1.5; cursor: pointer; }
+.lead-card .consent input { width: 20px; height: 20px; margin-top: 1px; flex-shrink: 0; accent-color: var(--cyan-ink); }
+.lead-card .form-status { font-size: 14px; color: var(--error); margin-top: 10px; }
+.lead-card .form-status:empty { display: none; }
+.lead-form .micro { text-align: center; }
+.lead-card .form-register { margin-top: 14px; padding-top: 14px; border-top: 1px solid #E2E8F0; text-align: center; font-size: 14px; color: var(--text-muted); }
+.lead-card .form-register a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-weight: 600; color: var(--cyan-ink); text-decoration: none; }
+.lead-card .form-register a:hover { text-decoration: underline; }
+.lead-card .form-register .ic { width: 16px; height: 16px; }
+.lead-card .lead-ref { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text-muted); margin-top: 14px; word-break: break-all; }
+.lead-card .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+.lead-thanks { text-align: center; padding: 12px 0; }
+.lead-thanks:focus { outline: none; }
+.lead-card .thanks-ic {
+  width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 50%;
+  display: grid; place-items: center; background: #DCFCE7; color: #15803D;
+}
+.lead-card .thanks-ic .ic { width: 26px; height: 26px; stroke-width: 2.5; }
+.lead-thanks .btn { margin-top: 8px; }
+
+@media (min-width: 640px) {
+  .lead-card { padding: 28px 26px; }
+  .lead-card .f-grid { grid-template-columns: 1fr 1fr; }
+}

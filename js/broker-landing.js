@@ -1,4 +1,5 @@
-// Broker recruitment landing page (become-a-broker.html).
+// Broker recruitment landing page (become-a-broker.html), plus the same lead
+// form on brokers.html, which has no A/B variant, sticky bar or video.
 // Relies on sendEmail() and escapeHtml() from js/main.js, which loads first.
 
 // ─── Config ──────────────────────────────────────────────────────────────────
@@ -31,6 +32,9 @@ const MIN_FILL_MS = 3000;
 const PAGE_LOADED_AT = Date.now();
 
 const VARIANT = window.XU_VARIANT || { h: '1', s: 'a', source: 'default' };
+// Only the landing page runs the headline test; brokers.html has no variant.
+const ON_LANDING_PAGE = !!window.XU_VARIANT;
+const PAGE_NAME = ON_LANDING_PAGE ? 'Broker landing page' : 'Brokers page';
 
 // ─── Tracking ────────────────────────────────────────────────────────────────
 function loadTags() {
@@ -74,7 +78,7 @@ if (window.XU_CONSENT) window.XU_CONSENT.onAccept(loadTags);
 
 // Sends one event to every tag that is loaded. Every event carries the A/B variant.
 function track(event, params = {}) {
-  const data = { ...params, headline_variant: VARIANT.h, subheadline_variant: VARIANT.s };
+  const data = ON_LANDING_PAGE ? { ...params, headline_variant: VARIANT.h, subheadline_variant: VARIANT.s } : { ...params };
   if (window.gtag) window.gtag('event', event, data);
   if (window.fbq) {
     if (event === 'generate_lead') window.fbq('track', 'Lead', data);
@@ -178,7 +182,7 @@ ${row('First name', d.firstName)}${row('Surname', d.surname)}${row('Mobile', d.m
 ${row('Brokerage', d.brokerage)}${row('FSP number', d.fsp)}${row('Province', d.province)}${row('Best time to call', d.contactTime)}
 ${row('POPIA consent', 'Yes, ' + d.consentAt)}${row('Form', d.formLocation)}
 ${row('CRM submission ID', d.submissionId || 'Not sent to the CRM (lead API not configured), capture manually')}
-${row('Headline variant', VARIANT.h)}${row('Subheadline variant', VARIANT.s)}${row('Variant source', VARIANT.source)}
+${row('Page', PAGE_NAME)}${ON_LANDING_PAGE ? row('Headline variant', VARIANT.h) + row('Subheadline variant', VARIANT.s) + row('Variant source', VARIANT.source) : ''}
 ${ATTR_KEYS.map(k => row(k, attribution[k])).join('')}
 ${row('Landing URL', attribution.landing_url)}${row('Referrer', attribution.referrer)}
 </table>
@@ -204,12 +208,13 @@ function confirmationEmailHtml(d) {
 function prospectMessage(d) {
   const source = ATTR_KEYS.filter(k => attribution[k]).map(k => `${k}=${attribution[k]}`).join(', ');
   return [
-    'Broker landing page enquiry.',
+    `${PAGE_NAME} enquiry.`,
     `Province: ${d.province}.`,
     d.contactTime ? `Best time to call: ${d.contactTime}.` : '',
     `POPIA consent given ${d.consentAt}.`,
     source ? `Source: ${source}.` : '',
-    `Variant: headline ${VARIANT.h}, subheadline ${VARIANT.s}. Form: ${d.formLocation}.`
+    ON_LANDING_PAGE ? `Variant: headline ${VARIANT.h}, subheadline ${VARIANT.s}.` : '',
+    `Form: ${d.formLocation}.`
   ].filter(Boolean).join(' ');
 }
 

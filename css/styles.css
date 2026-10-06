@@ -549,6 +549,8 @@ tbody td:nth-child(2), tbody td:nth-child(3) { font-family: 'DM Mono', monospace
 .why-txt { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 .why-panel .btn-primary { color: var(--white); background: var(--slate-800); }
 .why-panel .btn-primary:hover { background: var(--slate-900); }
+/* Broker lead form (css/lead-form.css) sits on a light background here */
+.become-layout .lead-card { box-shadow: 0 6px 24px rgba(2,6,23,0.08); }
 
 /* ── CONTACT CTA — dark ── */
 #contact {

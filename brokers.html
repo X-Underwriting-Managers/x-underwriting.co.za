@@ -9,8 +9,17 @@
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/consent.css">
+<link rel="stylesheet" href="css/lead-form.css">
 </head>
 <body>
+<!-- Icons used by the broker lead form -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-user-plus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+</svg>
+
 
 <!-- NAV -->
 <nav id="nav">
@@ -192,40 +201,93 @@
       </div>
     </div>
 
-    <div class="why-panel reveal d1">
-      <div class="s-label">Why partner with us</div>
-      <div class="why-pts">
-        <div class="why-pt">
-          <div class="why-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+    <div class="lead-card reveal d1" id="broker-lead">
+      <div class="lead-body">
+        <h2 class="lead-h">Get a broker walkthrough</h2>
+        <p class="lead-p">See our plans and Xcelerate, and learn how to get started with X Gap Cover.</p>
+        <form class="lead-form" novalidate data-loc="brokers_page">
+          <div class="hp" aria-hidden="true">
+            <label for="fCompanyUrl">Leave this field empty</label>
+            <input type="text" id="fCompanyUrl" name="companyUrl" tabindex="-1" autocomplete="off">
           </div>
-          <div>
-            <div class="why-title">Xcelerate Administration</div>
-            <div class="why-txt">A fully digital platform for policy management, client onboarding, and claims tracking.</div>
+          <div class="f-grid">
+            <div class="fld">
+              <label for="fFirst">First name</label>
+              <input id="fFirst" name="firstName" type="text" autocomplete="given-name" required aria-describedby="fFirst-err">
+              <p class="fld-err" id="fFirst-err"></p>
+            </div>
+            <div class="fld">
+              <label for="fSurname">Surname</label>
+              <input id="fSurname" name="surname" type="text" autocomplete="family-name" required aria-describedby="fSurname-err">
+              <p class="fld-err" id="fSurname-err"></p>
+            </div>
+            <div class="fld">
+              <label for="fMobile">Mobile number</label>
+              <input id="fMobile" name="mobile" type="tel" inputmode="tel" autocomplete="tel" placeholder="082 123 4567" required aria-describedby="fMobile-err">
+              <p class="fld-err" id="fMobile-err"></p>
+            </div>
+            <div class="fld">
+              <label for="fEmail">Email</label>
+              <input id="fEmail" name="email" type="email" inputmode="email" autocomplete="email" required aria-describedby="fEmail-err">
+              <p class="fld-err" id="fEmail-err"></p>
+            </div>
+            <div class="fld">
+              <label for="fBrokerage">Brokerage name</label>
+              <input id="fBrokerage" name="brokerage" type="text" autocomplete="organization" required aria-describedby="fBrokerage-err">
+              <p class="fld-err" id="fBrokerage-err"></p>
+            </div>
+            <div class="fld">
+              <label for="fFsp">FSP number <span class="opt">(if handy)</span></label>
+              <input id="fFsp" name="fsp" type="text" inputmode="numeric" autocomplete="off" aria-describedby="fFsp-err">
+              <p class="fld-err" id="fFsp-err"></p>
+            </div>
+            <div class="fld">
+              <label for="fProvince">Province</label>
+              <select id="fProvince" name="province" required aria-describedby="fProvince-err">
+                <option value="">Select</option>
+                <option>Eastern Cape</option>
+                <option>Free State</option>
+                <option>Gauteng</option>
+                <option>KwaZulu-Natal</option>
+                <option>Limpopo</option>
+                <option>Mpumalanga</option>
+                <option>North West</option>
+                <option>Northern Cape</option>
+                <option>Western Cape</option>
+              </select>
+              <p class="fld-err" id="fProvince-err"></p>
+            </div>
+            <div class="fld">
+              <label for="fTime">Best time to call <span class="opt">(optional)</span></label>
+              <select id="fTime" name="contactTime">
+                <option value="">Any time</option>
+                <option>Morning (8am to 11am)</option>
+                <option>Midday (11am to 2pm)</option>
+                <option>Afternoon (2pm to 5pm)</option>
+              </select>
+            </div>
           </div>
-        </div>
-        <div class="why-pt">
-          <div class="why-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <div class="fld fld-consent">
+            <label class="consent">
+              <input type="checkbox" id="fConsent" name="consent" required aria-describedby="fConsent-err">
+              <span>I agree that X Underwriting Managers may use these details to contact me about becoming an accredited broker, as set out in the <a href="popia-privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+            </label>
+            <p class="fld-err" id="fConsent-err"></p>
           </div>
-          <div>
-            <div class="why-title">Dedicated Training</div>
-            <div class="why-txt">Structured training ensures you understand every benefit, limit, and exclusion in our product suite before selling.</div>
-          </div>
-        </div>
-        <div class="why-pt">
-          <div class="why-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
-          </div>
-          <div>
-            <div class="why-title">Broker Support Desk</div>
-            <div class="why-txt">Our team assists with queries, new business applications, and claims at every step of the way.</div>
-          </div>
-        </div>
+          <button type="submit" class="btn btn-lg btn-block">Get a Walkthrough</button>
+          <p class="micro">No obligation.</p>
+          <p class="form-status" role="alert"></p>
+          <p class="form-register">Ready to register? <a href="https://xcelerate.x-underwriting.co.za/register" target="_blank" rel="noopener" data-track="register_click" data-loc="brokers_form">Register on Xcelerate <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
+        </form>
       </div>
-      <div class="why-panel-btns">
-        <a href="broker-registration.html" class="btn-primary">Register as a Broker</a>
-        <a href="https://calendly.com/ceazare-x-underwriting/30min" target="_blank" rel="noopener noreferrer" class="btn-outline">Schedule a Demo</a>
+      <div class="lead-thanks" hidden tabindex="-1">
+        <div class="thanks-ic" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg></div>
+        <h2 class="lead-h">Thank you, <span data-first-name></span>. Your details are with our broker team.</h2>
+        <p class="lead-p">We'll contact you to walk you through our plans and Xcelerate.</p>
+        <p class="lead-p">Can't wait? Book a time that suits you.</p>
+        <a href="https://calendly.com/ceazare-x-underwriting/30min" target="_blank" rel="noopener" class="btn btn-lg btn-block" data-track="demo_click" data-loc="thank_you"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg>Book a demo of Xcelerate</a>
+        <a href="https://xcelerate.x-underwriting.co.za/register" target="_blank" rel="noopener" class="btn btn-lg btn-block btn-outline" data-track="register_click" data-loc="thank_you"><svg class="ic" aria-hidden="true"><use href="#i-user-plus"/></svg>Ready to register? Register now</a>
+        <p class="lead-ref" hidden>Your reference: <span data-ref></span></p>
       </div>
     </div>
   </div>
@@ -329,6 +391,9 @@
 
 <script src="js/consent.js"></script>
 <script src="js/main.js"></script>
+<!-- Written at deploy time from GitHub environment settings; absent locally -->
+<script src="js/lead-config.js"></script>
+<script src="js/broker-landing.js"></script>
 <script>
 async function handleQuoteForm(e) {
   e.preventDefault();

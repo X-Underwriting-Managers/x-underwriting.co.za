@@ -1,0 +1,54 @@
+/* Cookie consent banner (js/consent.js). Self-contained so it works on both
+   styles.css pages and the broker landing page. */
+.xu-consent {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10000;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 20px;
+  background: #1E293B;
+  color: #CBD5E1;
+  border: 1px solid rgba(56,189,248,0.35);
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(2,6,23,0.35);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+.xu-consent[hidden] { display: none; }
+
+.xu-consent-txt { flex: 1 1 320px; margin: 0; }
+.xu-consent-txt a { color: #38BDF8; text-decoration: underline; text-underline-offset: 2px; }
+.xu-consent-txt a:hover { color: #FFFFFF; }
+
+.xu-consent-btns { display: flex; gap: 10px; flex: 0 0 auto; }
+
+/* Accept and decline get equal weight so declining is as easy as accepting */
+.xu-consent-btn {
+  min-width: 104px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: 1px solid #38BDF8;
+  background: transparent;
+  color: #FFFFFF;
+  font: 600 0.875rem/1 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.xu-consent-btn:hover { background: rgba(56,189,248,0.12); }
+.xu-consent-btn-p { background: #38BDF8; color: #020617; }
+.xu-consent-btn-p:hover { background: #FFFFFF; border-color: #FFFFFF; }
+.xu-consent-btn:focus-visible { outline: 2px solid #FFFFFF; outline-offset: 2px; }
+
+@media (max-width: 520px) {
+  .xu-consent { left: 12px; right: 12px; bottom: 12px; padding: 16px; }
+  .xu-consent-btns { width: 100%; }
+  .xu-consent-btn { flex: 1; }
+}

@@ -40,6 +40,26 @@ if (burger && mobileMenu) {
   }));
 }
 
+// Plan pages: mark the in-page menu link for the section in view. Documents sit
+// at the foot of the schedule, so pick the target nearest the line, not menu order.
+const planSubnav = document.querySelector('.plan-subnav');
+if (planSubnav) {
+  const entries = Array.from(planSubnav.querySelectorAll('a[href^="#"]'))
+    .map(link => ({ link, target: document.querySelector(link.getAttribute('href')) }))
+    .filter(e => e.target);
+  const markActive = () => {
+    const line = planSubnav.getBoundingClientRect().bottom + 24;
+    let current = null;
+    entries.forEach(e => {
+      const top = e.target.getBoundingClientRect().top;
+      if (top <= line && (!current || top > current.top)) current = { link: e.link, top };
+    });
+    entries.forEach(e => e.link.classList.toggle('active', !!current && e.link === current.link));
+  };
+  window.addEventListener('scroll', markActive, { passive: true });
+  markActive();
+}
+
 // Benefits show more / show less toggle
 const benefitsGrid = document.getElementById('benefitsGrid');
 const benefitsToggle = document.getElementById('benefitsToggle');
@@ -158,7 +178,7 @@ document.addEventListener('click', e => {
   else location.hash = url.hash;                   // fires hashchange
 });
 
-// ─── Per-life premium calculator ─────────────────────────────────────────────
+// ─── Premiums: shared by the calculator and the household examples ───────────
 // Nexus is rated per life, so the only honest way to show a premium is to add
 // up the actual lives on the policy. Figures mirror the current rate tables.
 const NEXUS_BANDS = [
@@ -180,57 +200,58 @@ const POLICY_RATES = {
 const TIER_ORDER = ['18-54', '55-64', '65+'];
 const MAX_LIVES = 8;
 
+// Family cover is the principal member plus one adult dependant and up to three
+// children. Extra children add to the premium; a third adult cannot be added at all.
+const MAX_POLICY_ADULTS = 2;
+
+// A household is a list of NEXUS_BANDS indexes, one per life
+const rand = n => 'R' + n.toLocaleString('en-ZA').replace(/,/g, ' ');
+
+const eldestTier = lives => lives
+  .map(i => NEXUS_BANDS[i].tier)
+  .reduce((a, b) => (TIER_ORDER.indexOf(b) > TIER_ORDER.indexOf(a) ? b : a), '18-54');
+
+const nexusTotal = (lives, key) => lives.reduce((sum, i) => sum + NEXUS_BANDS[i][key], 0);
+
+const childCount = lives => lives.filter(i => NEXUS_BANDS[i].child).length;
+const adultCount = lives => lives.length - childCount(lives);
+
+function policyIneligibleReason(lives) {
+  const adults = adultCount(lives);
+  if (adults === 0) return 'No per-policy equivalent: Vertex and Apex require an adult principal member.';
+  if (adults > MAX_POLICY_ADULTS) {
+    return 'No per-policy equivalent: Vertex and Apex family cover is the principal member plus one adult dependant. Further adults cannot be added to the policy.';
+  }
+  return null;
+}
+
+// Caveats worth surfacing that do not invalidate the quote
+function policyCaveat(lives) {
+  if (policyIneligibleReason(lives)) return null;
+  if (childCount(lives) > 3 && eldestTier(lives) !== '18-54') {
+    return 'Additional child dependants beyond three are not rated above age 54, so the figure shown is the family rate alone.';
+  }
+  return null;
+}
+
+// The individual rate for a single life, otherwise the family rate
+function policyTotal(lives, plan) {
+  if (policyIneligibleReason(lives)) return null;
+  const rates = POLICY_RATES[plan];
+  const tier = eldestTier(lives);
+  if (lives.length === 1) return rates[tier].ind;
+  // Additional-child rates are only published for the 18 to 54 band
+  const extra = tier === '18-54' ? Math.max(0, childCount(lives) - 3) * rates.child : 0;
+  return rates[tier].fam + extra;
+}
+
+// ─── Per-life premium calculator ─────────────────────────────────────────────
 const calcLives = document.getElementById('calcLives');
 const calcAdd = document.getElementById('calcAdd');
 
 if (calcLives && calcAdd) {
-  // One adult plus two children — the profile both rating models express cleanly
+  // One adult plus two children: the profile both rating models express cleanly
   let lives = [3, 0, 0];
-
-  const rand = n => 'R' + n.toLocaleString('en-ZA').replace(/,/g, ' ');
-
-  const eldestTier = () => lives
-    .map(i => NEXUS_BANDS[i].tier)
-    .reduce((a, b) => (TIER_ORDER.indexOf(b) > TIER_ORDER.indexOf(a) ? b : a), '18-54');
-
-  const nexusTotal = key => lives.reduce((sum, i) => sum + NEXUS_BANDS[i][key], 0);
-
-  const childCount = () => lives.filter(i => NEXUS_BANDS[i].child).length;
-  const adultCount = () => lives.length - childCount();
-
-  // Vertex and Apex are rated per policy on the eldest life: the individual rate
-  // for a single life, otherwise the family rate. Family cover is the principal
-  // member plus one adult dependant and up to three children. Extra children add
-  // to the premium; a third adult cannot be added at all.
-  const MAX_POLICY_ADULTS = 2;
-
-  function policyIneligibleReason() {
-    const adults = adultCount();
-    if (adults === 0) return 'No per-policy equivalent: Vertex and Apex require an adult principal member.';
-    if (adults > MAX_POLICY_ADULTS) {
-      return 'No per-policy equivalent: Vertex and Apex family cover is the principal member plus one adult dependant. Further adults cannot be added to the policy.';
-    }
-    return null;
-  }
-
-  // Caveats worth surfacing that do not invalidate the quote
-  function policyCaveat() {
-    if (policyIneligibleReason()) return null;
-    if (childCount() > 3 && eldestTier() !== '18-54') {
-      return 'Additional child dependants beyond three are not rated above age 54, so the figure shown is the family rate alone.';
-    }
-    return null;
-  }
-
-  function policyTotal(plan) {
-    if (policyIneligibleReason()) return null;
-    const rates = POLICY_RATES[plan];
-    const tier = eldestTier();
-    if (lives.length === 1) return rates[tier].ind;
-    // Additional-child rates are only published for the 18 to 54 band
-    const extra = tier === '18-54' ? Math.max(0, childCount() - 3) * rates.child : 0;
-    return rates[tier].fam + extra;
-  }
 
   function renderLives() {
     calcLives.innerHTML = '';
@@ -276,22 +297,22 @@ if (calcLives && calcAdd) {
       const el = document.getElementById(id);
       if (el) el.textContent = value;
     };
-    set('calcN1', rand(nexusTotal('n1')));
-    set('calcN2', rand(nexusTotal('n2')));
+    set('calcN1', rand(nexusTotal(lives, 'n1')));
+    set('calcN2', rand(nexusTotal(lives, 'n2')));
 
-    const reason = policyIneligibleReason();
-    const vertex = policyTotal('vertex');
-    const apex = policyTotal('apex');
+    const reason = policyIneligibleReason(lives);
+    const vertex = policyTotal(lives, 'vertex');
+    const apex = policyTotal(lives, 'apex');
     set('calcVertex', vertex === null ? '—' : rand(vertex));
     set('calcApex', apex === null ? '—' : rand(apex));
 
     const basis = document.getElementById('calcPolicyBasis');
     if (basis) {
-      const tierLabel = { '18-54': '18 to 54', '55-64': '55 to 64', '65+': '65 and over' }[eldestTier()];
+      const tierLabel = { '18-54': '18 to 54', '55-64': '55 to 64', '65+': '65 and over' }[eldestTier(lives)];
       basis.textContent = reason ? '' : (lives.length === 1 ? 'individual' : 'family') + ', ' + tierLabel;
     }
 
-    const message = reason || policyCaveat();
+    const message = reason || policyCaveat(lives);
     const note = document.getElementById('calcPolicyNote');
     if (note) {
       note.textContent = message || '';
@@ -311,6 +332,70 @@ if (calcLives && calcAdd) {
   });
 
   render();
+}
+
+// ─── Worked household examples ───────────────────────────────────────────────
+// Advisers rarely run a calculator mid-conversation, so a few common households
+// are priced up front. They use the calculator's own maths, so they cannot drift.
+const HOUSEHOLDS = [
+  {
+    name: 'Young family',
+    who: 'Two adults aged 30, two children',
+    lives: [2, 2, 0, 0],
+    why: 'Everyone is in a low age band, so per-life pricing stays well below a family rate.'
+  },
+  {
+    name: 'Established family',
+    who: 'Two adults aged 48, three children',
+    lives: [4, 4, 0, 0, 0],
+    why: 'Both adults are still under 55, so Nexus usually remains the cheaper model.'
+  },
+  {
+    name: 'Couple nearing retirement',
+    who: 'Two adults aged 58',
+    lives: [5, 5],
+    why: 'Both lives move into the 55 to 59 band. One family rate now covers the pair for less.'
+  },
+  {
+    name: 'Retired couple',
+    who: 'Two adults aged 67',
+    lives: [7, 7],
+    why: 'Two lives at the 65 and over rate cost more than one per-policy family rate.'
+  }
+];
+
+// The lower premium in each pairing is shaded: Nexus 1 with Vertex, Nexus 2 with Apex
+const HOUSEHOLD_PAIRS = [['n1', 'vertex'], ['n2', 'apex']];
+
+const householdTables = document.querySelectorAll('[data-households]');
+if (householdTables.length) {
+  const rows = HOUSEHOLDS.map(h => {
+    const premium = {
+      n1: nexusTotal(h.lives, 'n1'),
+      n2: nexusTotal(h.lives, 'n2'),
+      vertex: policyTotal(h.lives, 'vertex'),
+      apex: policyTotal(h.lives, 'apex')
+    };
+    const win = new Set();
+    HOUSEHOLD_PAIRS.forEach(([a, b]) => {
+      if (premium[a] < premium[b]) win.add(a);
+      else if (premium[b] < premium[a]) win.add(b);
+    });
+    const cell = key => '<td' + (win.has(key) ? ' class="win"' : '') + '>' + rand(premium[key]) + '</td>';
+    return '<tr><td>' + h.name + '<span class="hh-who">' + h.who + '</span><span class="hh-why">' + h.why + '</span></td>' +
+      cell('n1') + cell('n2') + cell('vertex') + cell('apex') + '</tr>';
+  }).join('');
+
+  const html =
+    '<table class="hh"><thead><tr>' +
+    '<th>Household</th>' +
+    '<th>Nexus 1<span class="unit">per life</span></th>' +
+    '<th>Nexus 2<span class="unit">per life</span></th>' +
+    '<th>Vertex<span class="unit">per policy</span></th>' +
+    '<th>Apex<span class="unit">per policy</span></th>' +
+    '</tr></thead><tbody>' + rows + '</tbody></table>';
+
+  householdTables.forEach(el => { el.innerHTML = html; });
 }
 
 // ─── Email API ───────────────────────────────────────────────────────────────

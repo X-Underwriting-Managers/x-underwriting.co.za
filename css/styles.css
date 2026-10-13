@@ -1280,8 +1280,109 @@ table.price tbody td:nth-child(4) {
 }
 .family-plan-b { font-size: 11px; color: var(--slate-400); font-family: 'DM Mono', monospace; }
 
+/* ── Adviser reference blocks ── */
+/* Sticky in-page menu under the plan hero, so waiting periods and documents stay one tap away */
+.plan-subnav {
+  position: sticky; top: 68px; z-index: 150; height: 56px;
+  background: var(--white); border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 14px rgba(2, 6, 23, 0.07);
+}
+.plan-subnav-in {
+  display: flex; align-items: stretch; gap: 30px;
+  height: 100%; padding: 0 60px;
+  overflow-x: auto; scrollbar-width: none;
+}
+.plan-subnav-in::-webkit-scrollbar { display: none; }
+.plan-subnav-name {
+  display: flex; align-items: center; padding-right: 26px;
+  border-right: 1px solid var(--border); white-space: nowrap;
+  font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 13px; color: var(--text-head);
+}
+.plan-subnav a {
+  display: flex; align-items: center; white-space: nowrap;
+  font-size: 14px; font-weight: 500; color: var(--slate-600); text-decoration: none;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.plan-subnav a:hover { color: var(--cyan-dark); }
+.plan-subnav a.active { color: var(--cyan-dark); border-bottom-color: var(--cyan-dark); }
+.plan-subnav a.plan-subnav-btn {
+  margin: 10px 0 10px auto; padding: 0 16px; border: 1px solid var(--cyan-dark);
+  border-radius: 3px; color: var(--cyan-dark); font-weight: 600; font-size: 13px;
+}
+.plan-subnav a.plan-subnav-btn:hover { background: var(--cyan-dark); color: var(--white); }
+.plan-subnav a.plan-subnav-btn.active { background: #f0f9ff; border-bottom-color: var(--cyan-dark); }
+/* Clear the fixed nav and the sticky menu when jumping to a section */
+body:has(.plan-subnav) section[id],
+body:has(.plan-subnav) .sub-h,
+body:has(.plan-subnav) .plan-docs { scroll-margin-top: 136px; }
+
+/* Sub-heading inside a section; also an anchor target below the fixed nav */
+.sub-h {
+  font-size: 17px; font-weight: 600; color: var(--text-head);
+  margin: 56px 0 8px; scroll-margin-top: 84px;
+}
+.sub-p { font-size: 14px; color: var(--text-muted); line-height: 1.7; max-width: 640px; }
+.sub-foot { font-size: 12px; color: var(--text-muted); line-height: 1.7; margin-top: 14px; max-width: 760px; }
+.sub-foot a { color: var(--cyan-dark); }
+
+/* The annual total leads a limit; the per-claim cap follows it */
+table.sched td strong { color: var(--text-head); font-weight: 600; }
+.per-claim {
+  display: block; margin-top: 3px;
+  font-family: 'DM Mono', monospace; font-size: 11px; color: var(--slate-500);
+}
+
+/* Waiting periods: two notes side by side */
+.wp-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 18px; }
+
+/* Which rating model usually costs less */
+.rot-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+.rot-card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 3px; padding: 22px 22px 20px;
+}
+.rot-who {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate-500);
+}
+.rot-verdict {
+  font-family: 'Orbitron', sans-serif; font-weight: 700;
+  font-size: 14px; color: var(--text-head); margin: 10px 0 8px; line-height: 1.4;
+}
+.rot-verdict.life { color: #075985; }
+.rot-verdict.policy { color: #0e7490; }
+.rot-x { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
+
+/* Worked household examples, rendered by main.js from the rate tables */
+table.hh tbody td:nth-child(n+2) {
+  font-family: 'DM Mono', monospace; font-size: 13px;
+  color: var(--slate-700); white-space: nowrap; vertical-align: middle;
+}
+table.hh tbody td.win { color: var(--cyan-dark); font-weight: 600; background: #f0f9ff; }
+table.hh thead th { white-space: nowrap; }
+table.hh .unit {
+  display: block; font-size: 9px; letter-spacing: 0.06em;
+  color: var(--slate-400); text-transform: none; margin-top: 2px;
+}
+table.hh .hh-who {
+  display: block; margin-top: 3px;
+  font-size: 12px; font-weight: 500; color: var(--slate-600);
+}
+table.hh .hh-why {
+  display: block; margin-top: 2px;
+  font-size: 12px; font-weight: 400; color: var(--text-muted); line-height: 1.55;
+}
+table.hh tbody td:first-child { min-width: 260px; }
+
+/* Plan documents at the foot of each schedule */
+.plan-docs { scroll-margin-top: 84px; }
+.doc-grid.four { grid-template-columns: repeat(4, 1fr); margin-top: 20px; }
+
 /* ── FOUR-PLAN RESPONSIVE ── */
 @media (max-width: 1100px) {
+  .rot-grid { grid-template-columns: 1fr 1fr; }
+  .doc-grid.four { grid-template-columns: 1fr 1fr; }
   .calc { grid-template-columns: 1fr; }
   .plan-detail-grid { grid-template-columns: 1fr; gap: 44px; }
   .plan-switch { grid-template-columns: 1fr 1fr; }
@@ -1293,6 +1394,33 @@ table.price tbody td:nth-child(4) {
   .ben-cat-wrap[data-view="nexus"] .ben-row { grid-template-columns: 1fr 170px 170px; }
 }
 @media (max-width: 768px) {
+  .wp-notes, .rot-grid, .doc-grid.four { grid-template-columns: 1fr; }
+  .plan-subnav { height: 50px; }
+  .plan-subnav-in { padding: 0 44px 0 20px; gap: 22px; }
+  /* Fade the right edge so the menu reads as scrollable */
+  .plan-subnav::after {
+    content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: 48px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--white) 75%);
+    pointer-events: none;
+  }
+  /* Schedule tables: stack the benefit name above its details on a phone */
+  table.sched thead { display: none; }
+  table.sched tbody td { display: block; }
+  table.sched tbody td:first-child { width: auto; padding-bottom: 2px; }
+  table.sched tbody tr:not(.tgh) td:nth-child(2) { padding-top: 0; }
+  .plan-subnav-name { display: none; }
+  .plan-subnav a { font-size: 13px; }
+  .plan-subnav a.plan-subnav-btn { margin-left: 0; }
+  body:has(.plan-subnav) section[id],
+  body:has(.plan-subnav) .sub-h,
+  body:has(.plan-subnav) .plan-docs { scroll-margin-top: 128px; }
+  /* Keep all four premiums on screen: drop the reasoning, tighten the cells */
+  table.hh tbody td:first-child { min-width: 0; }
+  table.hh thead th, table.hh tbody td { padding: 10px 7px; }
+  table.hh thead th:first-child, table.hh tbody td:first-child { padding-left: 12px; }
+  table.hh thead th { font-size: 10px; letter-spacing: 0.04em; white-space: normal; }
+  table.hh tbody td:nth-child(n+2) { font-size: 12px; }
+  table.hh .hh-why { display: none; }
   .family-grid { grid-template-columns: 1fr; }
   .plan-switch { grid-template-columns: 1fr; }
   .plan-hero-stats { grid-template-columns: 1fr 1fr; }

@@ -1374,6 +1374,7 @@ table.hh tbody td:first-child { min-width: 260px; }
 /* Plan documents at the foot of each schedule */
 .plan-docs { scroll-margin-top: 84px; }
 .doc-grid.four { grid-template-columns: repeat(4, 1fr); margin-top: 20px; }
+.doc-grid.two { grid-template-columns: repeat(2, 1fr); margin-top: 20px; max-width: 760px; }
 
 /* ── FOUR-PLAN RESPONSIVE ── */
 @media (max-width: 1100px) {
@@ -1390,7 +1391,7 @@ table.hh tbody td:first-child { min-width: 260px; }
   .ben-cat-wrap[data-view="nexus"] .ben-row { grid-template-columns: 1fr 170px 170px; }
 }
 @media (max-width: 768px) {
-  .wp-notes, .rot-grid, .doc-grid.four { grid-template-columns: 1fr; }
+  .wp-notes, .rot-grid, .doc-grid.four, .doc-grid.two { grid-template-columns: 1fr; }
   .plan-subnav { height: 50px; }
   .plan-subnav-in { padding: 0 44px 0 20px; gap: 22px; }
   /* Fade the right edge so the menu reads as scrollable */

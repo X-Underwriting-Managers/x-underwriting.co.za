@@ -213,13 +213,8 @@ nav.sc { border-bottom-color: var(--border-ac); }
 .hero-h1 span { color: var(--cyan); }
 .hero-p {
   font-size: clamp(15px, 1.6vw, 18px); font-weight: 400; line-height: 1.7;
-  color: var(--slate-400); max-width: 480px; margin-bottom: 14px;
+  color: var(--slate-400); max-width: 480px; margin-bottom: 36px;
   animation: fadeUp 0.6s ease 0.4s both;
-}
-.hero-disc {
-  font-family: 'DM Mono', monospace; font-size: 11px;
-  color: var(--slate-600); letter-spacing: 0.06em; margin-bottom: 36px;
-  animation: fadeUp 0.6s ease 0.45s both;
 }
 .hero-btns {
   display: flex; gap: 16px; align-items: center;
@@ -662,6 +657,7 @@ footer {
   max-width: 540px; line-height: 1.7; margin-bottom: 28px;
 }
 .page-hero-btns { display: flex; gap: 14px; align-items: center; }
+.page-hero-note { font-size: 12px; color: var(--slate-500); line-height: 1.6; max-width: 540px; margin-top: 22px; }
 
 /* ── PLAN PRICE ── */
 .plan-price {

@@ -201,7 +201,7 @@ const TIER_ORDER = ['18-54', '55-64', '65+'];
 const MAX_LIVES = 8;
 
 // Family cover is the principal member plus one adult dependant and up to three
-// children. Extra children add to the premium; a third adult cannot be added at all.
+// children. Extra children add to the premium; no rate is published for a further adult.
 const MAX_POLICY_ADULTS = 2;
 
 // A household is a list of NEXUS_BANDS indexes, one per life
@@ -220,7 +220,7 @@ function policyIneligibleReason(lives) {
   const adults = adultCount(lives);
   if (adults === 0) return 'No per-policy equivalent: Vertex and Apex require an adult principal member.';
   if (adults > MAX_POLICY_ADULTS) {
-    return 'No per-policy equivalent: Vertex and Apex family cover is the principal member plus one adult dependant. Further adults cannot be added to the policy.';
+    return 'No per-policy figure: Vertex and Apex family rates cover the principal member and one adult dependant. Ask your broker to quote for further adults.';
   }
   return null;
 }

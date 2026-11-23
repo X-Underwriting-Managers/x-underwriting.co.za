@@ -182,20 +182,20 @@ document.addEventListener('click', e => {
 // Nexus is rated per life, so the only honest way to show a premium is to add
 // up the actual lives on the policy. Figures mirror the current rate tables.
 const NEXUS_BANDS = [
-  { label: '0 to 21',     child: true,  tier: '18-54', n1: 30,  n2: 50  },
-  { label: '22 to 24',    child: false, tier: '18-54', n1: 113, n2: 130 },
-  { label: '25 to 34',    child: false, tier: '18-54', n1: 140, n2: 161 },
-  { label: '35 to 44',    child: false, tier: '18-54', n1: 157, n2: 181 },
-  { label: '45 to 54',    child: false, tier: '18-54', n1: 184, n2: 212 },
-  { label: '55 to 59',    child: false, tier: '55-64', n1: 420, n2: 483 },
-  { label: '60 to 64',    child: false, tier: '55-64', n1: 580, n2: 667 },
-  { label: '65 and over', child: false, tier: '65+',   n1: 730, n2: 840 }
+  { label: '0 to 21',     child: true,  tier: '18-54', n1: 32,  n2: 50  },
+  { label: '22 to 24',    child: false, tier: '18-54', n1: 119, n2: 137 },
+  { label: '25 to 34',    child: false, tier: '18-54', n1: 147, n2: 170 },
+  { label: '35 to 44',    child: false, tier: '18-54', n1: 165, n2: 191 },
+  { label: '45 to 54',    child: false, tier: '18-54', n1: 194, n2: 224 },
+  { label: '55 to 59',    child: false, tier: '55-64', n1: 441, n2: 510 },
+  { label: '60 to 64',    child: false, tier: '55-64', n1: 612, n2: 708 },
+  { label: '65 and over', child: false, tier: '65+',   n1: 771, n2: 891 }
 ];
 
 // Vertex and Apex are rated per policy on the eldest life.
 const POLICY_RATES = {
-  vertex: { '18-54': { ind: 450, fam: 560 }, '55-64': { ind: 550, fam: 700 }, '65+': { ind: 950,  fam: 1150 }, child: 40 },
-  apex:   { '18-54': { ind: 550, fam: 700 }, '55-64': { ind: 650, fam: 800 }, '65+': { ind: 1100, fam: 1450 }, child: 50 }
+  vertex: { '18-54': { ind: 471, fam: 583 }, '55-64': { ind: 572, fam: 725 }, '65+': { ind: 1003, fam: 1214 }, child: 35 },
+  apex:   { '18-54': { ind: 570, fam: 739 }, '55-64': { ind: 686, fam: 836 }, '65+': { ind: 1166, fam: 1537 }, child: 50 }
 };
 const TIER_ORDER = ['18-54', '55-64', '65+'];
 const MAX_LIVES = 8;
@@ -225,23 +225,14 @@ function policyIneligibleReason(lives) {
   return null;
 }
 
-// Caveats worth surfacing that do not invalidate the quote
-function policyCaveat(lives) {
-  if (policyIneligibleReason(lives)) return null;
-  if (childCount(lives) > 3 && eldestTier(lives) !== '18-54') {
-    return 'Additional child dependants beyond three are not rated above age 54, so the figure shown is the family rate alone.';
-  }
-  return null;
-}
-
 // The individual rate for a single life, otherwise the family rate
 function policyTotal(lives, plan) {
   if (policyIneligibleReason(lives)) return null;
   const rates = POLICY_RATES[plan];
   const tier = eldestTier(lives);
   if (lives.length === 1) return rates[tier].ind;
-  // Additional-child rates are only published for the 18 to 54 band
-  const extra = tier === '18-54' ? Math.max(0, childCount(lives) - 3) * rates.child : 0;
+  // Each child beyond three adds the additional-child rate, whatever the age band
+  const extra = Math.max(0, childCount(lives) - 3) * rates.child;
   return rates[tier].fam + extra;
 }
 
@@ -312,7 +303,7 @@ if (calcLives && calcAdd) {
       basis.textContent = reason ? '' : (lives.length === 1 ? 'individual' : 'family') + ', ' + tierLabel;
     }
 
-    const message = reason || policyCaveat(lives);
+    const message = reason;
     const note = document.getElementById('calcPolicyNote');
     if (note) {
       note.textContent = message || '';

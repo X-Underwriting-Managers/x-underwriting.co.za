@@ -16,18 +16,18 @@ Structure: [Emotional Dream Outcome] [Functional Benefit] in [Timeframe] Using [
 
 | # | Headline |
 |---|---|
-| 1 | Grow a Book Clients Trust & Win Back Selling Time Using Xcelerate (4 Plans From R113) |
+| 1 | Grow a Book Clients Trust & Win Back Selling Time Using Xcelerate (4 Plans From R119) |
 | 2 | Earn More From Every Medical Aid Client by Quoting Gap Cover Online in Minutes Using Xcelerate (Underwritten by Compass) |
 | 3 | Spend Less Time on Admin & More Time Selling by Onboarding Clients Online in Minutes Using Xcelerate (FSP 55527) |
 | 4 | Become the Adviser Clients Thank When Specialist Bills Arrive, Fit Every Budget Today Using 4 Gap Cover Plans (500% Gap Benefit) |
 | 5 | Sell Gap Cover With Confidence From Your First Client Using Structured Xcelerate Training (Underwritten by Compass, FSP 12148) |
-| 6 | Stop Chasing Insurers & Track Every Claim in Real Time Using Xcelerate (4 Plans From R113) |
-| 7 | Keep Clients for Longer by Covering Their Medical Shortfalls From R113 a Month Using 4 Gap Cover Plans (R223,000 Annual Limit) |
+| 6 | Stop Chasing Insurers & Track Every Claim in Real Time Using Xcelerate (4 Plans From R119) |
+| 7 | Keep Clients for Longer by Covering Their Medical Shortfalls From R119 a Month Using 4 Gap Cover Plans (R223,000 Annual Limit) |
 | 8 | Add a New Income Stream to Your Brokerage & Start Quoting as Soon as You're Accredited Using Xcelerate (FSP 55527) |
 | 9 | Give Every Client the Right Plan & Get a Dedicated Broker Team Behind You Using Xcelerate (4 Plans, 2 Rating Models) |
 | 10 | Build a Book You're Proud Of, Go From Enquiry to Accredited Broker in 3 Simple Steps Using Xcelerate (Compass Underwritten) |
 
-Why variation 1 is live: it leads with the strongest broker outcomes (a growing book, client trust and time back for selling), and the R113 entry price gives instant proof.
+Why variation 1 is live: it leads with the strongest broker outcomes (a growing book, client trust and time back for selling), and the R119 entry price gives instant proof.
 
 Note: the page makes no response time promise. "Within one business day" was removed everywhere at the business's request.
 
@@ -38,7 +38,7 @@ Note: variations 2 and 3 say "in minutes". The brief uses this as an example, bu
 | # | Subheadline | Words |
 |---|---|---|
 | A (main, live) | Tired of paper forms and chasing insurers for claim updates? Xcelerate puts quoting, onboarding and live claims tracking in one digital platform, so you get faster placements, fewer admin hours and more time to sell. | 35 |
-| B (benefit variant) | Losing clients when a specialist bill lands that their medical aid doesn't fully cover? Offer 4 gap cover plans from R113 a month and become the adviser they thank, with a dedicated broker team behind you. | 35 |
+| B (benefit variant) | Losing clients when a specialist bill lands that their medical aid doesn't fully cover? Offer 4 gap cover plans from R119 a month and become the adviser they thank, with a dedicated broker team behind you. | 35 |
 
 Compliance note: the brief's template says "The only ... to guarantee". We left out "the only" and "guarantee". Both are claims we cannot prove, and FAIS advertising rules treat them as misleading unless they are substantiated. The order (pain, mechanism, how it works, time bound benefit) is unchanged.
 
@@ -167,7 +167,7 @@ There are 7, not 8. The brief listed 9 candidates, and 2 merges plus 1 removal t
 |---|---|---|---|
 | 1 | Xcelerate digital platform | Quote, onboard and manage every client on Xcelerate, and win back hours for selling | 14 |
 | 2 | Real time claims tracking | Track every claim in real time with minimal paperwork and know the answer before your client asks | 17 |
-| 3 | 4 plans, 2 rating models | Confidently fit every client's budget with 4 plans from R113, rated per life or per policy | 16 |
+| 3 | 4 plans, 2 rating models | Confidently fit every client's budget with 4 plans from R119, rated per life or per policy | 16 |
 | 4 | Strong shared benefits | Offer a R223,000 annual limit and 500% in hospital gap benefit on every plan for peace of mind | 18 |
 | 5 | Structured training | Master every benefit, limit and exclusion through structured training, and sell with complete confidence | 14 |
 | 6 | Dedicated broker support | Never feel alone with a dedicated team behind every query, new business application & claim | 15 |
@@ -202,10 +202,10 @@ Intro: Two rating models, one strong foundation. Match the plan to your client's
 
 | Plan | Benefits | From | Rating | Badge |
 |---|---|---|---|---|
-| Nexus 1 | 15 | R113 per month | Per life | |
-| Nexus 2 | 20 | R130 per month | Per life | Most Popular |
-| Vertex | 11 | R450 per month | Per policy | |
-| Apex | 19 | R550 per month | Per policy | |
+| Nexus 1 | 15 | R119 per month | Per life | |
+| Nexus 2 | 20 | R137 per month | Per life | Most Popular |
+| Vertex | 11 | R471 per month | Per policy | |
+| Apex | 19 | R570 per month | Per policy | |
 
 Shared band: **Every plan includes a R223,000 overall annual limit & a 500% in hospital gap benefit.**
 Disclaimer: Gap cover is not a medical scheme and is not a substitute for medical scheme membership.
@@ -227,7 +227,7 @@ Secondary CTA: **Book a demo of Xcelerate**
 
 ## 10. Trust and social proof
 
-Slim strip under the hero: Authorised FSP 55527 · Underwritten by Compass (FSP 12148) · Dedicated broker support · 4 plans from R113
+Slim strip under the hero: Authorised FSP 55527 · Underwritten by Compass (FSP 12148) · Dedicated broker support · 4 plans from R119
 
 Fuller section headline: **A partner you can check**
 
@@ -299,14 +299,14 @@ Nothing below appears on the live page until it has been confirmed.
 |  H1 Grow a Book Clients Trust,       | Get a broker walkthrough       |  |
 |  With Answers Within One Business    | [First name]   [Surname]       |  |
 |  Day Using Xcelerate                 | [Mobile]       [Email]         |  |
-|  (4 Plans From R113)                 | [Brokerage]    [FSP no.]       |  |
+|  (4 Plans From R119)                 | [Brokerage]    [FSP no.]       |  |
 |                                      | [Province v]   [Time v]        |  |
 |  Subheadline (35 words)              | [x] POPIA consent              |  |
 |                                      | [ GET A WALKTHROUGH ]          |  |
 |  ✓ FSP 55527 · Compass FSP 12148     | No obligation.                 |  |
 |                                      +--------------------------------+  |
 +--------------------------------------------------------------------------+
-| TRUST STRIP  FSP 55527 | [shield] Compass | Support      | 4 plans R113  |
+| TRUST STRIP  FSP 55527 | [shield] Compass | Support      | 4 plans R119  |
 +--------------------------------------------------------------------------+
 | PAIN  (single column, 68ch)                                              |
 |  H2 Frustrated by chasing insurers...?                                   |
